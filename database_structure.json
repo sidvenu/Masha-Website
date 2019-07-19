@@ -1,0 +1,19 @@
+{
+    "version": "1",
+    "tables": [
+        {
+            "name": "paintings",
+            "columns": [
+                {"name": "id", "type": "integer", "constraints": "auto_increment"},
+                {"name": "painting_thumbnail", "type": "text"},
+                {"name": "title", "type": "text"},
+                {"name": "artist", "type": "text"},
+                {"name": "theme", "type": "text"},
+                {"name": "medium", "type": "text"},
+                {"name": "time", "type": "timestamp"}
+            ],
+            "primary_key": "id"
+        }
+    ],
+    "preupdate_queries": []
+}
