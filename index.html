@@ -39,14 +39,14 @@
 
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
-					<li class="menu-has-children">
+					<li>
 						<a href="#">Gallery</a>
 						<ul>
 							<li><a href="#">Artists</a></li>
 							<li><a href="#">Themes</a></li>
 						</ul>
 					</li>
-					<li class="menu-has-children">
+					<li>
 						<a href="#">Show Case</a>
 						<ul>
 							<li><a href="#">UpComing Events</a></li>
@@ -62,8 +62,8 @@
 
 			</nav><!-- #nav-menu-container -->
 			<div>
-				<i class="fa fa-search"></i>
-				<input type="text" id="searchText">
+				<!--<i class="fa fa-search"></i>-->
+				<input type="text" id="searchText" placeholder="Search" style="color:white;">
 			</div>
 		</div>
 	</header>
@@ -72,7 +72,7 @@
 		<div class="hero-container">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
-				<ol class="carousel-indicators" style="bottom: -22px;left: -208px;">
+				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -82,18 +82,21 @@
 				<div class="carousel-inner">
 
 					<div class="item active">
+						<div class="backgroundImg1"></div>
 						<h2><b>Feature of the day</b></h2>
 						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed risus pellentesque semper a vitae mi. </h5>
 
 					</div>
 
 					<div class="item">
+						<div class="backgroundImg2"></div>
 						<h2><b>Feature of the month</b></h2>
 						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed risus pellentesque semper a vitae mi. </h5>
 
 					</div>
 
 					<div class="item">
+						<div class="backgroundImg3"></div>
 						<h2><b>Feature of the year</b></h2>
 						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed risus pellentesque semper a vitae mi. </h5>
 
@@ -196,7 +199,7 @@
 				
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
-					<ol class="carousel-indicators" style="bottom:-79px">
+					<ol class="carousel-indicators" style="bottom: 105px;">
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 						<li data-target="#myCarousel" data-slide-to="1"></li>
 						<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -206,18 +209,21 @@
 					<div class="carousel-inner">
 
 						<div class="item active">
+							<div class="backgroundImg1Call2Action"></div>
 							<div class="col-lg-9 text-center text-lg-left">
 								<p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							</div>
 						</div>
 
 						<div class="item">
+							<div class="backgroundImg2Call2Action"></div>
 							<div class="col-lg-9 text-center text-lg-left">
 								<p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							</div>
 						</div>
 
 						<div class="item">
+							<div class="backgroundImg3Call2Action"></div>
 							<div class="col-lg-9 text-center text-lg-left">
 								<p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							</div>
@@ -234,7 +240,7 @@
 		<section id="team">
 			<div class="container wow fadeInUp">
 				<div class="section-header">
-					<h3 class="section-title">What is Masha Supprot?</h3>
+					<h3 class="section-title">What is Masha Support?</h3>
 					<p class="section-description">
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -282,23 +288,36 @@
 
 					<div class="col-lg-4 col-6 text-center">
 						<span><img src="img/social-care.png"></span>
-						<h5 style="margin-top:15px;"><b>Masha Support</b></h5><br />
-						<p style="margin-top:-27px;">Masha's mission enables and empowers under-privileged lives to move towards alternate choicesof professions through alluring art exploration.</p>
+						<div>
+							<h5><b>Masha Support</b></h5>
+							<p class="m-sm-top">Masha's mission enables and empowers under-privileged lives to move towards alternate choicesof professions through alluring art exploration.</p>
+
+
+						</div>
 					</div>
 
 					<div class="col-lg-4 col-6 text-center">
 						<span><img src="img/diploma.png"></span>
-						<h5 style="margin-top:15px;"><b>Artist Authenticity Certificate</b></h5>
-						<p>All our art work comes with artist authenticity certificate.</p>
+
+						<div>
+							<h5><b>Artist Authenticity Certificate</b></h5>
+							<p>All our art work comes with artist authenticity certificate.</p>
+
+						</div>
 					</div>
+
 
 					<div class="col-lg-4 col-12 text-center">
-						<span><img src="img/free-delivery.png"></span>
-						<h5><b>Free Shipping</b></h5>
-						<p>We offer free shipping for all order, regardless of the total amount of the order.</p>
+						<span><img src="img/free-delivery-min-com.png"></span>
+						<div style="margin-top: -14px;">
+							<h5><b>Free Shipping</b></h5>
+							<p>We offer free shipping for all order, regardless of the total amount of the order.</p>
+
+						</div>
 					</div>
 
-
+				
+					
 				</div>
 
 			</div>
@@ -311,24 +330,24 @@
 
 			<div class="row counters">
 
-				<div class="col-lg-4 col-6 text-center">
+				<div class="col-lg-4 col-6 text-center m-t-left">
 
-					<h6 style="margin-top:15px;"><b>About Us</b></h6><br />
+					<h6 style="margin-top:15px;"><b>About Us</b></h6><br/>
 					<p style="margin-top:-27px;">Masha Support.</p>
 				</div>
 
 				<div class="col-lg-4 col-6 text-center">
 
 					<h6 style="margin-top:15px;"><b>Help</b></h6>
-					<p>Privacy Policy</p><br />
+					<p style="margin-top:-6px;">Privacy Policy</p>
 					<p>FAQ</p>
 
 				</div>
 
-				<div class="col-lg-4 col-12 text-center">
+				<div class="col-lg-4 col-12 text-center m-c-right">
 
-					<h5><b>Contact</b></h5>
-					<p>Facebook</p>
+					<h6 style="margin-top:15px;"><b>Contact</b></h6>
+					<p style="margin-top:-6px;">Facebook</p>
 					<p>Instagram</p>
 				</div>
 
