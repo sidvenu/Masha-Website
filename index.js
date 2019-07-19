@@ -80,6 +80,16 @@ app.get("/paintings/search", (req,res)=>{
     res.send(query.get());
 });
 
+app.get("/painting", (req,res)=>{
+    let id =  req.query.id;
+    if (id == undefined) {
+        res.status(400).send("Require parameter 'id'.");
+    }
+    else {
+        res.send(paintings.where(`id = ${id}`).get());
+    }
+})
+
 app.listen(6000, ()=>{
     console.log("Listening at 6000");
 });
