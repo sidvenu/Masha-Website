@@ -88,7 +88,7 @@ app.get("/painting", (req,res)=>{
     else {
         res.send(paintings.where(`id = ${id}`).get());
     }
-})
+});
 
 app.listen(6000, ()=>{
     console.log("Listening at 6000");
