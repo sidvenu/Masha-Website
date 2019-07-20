@@ -34,6 +34,10 @@ body {
 	}
 }
 
+.carousel-control {
+	border: none;
+}
+
 .backgroundImg1 {
 	width: 100%;
 	height: 100vh;
@@ -885,9 +889,11 @@ a:hover {
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-	/*background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));*/
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/124N09119_6CB29_155305e9-0103-4f99-a699-4f1831e06465.png)  center;
+	background-size: cover;
+	padding: 80px 0;
 }
-.backgroundImg1Call2Action {
+/*.backgroundImg1Call2Action {
 	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/124N09119_6CB29_155305e9-0103-4f99-a699-4f1831e06465.png);
 	background-size: cover;
 	padding: 146px ;
@@ -901,7 +907,7 @@ a:hover {
 	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/124N09119_6CB29_155305e9-0103-4f99-a699-4f1831e06465.png);
 	background-size: cover;
 	padding: 146px;
-}
+}*/
 
 #call-to-action .cta-title {
   color: #fff;
@@ -913,9 +919,10 @@ a:hover {
 	color: #fff;
 	position: relative;
 	z-index: 1;
-	top: -147px;
+	top: 0px;
 	text-align: left;
-	right: -1px;
+	left: 10vw;
+	width: 400px;
 }
 
 @media (min-width: 769px) {
