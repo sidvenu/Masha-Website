@@ -215,6 +215,11 @@ Search glyphicon and text styling
   padding-right: 5px;
 }
 
+#mobile-nav #searchGroup #searchText {
+  padding-left: 10px;
+  margin-right: 5px;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
