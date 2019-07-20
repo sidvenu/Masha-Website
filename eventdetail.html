@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Event Details</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<link href="img/favicon.png" rel="icon">
+	<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="lib/animate/animate.min.css" rel="stylesheet">
+
+
+	<link href="css/gallery.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		#myImg {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+			#myImg:hover {
+				opacity: 0.7;
+			}
+
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		}
+
+		/* Modal Content (image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+		}
+
+		/* Caption of Modal Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+
+		/* Add Animation */
+		.modal-content, #caption {
+			-webkit-animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+			.close:hover,
+			.close:focus {
+				color: #bbb;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px) {
+			.modal-content {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header id="header">
+		<div class="container">
+
+			<div id="logo" class="pull-left" style="margin-top:-13px;">
+				<a href="#hero"><img src="img/MashaBranding.png" alt="" title="" /></img></a>
+			</div>
+
+			<nav id="nav-menu-container">
+				<ul class="nav-menu">
+					<li>
+						<a href="Gallery.html">Gallery</a>
+						<ul>
+							<li><a href="artist.html">Artists</a></li>
+							<li><a href="theme.html">Themes</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Show Case</a>
+						<ul>
+							<li><a href="events.html">Upcoming Events</a></li>
+							<li><a href="#">Exhibitions</a></li>
+						</ul>
+					</li>
+					<li><a href="masha.html">Masha Support</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="inmedia.html">In Media</a></li>
+
+				</ul>
+
+			</nav><!-- #nav-menu-container -->
+
+			<div>
+				<!--<i class="fa fa-search"></i>-->
+				<input type="text" id="searchText" placeholder="Search" style="color:black;">
+			</div>
+		</div>
+	</header>
+	<main id="main">
+		<section id="portfolio">
+			<div class="container wow fadeInUp">
+				<div class="section-header">
+					<h3 class="section-title"></h3>
+				</div>
+				<div class="row">
+
+				</div>
+
+				<div class="row" id="portfolio-wrapper">
+					<div class="col-lg-8 col-md-6 portfolio-item filter-app">
+
+						<img src="img/MG_9552.png" alt="">
+					</div>
+
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+
+						<div style="text-align: left;margin-top:-25px;">
+							<h2><b>Event Name</b></h2>
+							<span><b>25th July 2019</b></span><br />
+							<span><b>Venue: DLF</b></span><br /><br />
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuistiquem maecenas ultricies mi eget mauris. Mauris ultrices eros in cursus turpis massa. Id donec ultrices tincidunt arcu non sodales neque. Nam at lectus urna duis. Mi proin sed libero enim. Turpis massa sed elementum tempus egestas sed. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Eu non diam phasellus vestibulum lorem sed. Aenean pharetra magna ac placerat. Lectus quam id leo in vitae turpis massa. Faucibus turpis in eu mi bibendum neque egestas. Adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis posuere. A scelerisque purus semper eget duis at tellus. Posuere morbi leo urna molestie. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Fames ac turpis egestas sed tempus urna et. Arcu bibendum at varius vel pharetra vel. Augue lacus viverra vitae congue. Erat velit scelerisque in dictum non consectetur a erat. Maecenas accumsan lacus vel facilisis volutpat est.
+							</p>
+
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+
+
+			</div>
+		</section>
+		<section id="services">
+			<div class="container wow fadeIn">
+				<div class="section-header">
+					<h3 class="section-title">Image Gallery</h3>
+					<p class="section-description"></p>
+				</div>
+				<div class="container">
+					<div class="carousel slide" data-ride="carousel">
+						
+						<div class="carousel-inner">
+							<img src="img/next-1.png" style="position: relative; z-index: 2;top: 35px;right: 6px;" class="pull-left" onclick="ActiveDiv1()">
+							<img src="img/next.png" style="position: relative; z-index: 2;top: 35px;right: 6px;" class="pull-right" onclick="ActiveDiv2()">
+							<div class="carousel-item active" id="div1">
+								<div class="row">
+
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg1" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg2" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg3" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg4" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg5" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
+
+								</div>
+							</div>
+							<div class="carousel-item" id="div2">
+								<div class="row">
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="7 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="8 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="9 slide"></div>
+
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="10 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="11 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="12 slide"></div>
+
+								</div>
+							</div>
+
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+		</section><!-- #services -->
+
+	</main>
+
+
+
+
+
+
+
+
+
+	<section id="footerZ" style="margin-top:45px;">
+		<div class="">
+
+			<div class="row counters">
+
+				<div class="col-lg-4 col-6 text-center m-t-left">
+
+					<h6 style="margin-top:15px;"><b>About Us</b></h6><br />
+					<p style="margin-top:-27px;">Masha Support.</p>
+				</div>
+
+				<div class="col-lg-4 col-6 text-center">
+
+					<h6 style="margin-top:15px;"><b>Help</b></h6>
+					<p style="margin-top:-6px;">Privacy Policy</p>
+					<p>FAQ</p>
+
+				</div>
+
+				<div class="col-lg-4 col-12 text-center m-c-right">
+
+					<h6 style="margin-top:15px;"><b>Contact</b></h6>
+					<p style="margin-top:-6px;">Facebook</p>
+					<p>Instagram</p>
+				</div>
+
+
+			</div>
+
+		</div>
+	</section>
+	<div class="modal" id="myModal">
+		<div class="modal-dialog modal-xl">
+			
+			<img class="modal-content" id="img01" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" />
+
+
+			
+		</div>
+	</div>
+
+
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/jquery/jquery-migrate.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/wow/wow.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/counterup/counterup.min.js"></script>
+	<script src="lib/superfish/hoverIntent.js"></script>
+	<script src="lib/superfish/superfish.min.js"></script>
+	<script src="contactform/contactform.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(".modal").click(function () {
+			$("#myModal").modal('hide');
+			$("#myModal").css("display",'none');
+
+		});
+		function ActiveDiv1() {
+			$("#div2").removeClass("active");
+			$("#div1").addClass("active");
+		}
+		function ActiveDiv2() {
+			$("#div1").removeClass("active");
+			$("#div2").addClass("active");
+		}
+		
+		var modal = document.getElementById("myModal");
+
+		
+		var img = document.getElementById("myImg");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+		var img1 = document.getElementById("myImg1");
+		var modalImg1 = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img1.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+		var img2 = document.getElementById("myImg2");
+		var modalImg2 = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img2.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+		var img3 = document.getElementById("myImg3");
+		var modalImg3 = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img3.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+		var img4 = document.getElementById("myImg4");
+		var modalImg4 = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img4.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+		var img5 = document.getElementById("myImg5");
+		var modalImg5 = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img5.onclick = function () {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+	
+	</script>
+
+</body>
+	</html>
