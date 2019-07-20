@@ -386,7 +386,14 @@ Search glyphicon and text styling
 
 .nav-menu-right {
 	position: fixed;
-	right: 10vw;
+	right: 5vw;
+}
+
+
+@media (min-width: 1100px) {
+	.nav-menu-right {
+		right: 10vw;
+	}
 }
 
 .nav-menu > li {
