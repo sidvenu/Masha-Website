@@ -39,13 +39,13 @@
 
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
-					<li>
+					<li class="menu-has-children">
 						<a href="Gallery.html">Gallery</a>
 						<ul>
 							<li><a href="artist.html">Artists</a></li>
-							<li><a href="theme">Themes</a></li>
+							<li><a href="theme.html">Themes</a></li>
 						</ul>
-					</li>
+					</li class="menu-has-children">
 					<li>
 						<a href="#">Show Case</a>
 						<ul>
@@ -59,13 +59,13 @@
 					<li><a href="inmedia.html">In Media</a></li>
 
 				</ul>
-
+				<ul class="nav-menu nav-menu-right">
+					<li id="searchGroup">
+						<i class="glyphicon glyphicon-search"></i>
+						<input class="ml-auto" type="text" id="searchText" placeholder="Search">
+					</li>
+				</ul>
 			</nav><!-- #nav-menu-container -->
-
-			<div>
-				<!--<i class="fa fa-search"></i>-->
-				<input type="text" id="searchText" placeholder="Search" style="color:black;">
-			</div>
 		</div>
 	</header>
 	<main id="main">

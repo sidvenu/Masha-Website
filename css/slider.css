@@ -12,6 +12,10 @@ img {
 	padding: 5px;
 }
 
+#logo a img {
+	width: inherit;
+}
+
 h2 {
 	text-align: center;
 	padding-bottom: 1em;
