@@ -561,10 +561,11 @@ Search glyphicon and text styling
   transition: all 0.4s;
   outline: none;
   cursor: pointer;
+  background: none;
 }
 
 #mobile-nav-toggle i {
-  color: #fff;
+  color: black;
 }
 #searchGroup input {
   color: black;
@@ -677,11 +678,13 @@ body.mobile-nav-active {
 }
 
 body.mobile-nav-active #mobile-nav {
-  left: 0;
+  left: unset;
+  right: 0;
 }
 
 body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
+  right: unset;
 }
 
 /*--------------------------------------------------------------
