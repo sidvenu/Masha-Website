@@ -25,7 +25,7 @@ body {
 
 .carousel .carousel-text {
 	float: right;
-	margin-right: 5vw;
+  margin-right: 5vw;
 }
 
 @media (min-width: 1100px) {
