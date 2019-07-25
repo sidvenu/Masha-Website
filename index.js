@@ -38,7 +38,7 @@ app.get("/artists/search", (req,res)=>{
         res.status(400).send("Must specify query in 'q' parameter.");
     }
     else {
-        res.send(paintings.select("artist").distinct().where(`artist regexp '^${query}.*'`).get());
+        res.send(paintings.select("artist").distinct().where(`artist regexp '${query}.*'`).get());
     }
 });
 
@@ -49,7 +49,7 @@ app.get("/themes/search", (req,res)=>{
         res.status(400).send("Must specify query in 'q' parameter.");
     }
     else {
-        res.send(paintings.select("theme").distinct().where(`theme regexp '^${query}.*'`).get());
+        res.send(paintings.select("theme").distinct().where(`theme regexp '${query}.*'`).get());
     }
 });
 
@@ -59,22 +59,27 @@ app.get("/paintings/search", (req,res)=>{
     let title = req.query.title;
     let theme = req.query.theme;
     let medium = req.query.medium;
+    let size = req.query.size;
 
     let query = paintings.selectAll();
     if (artist != undefined) {
-        query = query.where(`artist regexp '^${artist}.*'`);
+        query = query.where(`artist regexp '${artist}.*'`);
     }
 
     if (title != undefined) {
-        query = query.where(`title regexp '^${title}.*'`);
+        query = query.where(`title regexp '${title}.*'`);
     }
 
     if (theme != undefined) {
-        query = query.where(`theme regexp '^${theme}.*'`);
+        query = query.where(`theme regexp '${theme}.*'`);
     }
 
     if (medium != undefined) {
-        query = query.where(`medium regexp '^${medium}.*'`);
+        query = query.where(`medium regexp '${medium}.*'`);
+    }
+
+    if (size != undefined) {
+        query = query.where(`size regexp '${size}.*'`);
     }
 
     res.send(query.get());
@@ -87,6 +92,17 @@ app.get("/painting", (req,res)=>{
     }
     else {
         res.send(paintings.where(`id = ${id}`).get());
+    }
+});
+
+app.post("/painting", (req,res)=>{
+    let painting = req.body;
+    let query = paintings.select("title, painting_thumbnail, size, medium, artist, painting_code");
+    if (!painting.title || !painting.thumbnail || !painting.size || !painting.medium || !painting.product_code || !painting.artist)
+        res.status(400).send("One or more required fields are missing.");
+    else {
+        query.insert(painting.title, painting.thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
+        res.send();
     }
 });
 

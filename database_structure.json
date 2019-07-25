@@ -1,5 +1,5 @@
 {
-    "version": "1",
+    "version": "1.0",
     "tables": [
         {
             "name": "paintings",
@@ -10,9 +10,11 @@
                 {"name": "artist", "type": "text"},
                 {"name": "theme", "type": "text"},
                 {"name": "medium", "type": "text"},
-                {"name": "time", "type": "timestamp"}
+                {"name": "time", "type": "timestamp"},
+                {"name": "painting_code", "type": "char(15)"},
+                {"name": "size", "type": "text"}
             ],
-            "primary_key": "id"
+            "primary_key": "id, painting_code"
         }
     ],
     "preupdate_queries": []
