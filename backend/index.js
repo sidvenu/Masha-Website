@@ -2,6 +2,7 @@ const express = require("express");
 const Database = require("sync-mysql-database").Database;
 const database_auth = require("./database_auth");
 const database_structure = require("./database_structure.json");
+const path = require("path");
 
 //sql connection
 var database = new Database(database_auth, database_structure);
@@ -9,6 +10,7 @@ var paintings = database.getTable("paintings").query();
 
 var app = new express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../")));
 app.use(express.urlencoded({extended: true}));
 
 //fetch all paintings
@@ -106,6 +108,8 @@ app.post("/painting", (req,res)=>{
     }
 });
 
-app.listen(6000, ()=>{
+
+
+app.listen(6001, ()=>{
     console.log("Listening at 6000");
 });
