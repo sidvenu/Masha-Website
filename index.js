@@ -18,7 +18,7 @@ app.get("/paintings", (req,res)=>{
 
 //fetch all artists
 app.get("/artists", (req,res)=>{
-    res.send(paintings.select("artist").distinct().get());
+    res.send(paintings.select("artist").distinct().orderby("artist").get());
 });
 
 //fetch all themes
@@ -38,7 +38,7 @@ app.get("/artists/search", (req,res)=>{
         res.status(400).send("Must specify query in 'q' parameter.");
     }
     else {
-        res.send(paintings.select("artist").distinct().where(`artist regexp '${query}.*'`).get());
+        res.send(paintings.select("artist").distinct().where(`artist regexp '${query}.*'`).orderby("artist").get());
     }
 });
 
