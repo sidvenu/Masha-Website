@@ -1,0 +1,21 @@
+{
+    "version": "1.0",
+    "tables": [
+        {
+            "name": "paintings",
+            "columns": [
+                {"name": "id", "type": "integer", "constraints": "auto_increment"},
+                {"name": "painting_thumbnail", "type": "text"},
+                {"name": "title", "type": "text"},
+                {"name": "artist", "type": "text"},
+                {"name": "theme", "type": "text"},
+                {"name": "medium", "type": "text"},
+                {"name": "time", "type": "timestamp"},
+                {"name": "painting_code", "type": "char(15)"},
+                {"name": "size", "type": "text"}
+            ],
+            "primary_key": "id, painting_code"
+        }
+    ],
+    "preupdate_queries": []
+}
