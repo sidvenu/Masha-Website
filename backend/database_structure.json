@@ -1,5 +1,5 @@
 {
-    "version": "2.1",
+    "version": "2.2",
     "tables": [
         {
             "name": "paintings",
@@ -24,7 +24,7 @@
                 {"name": "name", "type": "text"},
                 {"name": "colour", "type": "text"},
                 {"name": "type", "type": "text"},
-                {"name": "gender", "type": "char(1)"},
+                {"name": "gender", "type": "text"},
                 {"name": "photo_code", "type": "text"},
                 {"name": "size", "type": "text"}
             ],
