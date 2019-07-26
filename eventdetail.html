@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>Event Details</title>
@@ -12,7 +13,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+		rel="stylesheet">
 
 
 	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,23 +39,32 @@
 			transition: 0.3s;
 		}
 
-			#myImg:hover {
-				opacity: 0.7;
-			}
+		#myImg:hover {
+			opacity: 0.7;
+		}
 
 		/* The Modal (background) */
 		.modal {
-			display: none; /* Hidden by default */
-			position: fixed; /* Stay in place */
-			z-index: 1; /* Sit on top */
-			padding-top: 100px; /* Location of the box */
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			padding-top: 100px;
+			/* Location of the box */
 			left: 0;
 			top: 0;
-			width: 100%; /* Full width */
-			height: 100%; /* Full height */
-			overflow: auto; /* Enable scroll if needed */
-			background-color: rgb(0,0,0); /* Fallback color */
-			background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.9);
+			/* Black w/ opacity */
 		}
 
 		/* Modal Content (image) */
@@ -77,7 +88,8 @@
 		}
 
 		/* Add Animation */
-		.modal-content, #caption {
+		.modal-content,
+		#caption {
 			-webkit-animation-name: zoom;
 			-webkit-animation-duration: 0.6s;
 			animation-name: zoom;
@@ -115,12 +127,12 @@
 			transition: 0.3s;
 		}
 
-			.close:hover,
-			.close:focus {
-				color: #bbb;
-				text-decoration: none;
-				cursor: pointer;
-			}
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
 
 		/* 100% Image Width on Smaller Screens */
 		@media only screen and (max-width: 700px) {
@@ -145,8 +157,17 @@
 					<li class="menu-has-children">
 						<a href="Gallery.html">Gallery</a>
 						<ul>
-							<li><a href="artist.html">Artists</a></li>
-							<li><a href="theme.html">Themes</a></li>
+							<li><a href="#">Paintings</a></li>
+							<li><a href="#">Sculptures</a></li>
+							<li><a href="#">Shawls</a></li>
+							<li><a href="#">Carpets</a></li>
+							<!--li><a href="theme.html">Themes</a></li-->
+						</ul>
+					</li>
+					<li class="menu-has-children">
+						<a href="artist.html">Artist</a>
+						<ul id="artist-navbar-dropdown">
+							<li><a href="#">All Artists</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">
@@ -195,7 +216,18 @@
 							<span><b>25th July 2019</b></span><br />
 							<span><b>Venue: DLF</b></span><br /><br />
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuistiquem maecenas ultricies mi eget mauris. Mauris ultrices eros in cursus turpis massa. Id donec ultrices tincidunt arcu non sodales neque. Nam at lectus urna duis. Mi proin sed libero enim. Turpis massa sed elementum tempus egestas sed. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Eu non diam phasellus vestibulum lorem sed. Aenean pharetra magna ac placerat. Lectus quam id leo in vitae turpis massa. Faucibus turpis in eu mi bibendum neque egestas. Adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis posuere. A scelerisque purus semper eget duis at tellus. Posuere morbi leo urna molestie. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Fames ac turpis egestas sed tempus urna et. Arcu bibendum at varius vel pharetra vel. Augue lacus viverra vitae congue. Erat velit scelerisque in dictum non consectetur a erat. Maecenas accumsan lacus vel facilisis volutpat est.
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuistiquem maecenas
+								ultricies mi eget mauris. Mauris ultrices eros in cursus turpis massa. Id donec ultrices
+								tincidunt arcu non sodales neque. Nam at lectus urna duis. Mi proin sed libero enim.
+								Turpis massa sed elementum tempus egestas sed. Ultrices neque ornare aenean euismod
+								elementum nisi quis eleifend. Eu non diam phasellus vestibulum lorem sed. Aenean
+								pharetra magna ac placerat. Lectus quam id leo in vitae turpis massa. Faucibus turpis in
+								eu mi bibendum neque egestas. Adipiscing bibendum est ultricies integer quis. Ac turpis
+								egestas maecenas pharetra convallis posuere. A scelerisque purus semper eget duis at
+								tellus. Posuere morbi leo urna molestie. Ac orci phasellus egestas tellus rutrum tellus
+								pellentesque eu tincidunt. Fames ac turpis egestas sed tempus urna et. Arcu bibendum at
+								varius vel pharetra vel. Augue lacus viverra vitae congue. Erat velit scelerisque in
+								dictum non consectetur a erat. Maecenas accumsan lacus vel facilisis volutpat est.
 							</p>
 
 
@@ -218,37 +250,51 @@
 				</div>
 				<div class="container">
 					<div class="carousel slide" data-ride="carousel">
-						
+
 						<div class="carousel-inner">
-							<img src="img/next-1.png" style="position: relative; z-index: 2;top: 35px;right: 6px;" class="pull-left" onclick="ActiveDiv1()">
-							<img src="img/next.png" style="position: relative; z-index: 2;top: 35px;right: 6px;" class="pull-right" onclick="ActiveDiv2()">
+							<img src="img/next-1.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
+								class="pull-left" onclick="ActiveDiv1()">
+							<img src="img/next.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
+								class="pull-right" onclick="ActiveDiv2()">
 							<div class="carousel-item active" id="div1">
 								<div class="row">
 
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg1" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg2" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg3" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg4" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg5" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg1"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg2"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg3"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg4"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg5"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
 
 								</div>
 							</div>
 							<div class="carousel-item" id="div2">
 								<div class="row">
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="7 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="8 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="9 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="7 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="8 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="9 slide"></div>
 
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="10 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="11 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg" src="img/IMG_0695-400x300.png" alt="12 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="10 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="11 slide"></div>
+									<div class="col-md"><img class="d-block w-100" id="myImg"
+											src="img/IMG_0695-400x300.png" alt="12 slide"></div>
 
 								</div>
 							</div>
 
 						</div>
-						
+
 					</div>
 				</div>
 
@@ -298,11 +344,11 @@
 	</section>
 	<div class="modal" id="myModal">
 		<div class="modal-dialog modal-xl">
-			
+
 			<img class="modal-content" id="img01" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" />
 
 
-			
+
 		</div>
 	</div>
 
@@ -323,7 +369,7 @@
 	<script>
 		$(".modal").click(function () {
 			$("#myModal").modal('hide');
-			$("#myModal").css("display",'none');
+			$("#myModal").css("display", 'none');
 
 		});
 		function ActiveDiv1() {
@@ -334,10 +380,10 @@
 			$("#div1").removeClass("active");
 			$("#div2").addClass("active");
 		}
-		
+
 		var modal = document.getElementById("myModal");
 
-		
+
 		var img = document.getElementById("myImg");
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
@@ -391,8 +437,9 @@
 			captionText.innerHTML = this.alt;
 		}
 
-	
+
 	</script>
 
 </body>
-	</html>
+
+</html>

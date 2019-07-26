@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>In Media</title>
@@ -12,7 +13,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+		rel="stylesheet">
 
 
 	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,8 +48,17 @@
 					<li class="menu-has-children">
 						<a href="Gallery.html">Gallery</a>
 						<ul>
-							<li><a href="artist.html">Artists</a></li>
-							<li><a href="theme.html">Themes</a></li>
+							<li><a href="#">Paintings</a></li>
+							<li><a href="#">Sculptures</a></li>
+							<li><a href="#">Shawls</a></li>
+							<li><a href="#">Carpets</a></li>
+							<!--li><a href="theme.html">Themes</a></li-->
+						</ul>
+					</li>
+					<li class="menu-has-children">
+						<a href="artist.html">Artist</a>
+						<ul id="artist-navbar-dropdown">
+							<li><a href="#">All Artists</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">
@@ -82,33 +93,47 @@
 
 
 				</div>
-				
+
 				<div class="container">
 					<div class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
-							<img src="img/next-1.png" style="position: relative;top:110px; z-index: 2;width:3%" class="pull-left" onclick="ActiveDiv1()">
-							<img src="img/next.png" style="position: relative;top:110px; z-index: 2;width:3%" class="pull-right" onclick="ActiveDiv2()">
+							<img src="img/next-1.png" style="position: relative;top:110px; z-index: 2;width:3%"
+								class="pull-left" onclick="ActiveDiv1()">
+							<img src="img/next.png" style="position: relative;top:110px; z-index: 2;width:3%"
+								class="pull-right" onclick="ActiveDiv2()">
 
-							<div class="carousel-item active"  id="div1">
+							<div class="carousel-item active" id="div1">
 								<div class="row">
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
 
 								</div>
 							</div>
 							<div class="carousel-item" id="div2">
 								<div class="row">
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="7 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="8 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="9 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="7 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="8 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="9 slide"></div>
 
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="10 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="11 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100" src="img/IMG_0695-400x300.png" alt="12 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="10 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="11 slide"></div>
+									<div class="col-lg-4 col-md"><img class="d-block w-100"
+											src="img/IMG_0695-400x300.png" alt="12 slide"></div>
 
 								</div>
 							</div>
@@ -213,4 +238,5 @@
 		}
 	</script>
 </body>
-	</html>
+
+</html>
