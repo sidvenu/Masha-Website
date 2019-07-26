@@ -130,6 +130,36 @@ app.get("/painting", (req,res)=>{
     }
 });
 
+app.get("/shawls", (req,res)=>{
+    let params = req.query;
+    let num = params.num;
+    let keys = Object.keys(params);
+    let query = shawls.selectAll();
+    if (num != undefined) {
+        keys.splice(keys.indexOf("num"), 1);
+        query = query.limit(0, num);
+    }
+    keys.forEach((element)=>{
+        query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
+    });
+    res.send(query.get());
+});
+
+app.get("/carpets", (req,res)=>{
+    let params = req.query;
+    let num = params.num;
+    let keys = Object.keys(params);
+    let query = carpets.selectAll();
+    if (num != undefined) {
+        keys.splice(keys.indexOf("num"), 1);
+        query = query.limit(0, num);
+    }
+    keys.forEach((element)=>{
+        query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
+    });
+    res.send(query.get());
+});
+
 app.post("/painting", (req,res)=>{
     let painting = req.body;
     let query = paintings.select("title, painting_thumbnail, size, medium, artist, painting_code");
