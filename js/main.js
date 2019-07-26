@@ -53,7 +53,6 @@ jQuery(document).ready(function ($) {
       $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
       $('#mobile-body-overly').toggle();
     });
-
     $(document).click(function (e) {
       var container = $("#mobile-nav, #mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -127,4 +126,20 @@ jQuery(document).ready(function ($) {
 
   // custom code
 
+  // get artists from database and fill it in the navbar dropdown
+  function populateArtistsInNavbar() {
+    var numberOfArtists = 3;
+    $.get(`http://31f6fcca.ngrok.io/artists?num=${numberOfArtists}`, function (data) {
+      var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
+      console.log(data);
+      for (var i = 0; i < numberOfArtists; i++) {
+        // console.log(data[i].artist);
+        var artistName = data[i].artist;
+        var listString = `<li><a href="#">${artistName}</a></li>`;
+        listComp.prepend(listString);
+        listMobile.prepend(listString);
+      }
+    });
+  };
+  populateArtistsInNavbar();
 });
