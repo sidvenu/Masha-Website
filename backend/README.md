@@ -85,3 +85,5 @@
     *   `time`: Time when the painting was uploaded to the database.
     *   `painting_code`: A unique code in the format MASHA-000 for external usage.
     *   `size`: The dimensions of the painting.
+
+> All routes accept `num` query to limit the number of results.
