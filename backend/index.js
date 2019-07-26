@@ -7,6 +7,8 @@ const path = require("path");
 //sql connection
 var database = new Database(database_auth, database_structure);
 var paintings = database.getTable("paintings").query();
+var shawls = database.getTable("shawls").query();
+var carpets = database.getTable("carpets").query();
 
 var app = new express();
 app.use(express.json());
@@ -135,6 +137,31 @@ app.post("/painting", (req,res)=>{
         res.status(400).send("One or more required fields are missing.");
     else {
         query.insert(painting.title, painting.thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
+        res.send();
+    }
+});
+
+app.post("/shawl", (req,res)=>{
+    let shawl = req.body;
+    let query = shawls.select("item_number", "name", "colour", "type", "gender", "photo_code", "size");
+    if (!shawl.item_number || !shawl.name || !shawl.colour || !shawl.type || !shawl.gender || !shawl.photo_code || !shawl.size) {
+        res.status(400).send("One or more fields missing!");
+    }
+    else {
+        query.insert(shawl.item_number, shawl.name, shawl.colour, shawl.type, shawl.gender, shawl.photo_code, shawl.size);
+        res.send();
+    }
+
+});
+
+app.post("/carpet", (req,res)=>{
+    let carpet = req.body;
+    let query = carpets.select("item_number", "name", "size", "type", "colour", "photo_code", "details", "origin");
+    if (!carpet.item_number || !carpet.name || !carpet.size || !carpet.type || !carpet.colour || !carpet.photo_code || !carpet.details || !carpet.origin) {
+        res.status(400).send("One or more fields missing!");
+    }
+    else {
+        query.insert(carpet.item_number, carpet.name, carpet.size, carpet.type, carpet.colour, carpet.photo_code, carpet.details, carpet.origin);
         res.send();
     }
 });
