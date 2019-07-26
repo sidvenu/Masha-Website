@@ -18,6 +18,6 @@
   "homepage": "https://github.com/sidvenu/Masha-Website#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "sync-mysql-database": "^2.1.1"
+    "sync-mysql-database": "^2.3.3"
   }
 }

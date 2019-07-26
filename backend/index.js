@@ -15,12 +15,25 @@ app.use(express.urlencoded({extended: true}));
 
 //fetch all paintings
 app.get("/paintings", (req,res)=>{
-    res.send(paintings.get());
+    let number = req.query.num;
+    if (number == undefined || number == '')   
+        res.send(paintings.get());
+    else {
+        number = Number.parseInt(number);
+        res.send(paintings.limit(0, number).get());
+      }
 });
+
 
 //fetch all artists
 app.get("/artists", (req,res)=>{
-    res.send(paintings.select("artist").distinct().orderby("artist").get());
+    let number = req.query.num;
+    let artistList = paintings.select("artist").distinct().orderby("artist");
+    if (number != undefined) {
+        number = Number.parseInt(number);
+        artistList = artistList.limit(0, number);
+    }
+    res.send(artistList.get());
 });
 
 //fetch all themes
@@ -30,17 +43,30 @@ app.get("/themes", (req,res)=>{
 
 //fetch all medium
 app.get("/mediums", (req,res)=>{
-    res.send(paintings.select("medium").distinct().get());
+    let number = req.query.num;
+    let mediumList = paintings.select("medium").distinct();
+    
+    if (number != undefined) {
+        number = Number.parseInt(number);
+        mediumList = mediumList.limit(0, number);
+    }
+    
+    res.send(mediumList.get());
 });
 
 //search-artist
 app.get("/artists/search", (req,res)=>{
     let query = req.query.q;
+    let number = req.query.num;
     if (query == undefined || query == ""){
         res.status(400).send("Must specify query in 'q' parameter.");
     }
     else {
-        res.send(paintings.select("artist").distinct().where(`artist regexp '${query}.*'`).orderby("artist").get());
+        let result = paintings.select("artist").distinct().where(`artist regexp '${query}.*'`).orderby("artist");
+        if (number != undefined) {
+            result = result.limit(0, number);
+        }
+        res.send(result.get());
     }
 });
 
@@ -62,6 +88,7 @@ app.get("/paintings/search", (req,res)=>{
     let theme = req.query.theme;
     let medium = req.query.medium;
     let size = req.query.size;
+    let number = req.query.num;
 
     let query = paintings.selectAll();
     if (artist != undefined) {
@@ -82,6 +109,10 @@ app.get("/paintings/search", (req,res)=>{
 
     if (size != undefined) {
         query = query.where(`size regexp '${size}.*'`);
+    }
+
+    if (number != undefined) {
+        query = query.limit(0, number);
     }
 
     res.send(query.get());
@@ -107,8 +138,6 @@ app.post("/painting", (req,res)=>{
         res.send();
     }
 });
-
-
 
 app.listen(6001, ()=>{
     console.log("Listening at 6000");
