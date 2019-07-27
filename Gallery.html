@@ -57,118 +57,6 @@
 				</div>
 
 				<div class="row" id="portfolio-wrapper">
-					<!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-					</div>
-
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-
-						<img src="img/The-Lilt-600x600.png" alt="">
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-
-						<img src="img/The-Lilt-600x600.png" alt="">
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-
-						<img src="img/The-Lilt-600x600.png" alt="">
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<img src="img/METAMORPHOSIS-600x600.png" alt="">
-
-						<div style="text-align: center;">
-							<h4>Happiness</h4>
-							<span>Ishani </span><br />
-							<span style="color:lightgray">Oil on Canvas</span>
-
-
-						</div>
-					</div> -->
-
 				</div>
 
 			</div>
@@ -234,15 +122,28 @@
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				data.forEach(function (product) {
+					var firstLine = product.name;
+					var secondLine = product.artist;
+					var thirdLine = product.medium;
+					if(type==="shawls"){
+						secondLine = product.type;
+						thirdLine = product.gender;
+					} else if(type==="carpets"){
+						secondLine = product.type;
+						thirdLine = product.origin;
+					}
+					console.log(firstLine);
+					console.log(secondLine);
+					console.log(thirdLine);
 					productsList.append(`
 						<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 
 							<img src="img/METAMORPHOSIS-600x600.png" alt="" data-id="${product.id}">
 
 							<div style="text-align: center;">
-								<h4>${product.name}</h4>
-								<span>${product.artist}</span><br />
-								<span style="color:gray">${product.medium}</span>
+								<h4>${firstLine.toLowerCase()}</h4>
+								<span class="product-second-line">${secondLine.toLowerCase()}</span><br />
+								<span class="product-third-line" style="color:gray">${thirdLine.toLowerCase()}</span>
 							</div>
 						</div>
 					`);
