@@ -3,6 +3,7 @@ const Database = require("sync-mysql-database").Database;
 const database_auth = require("./database_auth");
 const database_structure = require("./database_structure.json");
 const path = require("path");
+const port = 3000;
 
 //sql connection
 var database = new Database(database_auth, database_structure);
@@ -196,6 +197,6 @@ app.post("/carpet", (req,res)=>{
     }
 });
 
-app.listen(6001, ()=>{
-    console.log("Listening at 6000");
+app.listen(port, ()=>{
+    console.log("Listening at " + port);
 });
