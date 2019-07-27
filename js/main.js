@@ -129,7 +129,7 @@ jQuery(document).ready(function ($) {
   // get artists from database and fill it in the navbar dropdown
   function populateArtistsInNavbar() {
     var numberOfArtists = 3;
-    $.get(`http://8ca1ee24.ngrok.io/artists?num=${numberOfArtists}`, function (data) {
+    $.get(`http://4f9b339d.ngrok.io/artists?num=${numberOfArtists}`, function (data) {
       var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
       console.log(data);
       for (var i = 0; i < numberOfArtists; i++) {
