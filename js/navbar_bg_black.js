@@ -9,13 +9,12 @@ document.write(`
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
 					<li class="menu-has-children">
-						<a href="Gallery.html" onmouseover="this.style.color='#fafafa'">Gallery</a>
+						<a href="#" onmouseover="this.style.color='#fafafa'">Gallery</a>
 						<ul>
-							<li><a href="#">Paintings</a></li>
-							<li><a href="#">Sculptures</a></li>
-							<li><a href="#">Shawls</a></li>
-							<li><a href="#">Carpets</a></li>
-							<!--li><a href="theme.html">Themes</a></li-->
+							<li><a href="Gallery.html?type=paintings">Paintings</a></li>
+							<li><a href="Gallery.html?type=sculptures">Sculptures</a></li>
+							<li><a href="Gallery.html?type=shawls">Shawls</a></li>
+							<li><a href="Gallery.html?type=carpets">Carpets</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">

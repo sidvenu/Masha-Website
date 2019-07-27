@@ -193,7 +193,7 @@
 	<script src="js/main.js"></script>
 	<script>
 		getProductsFromDatabase();
-		$("#portfolio-wrapper").on('click', ".portfolio-item", function () {
+		$("#portfolio-wrapper").on('click', "img", function () {
 			window.location = `product.html?id=${$(this).attr("data-id")}`;
 
 		});
@@ -226,30 +226,27 @@
 		}
 
 		function getProductsFromDatabase() {
-			$.get(`http://4f9b339d.ngrok.io/paintings`, function (data) {
+			let params = (new URL(document.location)).searchParams;
+			let type = params.get("type");
+			if(!type)
+				type = "paintings";
+			$.get(`http://4f9b339d.ngrok.io/${type}`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				data.forEach(function (product) {
 					productsList.append(`
-						<div class="col-lg-4 col-md-6 portfolio-item filter-app" data-id="${product.id}">
+						<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 
-							<img src="img/METAMORPHOSIS-600x600.png" alt="">
+							<img src="img/METAMORPHOSIS-600x600.png" alt="" data-id="${product.id}">
 
 							<div style="text-align: center;">
-								<h4>${product.title}</h4>
+								<h4>${product.name}</h4>
 								<span>${product.artist}</span><br />
-								<span style="color:lightgray">Oil on Canvas</span>
+								<span style="color:gray">${product.medium}</span>
 							</div>
 						</div>
 					`);
 				});
-				// for (var i = 0; i < numberOfArtists; i++) {
-				// 	// console.log(data[i].artist);
-				// 	var artistName = data[i].artist;
-				// 	var listString = `<li><a href="#">${artistName}</a></li>`;
-				// 	listComp.prepend(listString);
-				// 	listMobile.prepend(listString);
-				// }
 			});
 		}
 	</script>
