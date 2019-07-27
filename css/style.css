@@ -1041,6 +1041,16 @@ a:hover {
   margin: 0;
 }
 
+#portfolio .portfolio-item h4 {
+  text-transform:capitalize;
+}
+#portfolio .portfolio-item .product-second-line {
+  text-transform:capitalize;
+}
+#portfolio .portfolio-item .product-third-line {
+  text-transform:capitalize;
+}
+
 #portfolio .portfolio-item .details span {
   display: block;
   color: #fff;
