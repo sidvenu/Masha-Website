@@ -10,6 +10,7 @@ var database = new Database(database_auth, database_structure);
 var paintings = database.getTable("paintings").query();
 var shawls = database.getTable("shawls").query();
 var carpets = database.getTable("carpets").query();
+var sculptures = database.getTable("sculptures").query();
 
 var app = new express();
 app.use(express.json());
@@ -150,6 +151,29 @@ app.get("/carpets", (req,res)=>{
     res.send(query.get());
 });
 
+app.get("/sculptures", (req,res)=>{
+    let params = req.query;
+    let num = params.num;
+    let keys = Object.keys(params);
+    let query = sculptures.selectAll();
+    let offset = params.offset;
+    if (offset == undefined) {
+        offset = 0;
+    }
+    else {
+        keys.splice(keys.indexOf("offset"));
+    }
+    if (num != undefined) {
+        keys.splice(keys.indexOf("num"), 1);
+        query = query.limit(offset, num);
+    }
+    keys.forEach((element)=>{
+        query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
+    });
+    res.send(query.get());
+});
+
+
 app.post("/painting", (req,res)=>{
     let painting = req.body;
     let query = paintings.select("name, painting_thumbnail, size, medium, artist, painting_code");
@@ -172,6 +196,17 @@ app.post("/shawl", (req,res)=>{
         res.send();
     }
 
+});
+
+app.post("/sculpture", (req,res)=>{
+    let sculpture = req.body;
+    let query = sculptures.select("name, thumbnail, medium,  artist, painting_code");
+    if (!sculpture.name || !sculpture.thumbnail  || !sculpture.medium || !sculpture.painting_code || !sculpture.artist)
+        res.status(400).send("One or more required fields are missing.");
+    else {
+        query.insert(sculpture.name, sculpture.thumbnail, sculpture.medium, sculpture.artist, sculpture.painting_code);
+        res.send();
+    }
 });
 
 app.post("/carpet", (req,res)=>{
