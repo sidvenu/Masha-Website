@@ -152,11 +152,11 @@ app.get("/carpets", (req,res)=>{
 
 app.post("/painting", (req,res)=>{
     let painting = req.body;
-    let query = paintings.select("title, painting_thumbnail, size, medium, artist, painting_code");
-    if (!painting.title || !painting.photo_thumbnail || !painting.size || !painting.medium || !painting.product_code || !painting.artist)
+    let query = paintings.select("name, painting_thumbnail, size, medium, artist, painting_code");
+    if (!painting.name || !painting.photo_thumbnail || !painting.size || !painting.medium || !painting.product_code || !painting.artist)
         res.status(400).send("One or more required fields are missing.");
     else {
-        query.insert(painting.title, painting.photo_thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
+        query.insert(painting.name, painting.photo_thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
         res.send();
     }
 });

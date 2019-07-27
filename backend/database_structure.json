@@ -1,12 +1,12 @@
 {
-    "version": "2.2",
+    "version": "2.4",
     "tables": [
         {
             "name": "paintings",
             "columns": [
                 {"name": "id", "type": "integer", "constraints": "auto_increment"},
                 {"name": "painting_thumbnail", "type": "text"},
-                {"name": "title", "type": "text"},
+                {"name": "name", "type": "text"},
                 {"name": "artist", "type": "text"},
                 {"name": "theme", "type": "text"},
                 {"name": "medium", "type": "text"},
