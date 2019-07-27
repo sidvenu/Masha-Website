@@ -16,15 +16,27 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../")));
 app.use(express.urlencoded({extended: true}));
 
-//fetch all paintings
+//fetch paintings
 app.get("/paintings", (req,res)=>{
-    let number = req.query.num;
-    if (number == undefined || number == '')   
-        res.send(paintings.get());
+    let params = req.query;
+    let num = params.num;
+    let keys = Object.keys(params);
+    let query = paintings.selectAll();
+    let offset = params.offset;
+    if (offset == undefined) {
+        offset = 0;
+    }
     else {
-        number = Number.parseInt(number);
-        res.send(paintings.limit(0, number).get());
-      }
+        keys.splice(keys.indexOf("offset"));
+    }
+    if (num != undefined) {
+        keys.splice(keys.indexOf("num"), 1);
+        query = query.limit(offset, num);
+    }
+    keys.forEach((element)=>{
+        query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
+    });
+    res.send(query.get());
 });
 
 
@@ -84,43 +96,6 @@ app.get("/themes/search", (req,res)=>{
     }
 });
 
-//filter-paintings
-app.get("/paintings/search", (req,res)=>{
-    let artist = req.query.artist;
-    let title = req.query.title;
-    let theme = req.query.theme;
-    let medium = req.query.medium;
-    let size = req.query.size;
-    let number = req.query.num;
-
-    let query = paintings.selectAll();
-    if (artist != undefined) {
-        query = query.where(`artist regexp '${artist}.*'`);
-    }
-
-    if (title != undefined) {
-        query = query.where(`title regexp '${title}.*'`);
-    }
-
-    if (theme != undefined) {
-        query = query.where(`theme regexp '${theme}.*'`);
-    }
-
-    if (medium != undefined) {
-        query = query.where(`medium regexp '${medium}.*'`);
-    }
-
-    if (size != undefined) {
-        query = query.where(`size regexp '${size}.*'`);
-    }
-
-    if (number != undefined) {
-        query = query.limit(0, number);
-    }
-
-    res.send(query.get());
-});
-
 app.get("/painting", (req,res)=>{
     let id =  req.query.id;
     if (id == undefined) {
@@ -136,9 +111,16 @@ app.get("/shawls", (req,res)=>{
     let num = params.num;
     let keys = Object.keys(params);
     let query = shawls.selectAll();
+    let offset = params.offset;
+    if (offset == undefined) {
+        offset = 0;
+    }
+    else {
+        keys.splice(keys.indexOf("offset"));
+    }
     if (num != undefined) {
         keys.splice(keys.indexOf("num"), 1);
-        query = query.limit(0, num);
+        query = query.limit(offset, num);
     }
     keys.forEach((element)=>{
         query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
@@ -151,9 +133,16 @@ app.get("/carpets", (req,res)=>{
     let num = params.num;
     let keys = Object.keys(params);
     let query = carpets.selectAll();
+    let offset = params.offset;
+    if (offset == undefined) {
+        offset = 0;
+    }
+    else {
+        keys.splice(keys.indexOf("offset"));
+    }
     if (num != undefined) {
         keys.splice(keys.indexOf("num"), 1);
-        query = query.limit(0, num);
+        query = query.limit(offset, num);
     }
     keys.forEach((element)=>{
         query = query.where(`${element} regexp "${params[`${element}`]}.*"`);
@@ -163,11 +152,11 @@ app.get("/carpets", (req,res)=>{
 
 app.post("/painting", (req,res)=>{
     let painting = req.body;
-    let query = paintings.select("title, painting_thumbnail, size, medium, artist, painting_code");
-    if (!painting.title || !painting.photo_thumbnail || !painting.size || !painting.medium || !painting.product_code || !painting.artist)
+    let query = paintings.select("name, painting_thumbnail, size, medium, artist, painting_code");
+    if (!painting.name || !painting.photo_thumbnail || !painting.size || !painting.medium || !painting.product_code || !painting.artist)
         res.status(400).send("One or more required fields are missing.");
     else {
-        query.insert(painting.title, painting.photo_thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
+        query.insert(painting.name, painting.photo_thumbnail, painting.size, painting.medium, painting.artist, painting.product_code);
         res.send();
     }
 });
