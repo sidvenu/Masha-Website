@@ -116,21 +116,31 @@
 		function getProductsFromDatabase() {
 			let params = (new URL(document.location)).searchParams;
 			let type = params.get("type");
-			if(!type)
+			if (!type)
 				type = "paintings";
-			$.get(`${apiBaseURL}/${type}.php`, function (data) {
+			$.get(`${new URLBuilder().api().urlString}/${type}.php`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				data.forEach(function (product) {
 					var firstLine = product.name;
-					var secondLine = product.artist;
-					var thirdLine = product.medium;
-					if(type==="shawls"){
+					var secondLine, thirdLine;
+					var urlString;
+					if (type === "paintings") {
+						secondLine = product.artist;
+						thirdLine = product.medium;
+						urlString = URLBuilder.paintingsThumbnailURL(product.artist);
+					} else if (type === "sculptures") {
+						secondLine = product.name;
+						thirdLine = product.artist;
+						urlString = URLBuilder.carpetsThumbnailURL(product.artist);
+					} else if (type === "shawls") {
 						secondLine = product.type;
 						thirdLine = product.gender;
-					} else if(type==="carpets"){
+						urlString = URLBuilder.shawlsThumbnailURL();
+					} else if (type === "carpets") {
 						secondLine = product.type;
 						thirdLine = product.origin;
+						urlString = URLBuilder.carpetsThumbnailURL();
 					}
 					console.log(firstLine);
 					console.log(secondLine);
@@ -138,7 +148,7 @@
 					productsList.append(`
 						<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 
-							<img src="img/METAMORPHOSIS-600x600.png" alt="" data-id="${product.id}">
+							<img src="${}/${product.thumbnail}" alt="" data-id="${product.id}">
 
 							<div style="text-align: center;">
 								<h4>${firstLine.toLowerCase()}</h4>
