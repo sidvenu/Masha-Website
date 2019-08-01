@@ -132,7 +132,7 @@
 					} else if (type === "sculptures") {
 						secondLine = product.name;
 						thirdLine = product.artist;
-						urlString = URLBuilder.carpetsThumbnailURL(product.artist);
+						urlString = URLBuilder.sculpturesThumbnailURL(product.artist);
 					} else if (type === "shawls") {
 						secondLine = product.type;
 						thirdLine = product.gender;
@@ -148,7 +148,7 @@
 					productsList.append(`
 						<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 
-							<img src="${}/${product.thumbnail}" alt="" data-id="${product.id}">
+							<img src="${urlString}/${product.thumbnail}" alt="" data-id="${product.id}">
 
 							<div style="text-align: center;">
 								<h4>${firstLine.toLowerCase()}</h4>
