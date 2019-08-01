@@ -1,4 +1,88 @@
 var apiBaseURL = "api";
+var rawBaseURL = "raw";
+var thumbnailBaseURL = `${rawBaseURL}/thumbnails`;
+var photosBaseURL = `${rawBaseURL}/photos`;
+
+var paintingsFolderName = "Gallerie Splash";
+var paintingsThumbnailBaseURL = `${thumbnailBaseURL}/${paintingsFolderName}`;
+
+class URLBuilder {
+  constructor() {
+    this.urlString = "";
+  }
+  
+  api() {
+    return this.child("api");
+  }
+  
+  raw() {
+    return this.child("raw");
+  }
+  
+  thumbnails() {
+    return this.child("thumbnails");
+  }
+
+  photos() {
+    return this.child("photos");
+  }
+  
+  paintings(artistName) {
+    return this.child("Gallerie Splash").child(artistName);
+  }
+
+  static paintingsThumbnailURL(artistName) {
+    return new URLBuilder().raw().thumbnails().paintings(artistName).urlString;
+  }
+
+  static paintingsURL(artistName) {
+    return new URLBuilder().raw().photos().paintings(artistName).urlString;
+  }
+
+  shawls() {
+    return this.child("Shawls");
+  }
+
+  static shawlsThumbnailURL() {
+    return new URLBuilder().raw().thumbnails().shawls().urlString;
+  }
+
+  static shawlsURL() {
+    return new URLBuilder().raw().photos().shawls().urlString;
+  }
+
+  sculptures(artistName) {
+    return this.child("Sculptures").child(artistName);
+  }
+
+  static sculpturesThumbnailURL(artistName) {
+    return new URLBuilder().raw().thumbnails().sculptures(artistName).urlString;
+  }
+
+  static sculpturesURL(artistName) {
+    return new URLBuilder().raw().photos().sculptures(artistName).urlString;
+  }
+
+  carpets() {
+    return this.child("Carpets");
+  }
+
+  static carpetsThumbnailURL() {
+    return new URLBuilder().raw().thumbnails().carpets().urlString;
+  }
+
+  static carpetsURL() {
+    return new URLBuilder().raw().photos().carpets().urlString;
+  }
+
+  child(field) {
+    var url = Object.copy(this);
+    if (url.urlString)
+      url.urlString += `/`;
+    url.urlString += field;
+    return url;
+  }
+}
 
 jQuery(document).ready(function ($) {
 
