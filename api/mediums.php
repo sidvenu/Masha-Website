@@ -40,7 +40,7 @@
             }
         }
 
-        $query = "SELECT DISTINCT artist FROM paintings";
+        $query = "SELECT DISTINCT medium FROM paintings";
         if ($where !== FALSE) 
             $query = $query . $where;
 
