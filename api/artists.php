@@ -47,7 +47,7 @@
         if ($limit !== FALSE) 
             $query = $query . $limit;
 
-        $query = $query . " ORDER BY artist asc;";
+        $query = $query . ";";
         
         $result = $conn->query($query);
         $output = array();
