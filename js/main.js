@@ -1,3 +1,5 @@
+var apiBaseURL = "api";
+
 jQuery(document).ready(function ($) {
 
   // Header fixed and Back to top button
@@ -129,7 +131,7 @@ jQuery(document).ready(function ($) {
   // get artists from database and fill it in the navbar dropdown
   function populateArtistsInNavbar() {
     var numberOfArtists = 3;
-    $.get(`api/artists.php?num=${numberOfArtists}`, function (data) {
+    $.get(`${apiBaseURL}/artists.php?num=${numberOfArtists}`, function (data) {
       var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
       console.log(data);
       for (var i = 0; i < numberOfArtists; i++) {
