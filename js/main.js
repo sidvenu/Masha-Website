@@ -1,11 +1,3 @@
-var apiBaseURL = "api";
-var rawBaseURL = "raw";
-var thumbnailBaseURL = `${rawBaseURL}/thumbnails`;
-var photosBaseURL = `${rawBaseURL}/photos`;
-
-var paintingsFolderName = "Gallerie Splash";
-var paintingsThumbnailBaseURL = `${thumbnailBaseURL}/${paintingsFolderName}`;
-
 class URLBuilder {
   constructor() {
     this.urlString = "";
