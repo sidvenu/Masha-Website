@@ -21,8 +21,11 @@ with open(csvfilename, newline='') as csvfile:
             data = dict.fromkeys(headers)
             for i in range(len(row)):
                 data[headers[i]] = row[i]
-            response = requests.post(sys.argv[2], data)
+            print (row)
+            response = requests.post(sys.argv[2], data=data)
             if response.status_code == 400:
                 print ("ERROR: ")
-                print (row)
+                print (response.text)
+            else:
+                print ("SUCCESS")
 

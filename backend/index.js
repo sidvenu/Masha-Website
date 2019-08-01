@@ -2,7 +2,6 @@ const express = require("express");
 const Database = require("sync-mysql-database").Database;
 const database_auth = require("./database_auth");
 const database_structure = require("./database_structure.json");
-const path = require("path");
 const port = 3000;
 
 //sql connection
@@ -13,7 +12,6 @@ var carpets = database.getTable("carpets").query();
 
 var app = new express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../")));
 app.use(express.urlencoded({extended: true}));
 
 //fetch paintings
