@@ -118,7 +118,7 @@
 			let type = params.get("type");
 			if(!type)
 				type = "paintings";
-			$.get(`${type}.php`, function (data) {
+			$.get(`api/${type}.php`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				data.forEach(function (product) {
