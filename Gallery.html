@@ -165,28 +165,33 @@
 				let params = (new URL(document.location)).searchParams;
 				let type = params.get("type");
 				let searchQuery = $("#searchText").val().toLowerCase();
-				switch (type) {
-					case "paintings":
-						//show all 
-						$(".portfolio-item").show("slow");
+				
+				//hide the div
+				$("#portfolio-wrapper").hide();
 
-						//filter
-						$(".portfolio-item").each(function(index, product){
-							let firstLine = product.getElementsByTagName("h4")[0].innerHTML;
-							let secondLine = product.getElementsByClassName("product-second-line")[0].innerHTML;
-							let thirdLine = product.getElementsByClassName("product-third-line")[0].innerHTML;
+				//show all the products
+				$(".portfolio-item").show();
 
-							if (firstLine.toLowerCase().search(searchQuery)<0 &&
-								secondLine.toLowerCase().search(searchQuery)<0 &&
-								thirdLine.toLowerCase().search(searchQuery)<0) {
-								$(product).hide("slow");
-							}
-						});
-					break;
-				}
+				//filter
+				$(".portfolio-item").each(function (index, product) {
+					let firstLine = product.getElementsByTagName("h4")[0].innerHTML;
+					let secondLine = product.getElementsByClassName("product-second-line")[0].innerHTML;
+					let thirdLine = product.getElementsByClassName("product-third-line")[0].innerHTML;
+
+					if (firstLine.toLowerCase().search(searchQuery) < 0 &&
+						secondLine.toLowerCase().search(searchQuery) < 0 &&
+						thirdLine.toLowerCase().search(searchQuery) < 0) {
+						
+						//hide the products that don't match
+						$(product).hide();
+					}
+				});
+
+				//show the results
+				$("#portfolio-wrapper").show("slow");
 			}
 		}
-		
+
 		$("#mobile-nav #searchText").keyup(applySearchFilter);
 		$("#nav-menu-container #searchText").keyup(applySearchFilter);
 
