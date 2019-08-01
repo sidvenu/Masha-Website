@@ -118,7 +118,7 @@
 			let type = params.get("type");
 			if(!type)
 				type = "paintings";
-			$.get(`http://4f9b339d.ngrok.io/${type}`, function (data) {
+			$.get(`${type}.php`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				data.forEach(function (product) {
