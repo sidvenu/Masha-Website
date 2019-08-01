@@ -10,6 +10,7 @@
         $where = FALSE;
         $num = FALSE;
         $offset = FALSE;
+        $field = $_GET["field"];
         if (array_search("num", array_keys($_GET)) !== FALSE) {
             $num = $_GET["num"];
             array_splice($_GET, array_search("num", array_keys($_GET)), 1);
@@ -18,6 +19,10 @@
         if (array_search("offset", array_keys($_GET)) !== FALSE) {
             $offset = $_GET["offset"];
             array_splice($_GET, array_search("offset", array_keys($_GET)), 1);
+        }
+
+        if (array_search("field", array_keys($_GET)) !== FALSE) {
+            array_splice($_GET, array_search("field", array_keys($_GET)), 1);
         }
         
         if ($offset === FALSE) {
@@ -40,7 +45,7 @@
             }
         }
 
-        $query = "SELECT DISTINCT medium FROM paintings";
+        $query = "SELECT DISTINCT ". $field . " FROM sculptures";
         if ($where !== FALSE) 
             $query = $query . $where;
 
