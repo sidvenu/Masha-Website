@@ -176,9 +176,9 @@
 							let secondLine = product.getElementsByClassName("product-second-line")[0].innerHTML;
 							let thirdLine = product.getElementsByClassName("product-third-line")[0].innerHTML;
 
-							if (!firstLine.toLowerCase().contains(searchQuery) &&
-								!secondLine.toLowerCase().contains(searchQuery) &&
-								!thirdLine.toLowerCase().contains(searchQuery)) {
+							if (firstLine.toLowerCase().search(searchQuery)<0 &&
+								secondLine.toLowerCase().search(searchQuery)<0 &&
+								thirdLine.toLowerCase().search(searchQuery)<0) {
 								$(product).hide("slow");
 							}
 						});
