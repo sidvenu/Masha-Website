@@ -1,8 +1,5 @@
 <?php
-    $server_name = "localhost";
-    $username = "test_masha";
-    $password = "test";
-    $db = "test_masha";
+    include "auth.php";
 
     $conn = new mysqli($server_name, $username, $password, $db);
     if ($conn->connect_error) {
