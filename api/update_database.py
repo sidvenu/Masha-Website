@@ -23,9 +23,9 @@ with open(csvfilename, newline='') as csvfile:
                 data[headers[i]] = row[i]
             print (row)
             response = requests.post(sys.argv[2], data=data)
-            if response.status_code == 400:
+            if response.status_code == 200:
+                print ("SUCCESS")
+            else:
                 print ("ERROR: ")
                 print (response.text)
-            else:
-                print ("SUCCESS")
 
