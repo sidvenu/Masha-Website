@@ -1,223 +1,261 @@
 class URLBuilder {
-  constructor() {
-    this.urlString = "";
-  }
-  
-  api() {
-    return this.child("api");
-  }
-  
-  raw() {
-    return this.child("raw");
-  }
-  
-  thumbnails() {
-    return this.child("thumbnails");
-  }
+	constructor() {
+		this.urlString = "";
+	}
 
-  photos() {
-    return this.child("photos");
-  }
-  
-  paintings(artistName) {
-    return this.child("Gallerie Splash").child(artistName);
-  }
+	api() {
+		return this.child("api");
+	}
 
-  static paintingsThumbnailURL(artistName) {
-    return new URLBuilder().raw().thumbnails().paintings(artistName).urlString;
-  }
+	raw() {
+		return this.child("raw");
+	}
 
-  static paintingsURL(artistName) {
-    return new URLBuilder().raw().photos().paintings(artistName).urlString;
-  }
+	thumbnails() {
+		return this.child("thumbnails");
+	}
 
-  shawls() {
-    return this.child("Shawls");
-  }
+	photos() {
+		return this.child("photos");
+	}
 
-  static shawlsThumbnailURL() {
-    return new URLBuilder().raw().thumbnails().shawls().urlString;
-  }
+	paintings(artistName) {
+		return this.child("Gallerie Splash").child(artistName);
+	}
 
-  static shawlsURL() {
-    return new URLBuilder().raw().photos().shawls().urlString;
-  }
+	static paintingsThumbnailURL(artistName) {
+		return new URLBuilder().raw().thumbnails().paintings(artistName).urlString;
+	}
 
-  sculptures(artistName) {
-    return this.child("Sculptures").child(artistName);
-  }
+	static paintingsURL(artistName) {
+		return new URLBuilder().raw().photos().paintings(artistName).urlString;
+	}
 
-  static sculpturesThumbnailURL(artistName) {
-    return new URLBuilder().raw().thumbnails().sculptures(artistName).urlString;
-  }
+	shawls() {
+		return this.child("Shawls");
+	}
 
-  static sculpturesURL(artistName) {
-    return new URLBuilder().raw().photos().sculptures(artistName).urlString;
-  }
+	static shawlsThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().shawls().urlString;
+	}
 
-  carpets() {
-    return this.child("Carpets");
-  }
+	static shawlsURL() {
+		return new URLBuilder().raw().photos().shawls().urlString;
+	}
 
-  static carpetsThumbnailURL() {
-    return new URLBuilder().raw().thumbnails().carpets().urlString;
-  }
+	sculptures(artistName) {
+		return this.child("Sculptures").child(artistName);
+	}
 
-  static carpetsURL() {
-    return new URLBuilder().raw().photos().carpets().urlString;
-  }
+	static sculpturesThumbnailURL(artistName) {
+		return new URLBuilder().raw().thumbnails().sculptures(artistName).urlString;
+	}
 
-  child(field) {
-    var url = Object.create(this);
-    if (url.urlString)
-      url.urlString += `/`;
-    url.urlString += field;
-    return url;
-  }
+	static sculpturesURL(artistName) {
+		return new URLBuilder().raw().photos().sculptures(artistName).urlString;
+	}
+
+	carpets() {
+		return this.child("Carpets");
+	}
+
+	static carpetsThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().carpets().urlString;
+	}
+
+	static carpetsURL() {
+		return new URLBuilder().raw().photos().carpets().urlString;
+	}
+
+	child(field) {
+		var url = Object.create(this);
+		if (url.urlString)
+			url.urlString += `/`;
+		url.urlString += field;
+		return url;
+	}
 }
 
 jQuery(document).ready(function ($) {
 
-  // Header fixed and Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-      $('#header').addClass('header-fixed');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-      $('#header').removeClass('header-fixed');
-    }
-  });
-  $('.back-to-top').click(function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
+	// Header fixed and Back to top button
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('.back-to-top').fadeIn('slow');
+			$('#header').addClass('header-fixed');
+		} else {
+			$('.back-to-top').fadeOut('slow');
+			$('#header').removeClass('header-fixed');
+		}
+	});
+	$('.back-to-top').click(function () {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1500, 'easeInOutExpo');
+		return false;
+	});
 
-  // Initiate the wowjs
-  new WOW().init();
+	// Initiate the wowjs
+	new WOW().init();
 
-  // Initiate superfish on nav menu
-  $('.nav-menu').superfish({
-    animation: {
-      opacity: 'show'
-    },
-    speed: 400
-  });
+	// Initiate superfish on nav menu
+	$('.nav-menu').superfish({
+		animation: {
+			opacity: 'show'
+		},
+		speed: 400
+	});
 
-  // Mobile Navigation
-  if ($('#nav-menu-container').length) {
-    var $mobile_nav = $('#nav-menu-container').clone().prop({
-      id: 'mobile-nav'
-    });
-    $mobile_nav.find('> ul').attr({
-      'class': '',
-      'id': ''
-    });
-    $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
-    $('body').append('<div id="mobile-body-overly"></div>');
-    $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
+	// Mobile Navigation
+	if ($('#nav-menu-container').length) {
+		var $mobile_nav = $('#nav-menu-container').clone().prop({
+			id: 'mobile-nav'
+		});
+		$mobile_nav.find('> ul').attr({
+			'class': '',
+			'id': ''
+		});
+		$('body').append($mobile_nav);
+		$('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
+		$('body').append('<div id="mobile-body-overly"></div>');
+		$('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
 
-    $(document).on('click', '.menu-has-children i', function (e) {
-      $(this).next().toggleClass('menu-item-active');
-      $(this).nextAll('ul').eq(0).slideToggle();
-      $(this).toggleClass("fa-chevron-up fa-chevron-down");
-    });
+		$(document).on('click', '.menu-has-children i', function (e) {
+			$(this).next().toggleClass('menu-item-active');
+			$(this).nextAll('ul').eq(0).slideToggle();
+			$(this).toggleClass("fa-chevron-up fa-chevron-down");
+		});
 
-    $(document).on('click', '#mobile-nav-toggle', function (e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-      $('#mobile-body-overly').toggle();
-    });
-    $(document).click(function (e) {
-      var container = $("#mobile-nav, #mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-      }
-    });
-  } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
-    $("#mobile-nav, #mobile-nav-toggle").hide();
-  }
+		$(document).on('click', '#mobile-nav-toggle', function (e) {
+			$('body').toggleClass('mobile-nav-active');
+			$('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+			$('#mobile-body-overly').toggle();
+		});
+		$(document).click(function (e) {
+			var container = $("#mobile-nav, #mobile-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				if ($('body').hasClass('mobile-nav-active')) {
+					$('body').removeClass('mobile-nav-active');
+					$('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+					$('#mobile-body-overly').fadeOut();
+				}
+			}
+		});
+	} else if ($("#mobile-nav, #mobile-nav-toggle").length) {
+		$("#mobile-nav, #mobile-nav-toggle").hide();
+	}
 
-  // Smoth scroll on page hash links
-  $('a[href*="#"]:not([href="#"])').on('click', function () {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+	// Smoth scroll on page hash links
+	$('a[href*="#"]:not([href="#"])').on('click', function () {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 
-      var target = $(this.hash);
-      if (target.length) {
-        var top_space = 0;
+			var target = $(this.hash);
+			if (target.length) {
+				var top_space = 0;
 
-        if ($('#header').length) {
-          top_space = $('#header').outerHeight();
+				if ($('#header').length) {
+					top_space = $('#header').outerHeight();
 
-          if (!$('#header').hasClass('header-fixed')) {
-            top_space = top_space - 20;
-          }
-        }
+					if (!$('#header').hasClass('header-fixed')) {
+						top_space = top_space - 20;
+					}
+				}
 
-        $('html, body').animate({
-          scrollTop: target.offset().top - top_space
-        }, 1500, 'easeInOutExpo');
+				$('html, body').animate({
+					scrollTop: target.offset().top - top_space
+				}, 1500, 'easeInOutExpo');
 
-        if ($(this).parents('.nav-menu').length) {
-          $('.nav-menu .menu-active').removeClass('menu-active');
-          $(this).closest('li').addClass('menu-active');
-        }
+				if ($(this).parents('.nav-menu').length) {
+					$('.nav-menu .menu-active').removeClass('menu-active');
+					$(this).closest('li').addClass('menu-active');
+				}
 
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-        return false;
-      }
-    }
-  });
+				if ($('body').hasClass('mobile-nav-active')) {
+					$('body').removeClass('mobile-nav-active');
+					$('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+					$('#mobile-body-overly').fadeOut();
+				}
+				return false;
+			}
+		}
+	});
 
-  // Porfolio filter
-  $("#portfolio-flters li").click(function () {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
+	// Porfolio filter
+	$("#portfolio-flters li").click(function () {
+		$("#portfolio-flters li").removeClass('filter-active');
+		$(this).addClass('filter-active');
 
-    var selectedFilter = $(this).data("filter");
-    $("#portfolio-wrapper").fadeTo(100, 0);
+		var selectedFilter = $(this).data("filter");
+		$("#portfolio-wrapper").fadeTo(100, 0);
 
-    $(".portfolio-item").fadeOut().css('transform', 'scale(0)');
+		$(".portfolio-item").fadeOut().css('transform', 'scale(0)');
 
-    setTimeout(function () {
-      $(selectedFilter).fadeIn(100).css('transform', 'scale(1)');
-      $("#portfolio-wrapper").fadeTo(300, 1);
-    }, 300);
-  });
+		setTimeout(function () {
+			$(selectedFilter).fadeIn(100).css('transform', 'scale(1)');
+			$("#portfolio-wrapper").fadeTo(300, 1);
+		}, 300);
+	});
 
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
+	// jQuery counterUp
+	$('[data-toggle="counter-up"]').counterUp({
+		delay: 10,
+		time: 1000
+	});
 
-  // custom code
+	// custom code
 
-  // get artists from database and fill it in the navbar dropdown
-  function populateArtistsInNavbar() {
-    var numberOfArtists = 3;
-    $.get(`${new URLBuilder().api().urlString}/artists.php?num=${numberOfArtists}`, function (data) {
-      var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
-      console.log(data);
-      for (var i = 0; i < numberOfArtists; i++) {
-        // console.log(data[i].artist);
-        var artistName = data[i].artist;
-        var listString = `<li><a href="#">${artistName}</a></li>`;
-        listComp.prepend(listString);
-        listMobile.prepend(listString);
-      }
-    });
-  };
-  populateArtistsInNavbar();
+	// get artists from database and fill it in the navbar dropdown
+	function populateArtistsInNavbar() {
+		var numberOfArtists = 3;
+		$.get(`${new URLBuilder().api().urlString}/artists.php?num=${numberOfArtists}`, function (data) {
+			var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
+			console.log(data);
+			for (var i = 0; i < numberOfArtists; i++) {
+				// console.log(data[i].artist);
+				var artistName = data[i].artist;
+				var listString = `<li><a href="#">${artistName}</a></li>`;
+				listComp.prepend(listString);
+				listMobile.prepend(listString);
+			}
+		});
+	};
+	populateArtistsInNavbar();
+
+	$("#mobile-nav #searchText").keyup(applySearchFilter);
+	$("#nav-menu-container #searchText").keyup(applySearchFilter);
 });
+
+function applySearchFilter(event) {
+	console.log("YAY SEARCHED");
+	console.log(event.which);
+	if (event.which == 13) {
+		//pressed enter after entering search query
+		let params = (new URL(document.location)).searchParams;
+		let type = params.get("type");
+		let searchQuery = $("#searchText").val().toLowerCase();
+
+		//hide the div
+		$("#portfolio-wrapper").hide();
+
+		//show all the products
+		$(".portfolio-item").show();
+
+		//filter
+		$(".portfolio-item").each(function (index, product) {
+			let firstLine = product.getElementsByTagName("h4")[0].innerHTML;
+			let secondLine = product.getElementsByClassName("product-second-line")[0].innerHTML;
+			let thirdLine = product.getElementsByClassName("product-third-line")[0].innerHTML;
+
+			if (firstLine.toLowerCase().search(searchQuery) < 0 &&
+				secondLine.toLowerCase().search(searchQuery) < 0 &&
+				thirdLine.toLowerCase().search(searchQuery) < 0) {
+
+				//hide the products that don't match
+				$(product).hide();
+			}
+		});
+
+		//show the results
+		$("#portfolio-wrapper").show("slow");
+	}
+}
