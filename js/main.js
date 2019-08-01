@@ -76,7 +76,7 @@ class URLBuilder {
   }
 
   child(field) {
-    var url = Object.copy(this);
+    var url = Object.create(this);
     if (url.urlString)
       url.urlString += `/`;
     url.urlString += field;
