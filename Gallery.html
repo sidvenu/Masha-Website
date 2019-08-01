@@ -156,8 +156,10 @@
 				});
 			});
 		}
-		
-		$("#searchText").keyup(function(event) {
+
+		function applySearchFilter(event) {
+			console.log("YAY SEARCHED");
+			console.log(event.which);
 			if (event.which == 13) {
 				//pressed enter after entering search query
 				let params = (new URL(document.location)).searchParams;
@@ -183,7 +185,10 @@
 					break;
 				}
 			}
-		});
+		}
+		
+		$("#mobile-nav #searchText").keyup(applySearchFilter);
+		$("#nav-menu-container #searchText").keyup(applySearchFilter);
 
 	</script>
 </body>
