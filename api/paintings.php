@@ -11,12 +11,13 @@
         $where = FALSE;
         $num = FALSE;
         $offset = FALSE;
-        $searchQuery = FALSE;
+        
         if (array_search("num", array_keys($_GET)) !== FALSE) {
             $num = $_GET["num"];
             array_splice($_GET, array_search("num", array_keys($_GET)), 1);
         }
 
+        $searchQuery = FALSE;
         if (array_search("q", array_keys($_GET)) !== FALSE) {
             $searchQuery = $_GET["q"];
             array_splice($_GET, array_search("q", array_keys($_GET)), 1);
