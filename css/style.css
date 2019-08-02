@@ -1261,6 +1261,7 @@ a:hover {
   font-size: 24px;
   color: lightgray;
   text-decoration: none;
+  transition-duration: 0.5s;
 }
 
 #artistList a:hover {
