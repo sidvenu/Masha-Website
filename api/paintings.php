@@ -60,7 +60,7 @@
                 $search = " AND ";
             }
 
-            $search .= "(artist regexp '" . $searchQuery . ".*' OR medium regexp '". $searchQuery . ".*' OR title regexp '". $searchQuery . ".*')";
+            $search .= "(artist regexp '" . $searchQuery . ".*' OR medium regexp '". $searchQuery . ".*' OR name regexp '". $searchQuery . ".*')";
         }
 
         $query .= $search;
