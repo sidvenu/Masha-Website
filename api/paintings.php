@@ -10,9 +10,15 @@
         $where = FALSE;
         $num = FALSE;
         $offset = FALSE;
+        $searchQuery = FALSE;
         if (array_search("num", array_keys($_GET)) !== FALSE) {
             $num = $_GET["num"];
             array_splice($_GET, array_search("num", array_keys($_GET)), 1);
+        }
+
+        if (array_search("q", array_keys($_GET)) !== FALSE) {
+            $searchQuery = $_GET["q"];
+            array_splice($_GET, array_search("q", array_keys($_GET)), 1);
         }
 
         if (array_search("offset", array_keys($_GET)) !== FALSE) {
@@ -41,8 +47,23 @@
         }
 
         $query = "SELECT * FROM paintings";
+
+        $search = "";
         if ($where !== FALSE) 
             $query = $query . $where;
+
+        if ($searchQuery !== FALSE) {
+            if ($where === FALSE) {
+                $search = " WHERE ";
+            }
+            else {
+                $search = " AND ";
+            }
+
+            $search .= "(artist regexp '" . $searchQuery . ".*' OR medium regexp '". $searchQuery . ".*' OR title regexp '". $searchQuery . ".*')";
+        }
+
+        $query .= $search;
 
         if ($limit !== FALSE) 
             $query = $query . $limit;
