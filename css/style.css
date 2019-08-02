@@ -1259,7 +1259,7 @@ a:hover {
 #artistList a {
   font-family: "Roboto";
   font-size: 24px;
-  color: lightgray;
+  color: #b7b7b7;
   text-decoration: none;
   transition-duration: 0.5s;
 }
