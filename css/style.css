@@ -1251,3 +1251,18 @@ a:hover {
   font-size: 13px;
   color: #ccc;
 }
+
+/*
+  artist page styling
+*/
+
+#artistList a {
+  font-family: "Roboto";
+  font-size: 24px;
+  color: lightgray;
+  text-decoration: none;
+}
+
+#artistList a:hover {
+  color: black;
+}
