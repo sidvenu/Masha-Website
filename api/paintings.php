@@ -1,6 +1,7 @@
 <?php
     header("Content-Type: application/json;");
     include "auth.php";
+    include "tools.php";
 
     $conn = new mysqli($server_name, $username, $password, $db);
     if ($conn->connect_error) {
@@ -60,7 +61,7 @@
                 $search = " AND ";
             }
 
-            $search .= "(artist regexp '" . $searchQuery . ".*' OR medium regexp '". $searchQuery . ".*' OR name regexp '". $searchQuery . ".*')";
+            $search .= getSearchClause($searchQuery, ["artist", "medium", "name"]);
         }
 
         $query .= $search;
