@@ -88,45 +88,11 @@
 				<div class="section-header">
 
 				</div>
-				<div class="row">
+				<div class="row" id="artistList">
 					<div class="col-lg-3 col-md-6">
 						<div class="member">
 							<div class="pic">
 								<h3>FirstName LastName</h3>
-								<h3 style="color:lightgray">FirstName LastName</h3>
-								<h3 style="color:lightgray">FirstName LastName</h3>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="member">
-							<div class="pic">
-								<h3 style="color:lightgray">FirstName LastName</h3>
-
-								<h3 style="color:lightgray">FirstName LastName</h3>
-								<h3 style="color:lightgray">FirstName LastName</h3>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="member">
-							<div class="pic">
-								<h3 style="color:lightgray">FirstName LastName</h3>
-								<h3 style="color:lightgray">FirstName LastName</h3>
-								<h3 style="color:lightgray">FirstName LastName</h3>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="member">
-							<div class="pic">
-								<h3 style="color:lightgray">FirstName LastName</h3>
 								<h3 style="color:lightgray">FirstName LastName</h3>
 								<h3 style="color:lightgray">FirstName LastName</h3>
 							</div>
@@ -181,6 +147,26 @@
 			x[slideIndex - 1].style.display = "block";
 			x[slideIndex - 1].style.visibility = "visible";
 			dots[slideIndex - 1].className += " w3-white";
+		}
+
+		function populateArtists() {
+			$.ajax(new URLBuilder().api().child("artists.php").urlString, {
+				method: "GET",
+				success: (data) => {
+					$("#artistList").empty();
+					data.forEach(element => {
+						$("#artistList").append(`
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+								<div class="pic">
+									<a href="artistdetail.html?artist=${element.artist}">${element.artist}</a>
+								</div>
+							</div>
+						</div>
+						`);
+					});
+				}
+			});
 		}
 	</script>
 </body>
