@@ -221,12 +221,6 @@ jQuery(document).ready(function ($) {
 	};
 	populateArtistsInNavbar();
 
-	$("#mobile-nav #searchText").keyup(applySearchFilter);
-	$("#nav-menu-container #searchText").keyup(applySearchFilter);
+	$("#mobile-nav #searchText").keyup(()=>{getProductsFromDatabase($(this).val())});
+	$("#nav-menu-container #searchText").keyup(()=>{getProductsFromDatabase($(this).val())});
 });
-
-function applySearchFilter(event) {
-	console.log("YAY SEARCHED");
-	let searchQuery = $("#searchText").val();
-	getProductsFromDatabase(searchQuery);
-}
