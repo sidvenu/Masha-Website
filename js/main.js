@@ -223,4 +223,9 @@ jQuery(document).ready(function ($) {
 
 	$("#mobile-nav #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
 	$("#nav-menu-container #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
+
+	//populate artists
+	if ($("#artistList").length != 0) {
+		populateArtists();
+	}
 });
