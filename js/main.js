@@ -221,6 +221,6 @@ jQuery(document).ready(function ($) {
 	};
 	populateArtistsInNavbar();
 
-	$("#mobile-nav #searchText").keyup(()=>{getProductsFromDatabase($(this).val())});
-	$("#nav-menu-container #searchText").keyup(()=>{getProductsFromDatabase($(this).val())});
+	$("#mobile-nav #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
+	$("#nav-menu-container #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
 });
