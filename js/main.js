@@ -227,35 +227,6 @@ jQuery(document).ready(function ($) {
 
 function applySearchFilter(event) {
 	console.log("YAY SEARCHED");
-	console.log(event.which);
-	if (event.which == 13) {
-		//pressed enter after entering search query
-		let params = (new URL(document.location)).searchParams;
-		let type = params.get("type");
-		let searchQuery = $("#searchText").val().toLowerCase();
-
-		//hide the div
-		$("#portfolio-wrapper").hide();
-
-		//show all the products
-		$(".portfolio-item").show();
-
-		//filter
-		$(".portfolio-item").each(function (index, product) {
-			let firstLine = product.getElementsByTagName("h4")[0].innerHTML;
-			let secondLine = product.getElementsByClassName("product-second-line")[0].innerHTML;
-			let thirdLine = product.getElementsByClassName("product-third-line")[0].innerHTML;
-
-			if (firstLine.toLowerCase().search(searchQuery) < 0 &&
-				secondLine.toLowerCase().search(searchQuery) < 0 &&
-				thirdLine.toLowerCase().search(searchQuery) < 0) {
-
-				//hide the products that don't match
-				$(product).hide();
-			}
-		});
-
-		//show the results
-		$("#portfolio-wrapper").show("slow");
-	}
+	let searchQuery = $("#searchText").val();
+	getProductsFromDatabase(searchQuery);
 }

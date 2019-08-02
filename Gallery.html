@@ -109,14 +109,17 @@
 			dots[slideIndex - 1].className += " w3-white";
 		}
 
-		function getProductsFromDatabase() {
+		function getProductsFromDatabase(searchQ) {
+			if (searchQ == undefined)
+				searchQ = "";
 			let params = (new URL(document.location)).searchParams;
 			let type = params.get("type");
 			if (!type)
 				type = "paintings";
-			$.get(`${new URLBuilder().api().urlString}/${type}.php`, function (data) {
+			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
+				productsList.empty();
 				data.forEach(function (product) {
 					var firstLine = product.name;
 					var secondLine, thirdLine;
