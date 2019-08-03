@@ -56,7 +56,7 @@ class URLBuilder {
 	}
 
 	static artistsThumbnailURL() {
-		return new URLBuilder().raw().thumbnails().artists();
+		return new URLBuilder().raw().thumbnails().artists().urlString;
 	}
 
 	static sculpturesURL(artistName) {
