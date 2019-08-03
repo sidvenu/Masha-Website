@@ -51,7 +51,7 @@
         if ($where !== FALSE) 
             $query = $query . $where;
 
-        if ($searchQuery !== FALSE) {
+        if ($searchQuery !== FALSE && $searchQuery != "") {
             if ($where === FALSE) {
                 $search = " WHERE ";
             }

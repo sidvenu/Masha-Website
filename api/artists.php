@@ -19,6 +19,12 @@
             $offset = $_GET["offset"];
             array_splice($_GET, array_search("offset", array_keys($_GET)), 1);
         }
+
+        $searchQuery = FALSE;
+        if (array_search("q", array_keys($_GET)) !== FALSE) {
+            $searchQuery = $_GET["q"];
+            array_splice($_GET, array_search("q", array_keys($_GET)), 1);
+        }
         
         if ($offset === FALSE) {
             $offset = 0;
@@ -40,15 +46,29 @@
             }
         }
 
-        $query = "SELECT artist FROM artists";
+        $query = "SELECT * FROM artists";
+        $search = "";
         if ($where !== FALSE) 
             $query = $query . $where;
+
+        if ($searchQuery !== FALSE && $searchQuery != "") {
+            if ($where === FALSE) {
+                $search = " WHERE ";
+            }
+            else {
+                $search = " AND ";
+            }
+
+            $search .= getSearchClause($searchQuery, ["name"]);
+        }
+
+        $query .= $search;
 
         if ($limit !== FALSE) 
             $query = $query . $limit;
 
         $query = $query . ";";
-        
+
         $result = $conn->query($query);
         $output = array();
         while ($row = $result->fetch_assoc()) {
@@ -56,4 +76,5 @@
         }
         echo json_encode($output);
     }   
+
 ?>
