@@ -18,9 +18,9 @@ document.write(`
 						</ul>
 					</li>
 					<li class="menu-has-children">
-						<a href="artist.html" onmouseover="this.style.color='#fafafa'">Artist</a>
+						<a href="#" onmouseover="this.style.color='#fafafa'">Artist</a>
 						<ul id="artist-navbar-dropdown">
-							<li><a href="#">All Artists</a></li>
+							<li><a href="artist.html">All Artists</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">

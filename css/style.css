@@ -1262,6 +1262,7 @@ a:hover {
   color: #b7b7b7;
   text-decoration: none;
   transition-duration: 0.5s;
+  text-transform: capitalize;
 }
 
 #artistList a:hover {
