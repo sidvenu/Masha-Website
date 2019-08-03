@@ -40,7 +40,7 @@
             }
         }
 
-        $query = "SELECT DISTINCT artist FROM paintings";
+        $query = "SELECT artist FROM artists";
         if ($where !== FALSE) 
             $query = $query . $where;
 
@@ -56,5 +56,4 @@
         }
         echo json_encode($output);
     }   
-
 ?>
