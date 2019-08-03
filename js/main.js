@@ -233,6 +233,8 @@ jQuery(document).ready(function ($) {
 	if ($("#artistArtworks").length != 0) {
 		let params = (new URL(document.location)).searchParams;
 		let artist = params.get("artist");
+
+		$("#artistArtworks #artistName").html(artist);
 		$.ajax(new URLBuilder().api().urlString + `/paintings.php?artist=${artist}`, {
 			method: "GET",
 			success: (data)=>{
@@ -243,6 +245,8 @@ jQuery(document).ready(function ($) {
 							<div class="pic"><img
 									src="${URLBuilder.paintingsThumbnailURL(artist)+"/"+element.thumbnail}"
 									alt=""></div>
+							<h4>${element.name}</h4>
+							<span>${element.medium}</span>
 						</div>	
 					</div>
 					`);
