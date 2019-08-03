@@ -243,7 +243,7 @@ jQuery(document).ready(function ($) {
 							<div class="pic"><img
 									src="${URLBuilder.paintingsThumbnailURL(artist)+"/"+element.thumbnail}"
 									alt=""></div>
-							<h3>${element.title}</h3>
+							<h3>${element.name}</h3>
 							<h3>${element.medium}</h3>
 						</div>	
 					</div>
