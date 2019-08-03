@@ -128,19 +128,28 @@
 						secondLine = product.artist;
 						thirdLine = product.medium;
 						urlString = URLBuilder.paintingsThumbnailURL(product.artist);
-					} else if (type === "sculptures") {
+					}
+					else if (type === "sculptures") {
 						secondLine = product.artist;
 						thirdLine = product.medium;
 						urlString = URLBuilder.sculpturesThumbnailURL(product.artist);
-					} else if (type === "shawls") {
+					}
+					else if (type === "shawls") {
 						secondLine = product.type;
 						thirdLine = product.gender;
 						urlString = URLBuilder.shawlsThumbnailURL();
-					} else if (type === "carpets") {
+					}
+					else if (type === "carpets") {
 						secondLine = product.type;
 						thirdLine = product.origin;
 						urlString = URLBuilder.carpetsThumbnailURL();
 					}
+					else if (type == "artists") {
+						urlString = URLBuilder.artistsThumbnailURL();
+						secondLine = "";
+						thirdLine = "";
+					}
+
 					console.log(firstLine);
 					console.log(secondLine);
 					console.log(thirdLine);

@@ -23,6 +23,10 @@ class URLBuilder {
 		return this.child("Gallerie Splash").child(artistName);
 	}
 
+	artists() {
+		return this.child("artists");
+	}
+
 	static paintingsThumbnailURL(artistName) {
 		return new URLBuilder().raw().thumbnails().paintings(artistName).urlString;
 	}
@@ -49,6 +53,10 @@ class URLBuilder {
 
 	static sculpturesThumbnailURL(artistName) {
 		return new URLBuilder().raw().thumbnails().sculptures(artistName).urlString;
+	}
+
+	static artistsThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().artists();
 	}
 
 	static sculpturesURL(artistName) {
