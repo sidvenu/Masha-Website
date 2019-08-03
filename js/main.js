@@ -220,7 +220,7 @@ jQuery(document).ready(function ($) {
 			console.log(data);
 			for (var i = 0; i < numberOfArtists; i++) {
 				// console.log(data[i].artist);
-				var artistName = data[i].artist;
+				var artistName = data[i].name;
 				var listString = `<li><a href="artistdetail.html?artist=${artistName}">${artistName}</a></li>`;
 				listComp.prepend(listString);
 				listMobile.prepend(listString);
