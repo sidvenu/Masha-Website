@@ -233,7 +233,7 @@ jQuery(document).ready(function ($) {
 	if ($("#artistArtworks").length != 0) {
 		let params = (new URL(document.location)).searchParams;
 		let artist = params.get("artist");
-		$.ajax(new URLBuilder().api().paintings().urlString + `?artist=${artist}`, {
+		$.ajax(new URLBuilder().api().urlString + `paintings.php?artist=${artist}`, {
 			method: "GET",
 			success: (data)=>{
 				data.forEach((element)=>{
