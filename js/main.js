@@ -233,7 +233,7 @@ jQuery(document).ready(function ($) {
 	if ($("#artistArtworks").length != 0) {
 		let params = (new URL(document.location)).searchParams;
 		let artist = params.get("artist");
-		$.ajax(new URLBuilder().api().urlString + `paintings.php?artist=${artist}`, {
+		$.ajax(new URLBuilder().api().urlString + `/paintings.php?artist=${artist}`, {
 			method: "GET",
 			success: (data)=>{
 				data.forEach((element)=>{
@@ -243,8 +243,9 @@ jQuery(document).ready(function ($) {
 							<div class="pic"><img
 									src="${URLBuilder.paintingsThumbnailURL(artist)+"/"+element.thumbnail}"
 									alt=""></div>
-
-						</div>
+							<h3>${element.title}</h3>
+							<h3>${element.medium}</h3>
+						</div>	
 					</div>
 					`);
 				});
