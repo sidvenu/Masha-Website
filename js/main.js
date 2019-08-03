@@ -213,7 +213,7 @@ jQuery(document).ready(function ($) {
 			for (var i = 0; i < numberOfArtists; i++) {
 				// console.log(data[i].artist);
 				var artistName = data[i].artist;
-				var listString = `<li><a href="#">${artistName}</a></li>`;
+				var listString = `<li><a href="artistdetail.html?artist=${artistName}">${artistName}</a></li>`;
 				listComp.prepend(listString);
 				listMobile.prepend(listString);
 			}
@@ -227,5 +227,28 @@ jQuery(document).ready(function ($) {
 	//populate artists
 	if ($("#artistList").length != 0) {
 		populateArtists();
+	}
+
+	//populate artist artworks
+	if ($("#artistArtworks").length != 0) {
+		let params = (new URL(document.location)).searchParams;
+		let artist = params.get("artist");
+		$.ajax(new URLBuilder().api().paintings().urlString + `?artist=${artist}`, {
+			method: "GET",
+			success: (data)=>{
+				data.forEach((element)=>{
+					$("#artistArtworks").append(`
+					<div class="col-lg-4 col-md-6">
+						<div class="member">
+							<div class="pic"><img
+									src="${URLBuilder.paintingsThumbnailURL(artist)+"/"+element.thumbnail}"
+									alt=""></div>
+
+						</div>
+					</div>
+					`);
+				});
+			}
+		});
 	}
 });
