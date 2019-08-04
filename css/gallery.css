@@ -1238,4 +1238,24 @@ a:hover {
   color: #ccc;
 }
 
+/*
+  Sorting rules
+*/
 
+#portfolio-sortcontrol li {
+  text-decoration: lightgray;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  transition-duration: 0.5s;
+  font-weight: 200;
+}
+
+#portfolio-sortcontrol li:hover {
+  text-decoration-style: solid;
+  font-weight: 300;
+}
+
+#portfolio-sortcontrol li.selected {
+  text-decoration-style: solid;
+  text-decoration-color: black;
+}
