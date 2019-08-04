@@ -110,8 +110,8 @@
 		}
 
 		//sort control
-		$("#portfolio-sortcontrol").on("click", "li", (ev) => {
-			$("#portfolio-sortcontrol li.selected").removeClass("selected");
+		$("#portfolio-sortmethods li").click((ev) => {
+			$("#portfolio-sortmethods li.selected").removeClass("selected");
 			$(this).addClass("selected");
 			sortProducts($(this).html());
 		});
