@@ -270,4 +270,9 @@ jQuery(document).ready(function ($) {
 		sortProducts($(ev.target).html());
 	});
 
+	//hide sort menu if there are no parameters to sort with
+	if ($("#portfolio-sortmethods li").length == 0) {
+		$("#portfolio-sortcontrol").hide();
+	}
+
 });

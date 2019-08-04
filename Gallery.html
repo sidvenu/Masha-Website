@@ -46,8 +46,6 @@
 					<div class="col-lg-12" id="portfolio-sortcontrol">
 						<h5><b>Sort by:</b></h5>
 						<ul id="portfolio-sortmethods">
-							<li>Artist</li>
-							<li>Medium</li>
 						</ul>
 					</div>
 				</div>
@@ -141,21 +139,39 @@
 						secondLine = product.artist;
 						thirdLine = product.medium;
 						urlString = URLBuilder.paintingsThumbnailURL(product.artist);
+						$("#portfolio-methods").append(`
+							<li>Artist</li>
+							<li>Name</li>
+							<li>Medium</li>
+						`);
 					}
 					else if (type === "sculptures") {
 						secondLine = product.artist;
 						thirdLine = product.medium;
 						urlString = URLBuilder.sculpturesThumbnailURL(product.artist);
+						$("#portfolio-methods").append(`
+							<li>Artist</li>
+							<li>Name</li>
+							<li>Medium</li>
+						`);
 					}
 					else if (type === "shawls") {
 						secondLine = product.type;
 						thirdLine = product.gender;
 						urlString = URLBuilder.shawlsThumbnailURL();
+						$("#portfolio-methods").append(`
+							<li>Name</li>
+							<li>Type</li>
+						`);
 					}
 					else if (type === "carpets") {
 						secondLine = product.type;
 						thirdLine = product.origin;
 						urlString = URLBuilder.carpetsThumbnailURL();
+						$("#portfolio-methods").append(`
+							<li>Name</li>
+							<li>Type</li>
+						`);
 					}
 					else if (type == "artists") {
 						urlString = URLBuilder.artistsThumbnailURL();
