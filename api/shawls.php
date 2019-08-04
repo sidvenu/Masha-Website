@@ -1,5 +1,5 @@
 <?php
-    header("Content-Type: application/json;");
+    //header("Content-Type: application/json;");
     include "auth.php";
     include "tools.php";
 
@@ -77,6 +77,7 @@
         while ($row = $result->fetch_assoc()) {
             array_push($output, $row);
         }
+        echo ($query);
         echo json_encode($output);
     }   
 
