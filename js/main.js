@@ -275,6 +275,7 @@ jQuery(document).ready(function ($) {
 	
 	if (url.pathname == "/Gallery.html") {
 		let type = url.searchParams.type;
+		console.log(type);
 		switch (type) {
 			case "paintings":
 				$("#portfolio-sortmethods").append(`
