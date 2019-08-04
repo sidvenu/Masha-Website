@@ -217,9 +217,7 @@ jQuery(document).ready(function ($) {
 		var numberOfArtists = 3;
 		$.get(`${new URLBuilder().api().urlString}/artists.php?num=${numberOfArtists}`, function (data) {
 			var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
-			console.log(data);
 			for (var i = 0; i < numberOfArtists; i++) {
-				// console.log(data[i].artist);
 				var artistName = data[i].name;
 				var listString = `<li><a href="artistdetail.html?artist=${artistName}">${artistName}</a></li>`;
 				listComp.prepend(listString);
@@ -275,7 +273,6 @@ jQuery(document).ready(function ($) {
 	
 	if (url.pathname == "/Gallery.html") {
 		let type = url.searchParams.get("type");
-		console.log(type);
 		switch (type) {
 			case "paintings":
 				$("#portfolio-sortmethods").append(`
