@@ -109,14 +109,32 @@
 			dots[slideIndex - 1].className += " w3-white";
 		}
 
-		function getProductsFromDatabase(searchQ) {
+		//sort control
+		$("#portfolio-sortcontrol").on("click", "li", (ev) => {
+			$("#portfolio-sortcontrol li.selected").removeClass("selected");
+			$(this).addClass("selected");
+			sortProducts($(this).html());
+		});
+
+		function sortProducts(sort) {
+			getProductsFromDatabase(globalThis.productSearchFilter, sort);
+		}
+
+		function getProductsFromDatabase(searchQ, sort) {
 			if (searchQ == undefined)
+			{
 				searchQ = "";
+				globalThis.productSearchFilter = undefined;
+			}
+			else 
+				globalThis.productSearchFilter = searchQ;
+			if (sort == undefined)
+				sort = "";
 			let params = (new URL(document.location)).searchParams;
 			let type = params.get("type");
 			if (!type)
 				type = "paintings";
-			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}`, function (data) {
+			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`, function (data) {
 				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				productsList.empty();

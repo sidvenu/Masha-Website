@@ -209,7 +209,7 @@ jQuery(document).ready(function ($) {
 		delay: 10,
 		time: 1000
 	});
-
+	
 	// custom code
 
 	// get artists from database and fill it in the navbar dropdown
