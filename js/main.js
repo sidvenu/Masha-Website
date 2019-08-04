@@ -209,7 +209,7 @@ jQuery(document).ready(function ($) {
 		delay: 10,
 		time: 1000
 	});
-	
+
 	// custom code
 
 	// get artists from database and fill it in the navbar dropdown
@@ -229,8 +229,8 @@ jQuery(document).ready(function ($) {
 	};
 	populateArtistsInNavbar();
 
-	$("#mobile-nav #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
-	$("#nav-menu-container #searchText").keyup((ev)=>{getProductsFromDatabase($(ev.target).val())});
+	$("#mobile-nav #searchText").keyup((ev) => { getProductsFromDatabase($(ev.target).val()) });
+	$("#nav-menu-container #searchText").keyup((ev) => { getProductsFromDatabase($(ev.target).val()) });
 
 	//populate artists
 	if ($("#artistList").length != 0) {
@@ -245,13 +245,13 @@ jQuery(document).ready(function ($) {
 		$("#artistName").html(artist);
 		$.ajax(new URLBuilder().api().urlString + `/paintings.php?artist=${artist}`, {
 			method: "GET",
-			success: (data)=>{
-				data.forEach((element)=>{
+			success: (data) => {
+				data.forEach((element) => {
 					$("#artistArtworks").append(`
 					<div class="col-lg-4 col-md-6">
 						<div class="member">
 							<div class="pic"><img
-									src="${URLBuilder.paintingsThumbnailURL(artist)+"/"+element.thumbnail}"
+									src="${URLBuilder.paintingsThumbnailURL(artist) + "/" + element.thumbnail}"
 									alt=""></div>
 							<h4>${element.name}</h4>
 							<span>${element.medium}</span>
@@ -262,4 +262,12 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	}
+
+	//sort control
+	$("#portfolio-sortmethods").on("click", "li", (ev) => {
+		$("#portfolio-sortmethods li.selected").removeClass("selected");
+		$(ev.target).addClass("selected");
+		sortProducts($(ev.target).html());
+	});
+
 });
