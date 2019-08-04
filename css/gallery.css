@@ -1248,14 +1248,20 @@ a:hover {
   text-decoration-style: dashed;
   transition-duration: 0.5s;
   font-weight: 200;
+  font-size: 24px;
+  font-family: "roboto";
+  display:inline;
 }
 
 #portfolio-sortcontrol li:hover {
   text-decoration-style: solid;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 32px;
 }
 
 #portfolio-sortcontrol li.selected {
   text-decoration-style: solid;
   text-decoration-color: black;
+  font-weight: 400;
+  font-size: 32px;
 }
