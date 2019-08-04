@@ -126,7 +126,6 @@
 			if (!type)
 				type = "paintings";
 			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`, function (data) {
-				console.log(data);
 				var productsList = $("#portfolio-wrapper");
 				productsList.empty();
 			
@@ -162,10 +161,7 @@
 						thirdLine = "";
 						productURL = "artistdetail.html?artist=" + product.name;
 					}
-
-					console.log(firstLine);
-					console.log(secondLine);
-					console.log(thirdLine);
+					
 					productsList.append(`
 						<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 
