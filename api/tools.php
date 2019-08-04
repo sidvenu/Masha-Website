@@ -21,7 +21,7 @@
             array_splice($args, array_search("sort", array_keys($args)), 1);
         }
 
-        if ($sort !== FALSE) {
+        if ($sort !== FALSE && $sort != "") {
             $clause = " ORDER BY " . $sort . " ASC";
         }
 
