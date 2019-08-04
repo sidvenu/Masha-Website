@@ -271,7 +271,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	//fill sort options
-	let url = new URL(documen.location);
+	let url = new URL(document.location);
 	
 	if (url.pathname == "/Gallery.html") {
 		let type = url.searchParams.type;
