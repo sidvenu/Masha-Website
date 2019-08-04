@@ -109,12 +109,6 @@
 			dots[slideIndex - 1].className += " w3-white";
 		}
 
-		//sort control
-		$("#portfolio-sortcontrol").on("click", "li", (ev) => {
-			$("#portfolio-sortcontrol li.selected").removeClass("selected");
-			$(this).addClass("selected");
-			sortProducts($(this).html());
-		});
 
 		function sortProducts(sort) {
 			getProductsFromDatabase(globalThis.productSearchFilter, sort);
