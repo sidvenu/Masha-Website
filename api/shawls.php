@@ -72,11 +72,11 @@
 
         $query = $query . ";";
 
-        $result = $conn->query($query);
-        $output = array();
-        while ($row = $result->fetch_assoc()) {
-            array_push($output, $row);
-        }
+        // $result = $conn->query($query);
+        // $output = array();
+        // while ($row = $result->fetch_assoc()) {
+        //     array_push($output, $row);
+        // }
         echo ($query);
         echo json_encode($output);
     }   
