@@ -274,7 +274,7 @@ jQuery(document).ready(function ($) {
 	let url = new URL(document.location);
 	
 	if (url.pathname == "/Gallery.html") {
-		let type = url.searchParams.type;
+		let type = url.searchParams.get("type");
 		console.log(type);
 		switch (type) {
 			case "paintings":
