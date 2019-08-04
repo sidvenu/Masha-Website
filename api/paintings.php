@@ -11,6 +11,7 @@
         $where = FALSE;
         $num = FALSE;
         $offset = FALSE;
+        $sort = getSortClause($_GET);
         
         if (array_search("num", array_keys($_GET)) !== FALSE) {
             $num = $_GET["num"];
@@ -66,6 +67,7 @@
         }
 
         $query .= $search;
+        $query .= $sort;
 
         if ($limit !== FALSE) 
             $query = $query . $limit;

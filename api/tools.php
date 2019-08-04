@@ -11,4 +11,20 @@
 
         return $clause;
     }
+
+    function getSortClause(&$args) {
+        $sort = FALSE;
+        $clause = "";
+
+        if (array_key_exists("sort", $args)) {
+            $sort = $args["sort"];
+            array_splice($args, array_search("sort", array_keys($args)), 1);
+        }
+
+        if ($sort !== FALSE) {
+            $clause = " ORDER BY " . $sort . " ASC";
+        }
+
+        return $clause;
+    }
 ?>
