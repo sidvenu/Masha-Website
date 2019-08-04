@@ -270,4 +270,44 @@ jQuery(document).ready(function ($) {
 		sortProducts($(ev.target).html());
 	});
 
+	//fill sort options
+	let url = new URL(documen.location);
+	
+	if (url.pathname == "/Gallery.html") {
+		let type = url.searchParams.type;
+		switch (type) {
+			case "paintings":
+				$("#portfolio-sortmethods").append(`
+					<li>Artist</li>
+					<li>Name</li>
+					<li>Medium</li>
+				`);
+				break;
+
+			case "carpets":
+				$("#portfolio-sortmethods").append(`
+					<li>Name</li>
+					<li>Type</li>
+				`);
+				break;
+
+			case "shawls":
+				$("#portfolio-sortmethods").append(`
+					<li>Name</li>
+					<li>Type</li>
+				`);
+				break;
+			case "sculptures":
+				$("#portfolio-sortmethods").append(`
+					<li>Artist</li>
+					<li>Name</li>
+					<li>Medium</li>
+				`);
+				break;
+			case "artists":
+				//no sorting options
+				$("#portfolio-sortcontrol").hide();
+				break;
+		}
+	}
 });
