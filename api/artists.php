@@ -11,6 +11,7 @@
         $where = FALSE;
         $num = FALSE;
         $offset = FALSE;
+        getSortClause($_GET);
         if (array_search("num", array_keys($_GET)) !== FALSE) {
             $num = $_GET["num"];
             array_splice($_GET, array_search("num", array_keys($_GET)), 1);
@@ -64,6 +65,7 @@
         }
 
         $query .= $search;
+        $query .= $sort;
         $query .= " ORDER BY name";
 
         if ($limit !== FALSE) 
@@ -71,12 +73,11 @@
 
         $query = $query . ";";
 
-        // $result = $conn->query($query);
-        // $output = array();
-        // while ($row = $result->fetch_assoc()) {
-        //     array_push($output, $row);
-        // }
-        echo $query;
+        $result = $conn->query($query);
+        $output = array();
+        while ($row = $result->fetch_assoc()) {
+            array_push($output, $row);
+        }
         echo json_encode($output);
     }   
 

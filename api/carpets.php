@@ -65,7 +65,6 @@
         }
 
         $query .= $search;
-        $query .= $sort;
 
         if ($limit !== FALSE) 
             $query = $query . $limit;
