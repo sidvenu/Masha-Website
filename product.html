@@ -48,18 +48,18 @@
 				<div class="row" id="portfolio-wrapper">
 					<div class="col-lg-8 col-md-6 portfolio-item filter-app">
 
-						<img src="img/mf-hussain3.png" alt="">
+						<img id="product-thumbnail" src="img/mf-hussain3.png" alt="">
 					</div>
 
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
 
 						<div style="text-align: center;margin-top:80px;">
-							<h2><b>Happiness</b></h2>
-							<span style="text-decoration-line:underline;font-size:24px;"><b>MF Hussain</b></span><br />
-							<span style="font-size:20px;"><b>INR 5,550</b></span><br /><br />
-							<span style="color:lightgray;font-size:18px;">Dimensions: 49 3/4' x 29 1/4'</span><br />
-							<span style="color:lightgray;font-size:18px;">Medium: Oil on Canvas</span><br />
+							<h2 id="product-name"><b>Happiness</b></h2>
+							<span style="text-decoration-line:underline;font-size:24px;"><b id="product-line1">MF Hussain</b></span><br />
+							<!-- <span style="font-size:20px;"><b>INR 5,550</b></span><br /><br /> -->
+							<span id = "product-line2" style="color:lightgray;font-size:18px;">Dimensions: 49 3/4' x 29 1/4'</span><br />
+							<span id = "product-line3" style="color:lightgray;font-size:18px;">Medium: Oil on Canvas</span><br />
 							<br />
 
 							<button class="btn btn-dark" onmouseover="this.style.color='#fafafa'"
@@ -254,6 +254,25 @@
 			x[slideIndex - 1].style.display = "block";
 			x[slideIndex - 1].style.visibility = "visible";
 			dots[slideIndex - 1].className += " w3-white";
+		}
+
+		//fill product details
+		function updateProductDetails() {
+			let url = new URL(document.location);
+			let item_number = url.searchParams.get("id");
+
+			if (item_number.match(/^MASH-/)) {
+				//painting
+
+				//fetch painting 
+				$.get(new URLBuilder().api().child("paintings.api").urlString + `?item_number=${item_number}`, (data)=>{
+					$("#product-thumbnail").attr("src", new URLBuilder().photos().paintings(data.artist).urlString);
+					$("#product-name").html(`<b>${data.name}</b>`);
+					$("#product-line1").html(data.artist);
+					$("#product-line2").html(data.size);
+					$("#product-line3").html("Medium: " + data.medium);
+				});
+			}
 		}
 	</script>
 </body>

@@ -308,4 +308,8 @@ jQuery(document).ready(function ($) {
 				break;
 		}
 	}
+
+	if (url.pathname == "/product.html") {
+		updateProductDetails();
+	}
 });
