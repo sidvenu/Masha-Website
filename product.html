@@ -255,6 +255,8 @@
 			x[slideIndex - 1].style.visibility = "visible";
 			dots[slideIndex - 1].className += " w3-white";
 		}
+		//hide the div before updating
+		$("#portfolio-wrapper").hide();
 
 		//fill product details
 		function updateProductDetails() {
@@ -275,6 +277,8 @@
 					$("#product-line3").html("Medium: " + data.medium);
 				});
 			}
+
+			$("#portfolio-wrapper").show('slow');
 		}
 	</script>
 </body>
