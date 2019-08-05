@@ -337,7 +337,6 @@
 		}
 
 		function initCarousel1() {
-			console.log("lol");
 			$.get(`${new URLBuilder().api().urlString}/paintings.php?offset=100&num=3`, function (data) {
 				console.log(data);
 				var slides = $("#myCarousel .carousel-inner");
@@ -345,7 +344,7 @@
 				slides.empty();
 				carouselIndicators.empty();
 				for (var i = 0; i < data.length; i++) {
-					var painting = data.get(i);
+					var painting = data[i];
 					var imageBaseURL = URLBuilder.paintingsURL(painting.artist);
 					slides.append(`
 					<div class="item ${i == 0 ? "active" : ""}">
@@ -363,8 +362,6 @@
 				}
 			});
 		}
-		initCarousel1();
-		console.log("workn+g");
 	</script>
 </body>
 

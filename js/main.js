@@ -308,8 +308,9 @@ jQuery(document).ready(function ($) {
 				break;
 		}
 	}
-
-	if (url.pathname == "/product.html") {
+	else if (url.pathname == "/product.html") {
 		updateProductDetails();
+	} else if (url.pathname == "/" || url.pathname == "/index.html") {
+		initCarousel1();
 	}
 });
