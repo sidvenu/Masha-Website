@@ -41,47 +41,10 @@
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
 				</ol>
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
-
-					<div class="item active">
-						<div class="backgroundImg1"></div>
-						<div class="carousel-text">
-							<h2><b>Feature of the day</b></h2>
-							<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh
-								faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed
-								risus
-								pellentesque semper a vitae mi. </h5>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="backgroundImg2"></div>
-						<div class="carousel-text">
-							<h2><b>Feature of the month</b></h2>
-							<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh
-								faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed
-								risus
-								pellentesque semper a vitae mi. </h5>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="backgroundImg3"></div>
-						<div class="carousel-text">
-							<h2><b>Feature of the year</b></h2>
-							<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat iaculis nibh
-								faucibus consequat. Morbi varius tincidunt sem eu ullamcorper. Integer eget dolor sed
-								risus
-								pellentesque semper a vitae mi. </h5>
-						</div>
-					</div>
-
 				</div>
 				<button class="left carousel-control" data-target="#myCarousel" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left"></span>
@@ -372,6 +335,36 @@
 			x[slideIndex - 1].style.visibility = "visible";
 			dots[slideIndex - 1].className += " w3-white";
 		}
+
+		function initCarousel1() {
+			console.log("lol");
+			$.get(`${new URLBuilder().api().urlString}/paintings.php?offset=100&num=3`, function (data) {
+				console.log(data);
+				var slides = $("#myCarousel .carousel-inner");
+				var carouselIndicators = $("#myCarousel .carousel-indicators");
+				slides.empty();
+				carouselIndicators.empty();
+				for (var i = 0; i < data.length; i++) {
+					var painting = data.get(i);
+					var imageBaseURL = URLBuilder.paintingsURL(painting.artist);
+					slides.append(`
+					<div class="item ${i == 0 ? "active" : ""}">
+						<div class="backgroundImg" style="background: url(${imageBaseURL}/${painting.thumbnail}) top center;">
+						</div>
+						<div class="carousel-text">
+							<h2><b>${painting.name}</b></h2>
+							<h5>${painting.artist}</h5>
+						</div>
+					</div>
+					`);
+					carouselIndicators.append(`
+					<li data-target="#myCarousel" data-slide-to="${i}" ${i == 0 ? `class="active"` : ""}></li>
+					`);
+				}
+			});
+		}
+		initCarousel1();
+		console.log("workn+g");
 	</script>
 </body>
 
