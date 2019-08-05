@@ -54,12 +54,7 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
 
-						<div style="text-align: center;margin-top:80px;">
-							<h2 id="product-name"><b>Happiness</b></h2>
-							<span style="text-decoration-line:underline;font-size:24px;"><b id="product-line1">MF Hussain</b></span><br />
-							<!-- <span style="font-size:20px;"><b>INR 5,550</b></span><br /><br /> -->
-							<span id = "product-line2" style="color:lightgray;font-size:18px;">Dimensions: 49 3/4' x 29 1/4'</span><br />
-							<span id = "product-line3" style="color:lightgray;font-size:18px;">Medium: Oil on Canvas</span><br />
+						<div style="text-align: center;margin-top:80px;" id="product-details">
 							<br />
 
 							<button class="btn btn-dark" onmouseover="this.style.color='#fafafa'"
@@ -266,19 +261,101 @@
 			if (item_number.match(/^MASH-/)) {
 				//painting
 
-				//fetch painting 
+				//fetch painting
 				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
 					let data = dataReceived[0];
 
-					$("#product-thumbnail").attr("src", new URLBuilder().raw().photos().paintings(data.artist).urlString + `/${data.thumbnail}`);
-					$("#product-name").html(`<b>${data.name}</b>`);
-					$("#product-line1").html(data.artist);
-					$("#product-line2").html(data.size);
-					$("#product-line3").html("Medium: " + data.medium);
+					$("#product-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
+					$("#product-details").append(`
+						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
+					`);
+
+					$("#portfolio-wrapper").show('slow');
 				});
 			}
+			else if (item_number.match(/^SCUL-/)) {
+				//sculptures
 
-			$("#portfolio-wrapper").show('slow');
+				//fetch scul
+				$.get(new URLBuilder().api().child("sculptures.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+					let data = dataReceived[0];
+
+					$("#product-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
+					$("#product-details").append(`
+						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
+					`);
+
+					$("#portfolio-wrapper").show('slow');
+				});
+			}
+			else if (item_number.match(/^S/)) {
+				//shawls
+
+				//fetch shawl
+				$.get(new URLBuilder().api().child("shawls.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+					let data = dataReceived[0];
+
+					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
+					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Type: ${data.type}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Colour: ${data.colour}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Gender: ${data.gender}</span><br />
+					`);
+
+
+					$("#portfolio-wrapper").show('slow');
+				});
+			}
+			else if (item_number.match(/^C/)) {
+				//carpets
+
+				//fetch carpet
+				$.get(new URLBuilder().api().child("carpets.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+					let data = dataReceived[0];
+
+					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
+					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Type: ${data.type}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Colour: ${data.colour}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Origin: ${data.origin}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Details: ${data.details}</span><br />
+					`);
+
+					$("#portfolio-wrapper").show('slow');
+				});
+			}
 		}
 	</script>
 </body>
