@@ -265,8 +265,10 @@
 				//painting
 
 				//fetch painting 
-				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (data)=>{
-					$("#product-thumbnail").attr("src", new URLBuilder().photos().paintings(data.artist).urlString);
+				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+					let data = dataReceived[0];
+
+					$("#product-thumbnail").attr("src", new URLBuilder().photos().paintings(data.artist).urlString + `/${data.thumbnail}`);
 					$("#product-name").html(`<b>${data.name}</b>`);
 					$("#product-line1").html(data.artist);
 					$("#product-line2").html(data.size);
