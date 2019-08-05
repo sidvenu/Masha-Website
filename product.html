@@ -265,7 +265,7 @@
 				//painting
 
 				//fetch painting 
-				$.get(new URLBuilder().api().child("paintings.api").urlString + `?item_number=${item_number}`, (data)=>{
+				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (data)=>{
 					$("#product-thumbnail").attr("src", new URLBuilder().photos().paintings(data.artist).urlString);
 					$("#product-name").html(`<b>${data.name}</b>`);
 					$("#product-line1").html(data.artist);
