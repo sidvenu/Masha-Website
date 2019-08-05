@@ -265,7 +265,29 @@
 				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
 					let data = dataReceived[0];
 
-					$("#product-thumbnail").attr("src", new URLBuilder().raw().photos().paintings(data.artist).urlString + `/${data.thumbnail}`);
+					$("#product-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
+					$("#product-details").append(`
+						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
+					`);
+					$("#product-details").append(`
+						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
+					`);
+
+					$("#portfolio-wrapper").show('slow');
+				});
+			}
+			else if (item_number.match(/^SCUL-/)) {
+				//sculptures
+
+				//fetch scul
+				$.get(new URLBuilder().api().child("sculptures.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+					let data = dataReceived[0];
+
+					$("#product-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-details").append(`
 						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
@@ -287,7 +309,7 @@
 				$.get(new URLBuilder().api().child("shawls.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
 					let data = dataReceived[0];
 
-					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL().urlString + `/${data.thumbnail}`);
+					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
@@ -313,7 +335,7 @@
 				$.get(new URLBuilder().api().child("carpets.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
 					let data = dataReceived[0];
 
-					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL().urlString + `/${data.thumbnail}`);
+					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
