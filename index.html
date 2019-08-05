@@ -347,7 +347,7 @@
 					var painting = data[i];
 					var imageBaseURL = URLBuilder.paintingsURL(painting.artist);
 					var imageURL = `${imageBaseURL}/${painting.thumbnail}`;
-					imageURL.replace(" ", "%20");
+					imageURL = imageURL.split(" ").join("%20");
 					slides.append(`
 					<div class="item ${i == 0 ? "active" : ""}">
 						<div class="backgroundImg" style="background: url(${imageURL}) top center; background-size: cover;">
