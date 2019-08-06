@@ -125,38 +125,11 @@
 		<section id="team">
 			<div class="container wow fadeInUp">
 				<div class="section-header">
-					<h3 class="section-title" style="text-decoration-line:underline">Other works by M F Hussain</h3>
+					<h3 class="section-title" style="text-decoration-line:underline">Other works by <span id="team-artist"></span></h3>
 
 				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<div class="member">
-							<div class="pic"><img
-									src="img/M-F-Husain-Title-Culture-of-the-streets-Water-colour-on-paper-15X22-inches-Year-1982-2.png"
-									alt=""></div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-8 col-md-6">
-						<div class="member">
-							<div class="pic"><img src="img/DSC01526.png" alt=""></div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="member">
-							<div class="pic"><img src="img/Azimi-1-030818.png" alt=""></div>
-
-						</div>
-					</div>
-
-					<div class="col-lg-8 col-md-6">
-						<div class="member">
-							<div class="pic"><img src="img/Azimi-1-030818.png" alt=""></div>
-						</div>
-					</div>
+				<div class="row" id="team-otherworks">
+					
 				</div>
 
 			</div>
@@ -272,6 +245,28 @@
 						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
 					`);
 
+					//section:team
+					$("#team-artist").html(data.artist);
+
+					//other works
+					$.get("api/paintings.php?artist="+data.artist, (works)=>{
+						data.forEach(element => {
+							if (works.item_number != item_number) {
+								$("#team-otherworks").append(`
+								<div class="col-lg-4 col-md-6">
+								<div class="member">
+									<div class="pic">
+											<a href="product.html?id=${works.item_number}">
+											<img
+											src="${URLBuilder.paintingsThumbnailURL(works.artist)}/${works.thumbnail}"
+											alt=""></a></div>
+									</div>
+								</div>
+								`);
+							} 
+						});
+					});
+
 					$("#portfolio-wrapper").show('slow');
 				});
 			}
@@ -293,6 +288,27 @@
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
 						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
 					`);
+
+					//section:team
+					$("#team-artist").html(data.artist);
+
+					$.get("api/paintings.php?artist="+data.artist, (works)=>{
+						data.forEach(element => {
+							if (works.item_number != item_number) {
+								$("#team-otherworks").append(`
+								<div class="col-lg-4 col-md-6">
+								<div class="member">
+									<div class="pic">
+											<a href="product.html?id=${works.item_number}">
+											<img
+											src="${URLBuilder.sculpturesThumbnailURL(works.artist)}/${works.thumbnail}"
+											alt=""></a></div>
+									</div>
+								</div>
+								`);
+							} 
+						});
+					});
 
 					$("#portfolio-wrapper").show('slow');
 				});
@@ -316,6 +332,8 @@
 						<span style="color:lightgray;font-size:18px;">Gender: ${data.gender}</span><br />
 					`);
 
+					$("#team").hide();
+
 					$("#portfolio-wrapper").show('slow');
 				});
 			}
@@ -338,6 +356,8 @@
 						<span style="color:lightgray;font-size:18px;">Origin: ${data.origin}</span><br />
 						<span style="color:lightgray;font-size:18px;">Details: ${data.details}</span><br />
 					`);
+
+					$("#team").hide();
 
 					$("#portfolio-wrapper").show('slow');
 				});
