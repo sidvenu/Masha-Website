@@ -311,6 +311,7 @@ jQuery(document).ready(function ($) {
 	}
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();
+		$("#sendenquiry-button").click(validateModal);
 	} else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
 		//carousel swipe

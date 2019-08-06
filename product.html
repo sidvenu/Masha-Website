@@ -125,11 +125,12 @@
 		<section id="team">
 			<div class="container wow fadeInUp">
 				<div class="section-header">
-					<h3 class="section-title" style="text-decoration-line:underline">Other works by <span id="team-artist"></span></h3>
+					<h3 class="section-title" style="text-decoration-line:underline">Other works by <span
+							id="team-artist"></span></h3>
 
 				</div>
 				<div class="row" id="team-otherworks">
-					
+
 				</div>
 
 			</div>
@@ -153,16 +154,16 @@
 					<div style="text-align: center">
 						<h6><b>To: Masha Arts and handicrafts</b></h6>
 						<img id="product-modal-thumbnail" src="img/placeholder.jpg" alt="" style="width:95px;">
-						<h6><b id = "product-modal-name">M F Hussain</b></h6>
+						<h6><b id="product-modal-name">M F Hussain</b></h6>
 						<div id="product-modal-details"></div>
 						<br />
-						<textarea class="col-10"></textarea>
+						<textarea class="col-10" id="myModal-queries">Any queries or specifics</textarea>
 						<br />
 						<br />
-						<input type="text" class="col-10" placeholder="Your Full Name.">
+						<input type="text" id="myModal-name" class="col-10" placeholder="Your Full Name">
 						<br />
 						<br />
-						<input type="text" class="col-10" placeholder="Your Email Id.">
+						<input type="text" id="myModal-email" class="col-10" placeholder="Your Email ID">
 						<br />
 						<br />
 						<span style="color:lightgray">By sending inquiry, you're agreeing to our terms and
@@ -170,8 +171,7 @@
 						<br />
 
 						<button class="btn btn-dark" onmouseover="this.style.color='#fafafa'"
-							style="width:362px;height:29px;margin-top:-13px;" data-toggle="modal"
-							data-target="#myModal">Send</button>
+							style="width:362px;height:29px;margin-top:-13px;" id="sendenquiry-button">Send</button>
 					</div>
 				</div>
 			</div>
@@ -231,12 +231,12 @@
 				//painting
 
 				//fetch painting
-				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+				$.get(new URLBuilder().api().child("paintings.php").urlString + `?item_number=${item_number}`, (dataReceived) => {
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
 					$("#product-modal-thumbnail").attr("src", URLBuilder.paintingsThumbnailURL(data.artist) + `/${data.thumbnail}`);
-					
+
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
 					$("#product-details, #product-modal-details").append(`
@@ -249,7 +249,7 @@
 					$("#team-artist").html(data.artist);
 
 					//other works
-					$.get("api/paintings.php?artist="+data.artist, (works)=>{
+					$.get("api/paintings.php?artist=" + data.artist, (works) => {
 						works.forEach(element => {
 							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
@@ -263,7 +263,7 @@
 									</div>
 								</div>
 								`);
-							} 
+							}
 						});
 					});
 
@@ -274,12 +274,12 @@
 				//sculptures
 
 				//fetch scul
-				$.get(new URLBuilder().api().child("sculptures.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+				$.get(new URLBuilder().api().child("sculptures.php").urlString + `?item_number=${item_number}`, (dataReceived) => {
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
 					$("#product-modal-thumbnail").attr("src", URLBuilder.sculpturesThumbnailURL(data.artist) + `/${data.thumbnail}`);
-				
+
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
 
@@ -292,7 +292,7 @@
 					//section:team
 					$("#team-artist").html(data.artist);
 
-					$.get("api/paintings.php?artist="+data.artist, (works)=>{
+					$.get("api/paintings.php?artist=" + data.artist, (works) => {
 						data.forEach(element => {
 							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
@@ -306,7 +306,7 @@
 									</div>
 								</div>
 								`);
-							} 
+							}
 						});
 					});
 
@@ -317,7 +317,7 @@
 				//shawls
 
 				//fetch shawl
-				$.get(new URLBuilder().api().child("shawls.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+				$.get(new URLBuilder().api().child("shawls.php").urlString + `?item_number=${item_number}`, (dataReceived) => {
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
@@ -341,7 +341,7 @@
 				//carpets
 
 				//fetch carpet
-				$.get(new URLBuilder().api().child("carpets.php").urlString + `?item_number=${item_number}`, (dataReceived)=>{
+				$.get(new URLBuilder().api().child("carpets.php").urlString + `?item_number=${item_number}`, (dataReceived) => {
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
@@ -360,6 +360,36 @@
 					$("#team").hide();
 
 					$("#portfolio-wrapper").show('slow');
+				});
+			}
+		}
+
+		//enquiry validation
+		function validateModal() {
+			let validated = false;
+
+			//perform validation
+			let queries = $("#myModal-queries").val();
+			let name = $("#myModal-name").val();
+			let emailid = $("#myModal-email").val();
+
+			//send data
+			if (validated) {
+				$.ajax("api/enquiry.php", {
+					success: ()=>{
+						alert("Enquiry posted successfully!");
+						$("#myModal").modal("hide");
+					},
+					error: () => {
+						alert("Couldn't send enquiry. Please try again later.");
+					},
+					
+					method: "POST",
+					data: {
+						queries: queries,
+						name: name,
+						emailid: emailid
+					}
 				});
 			}
 		}
