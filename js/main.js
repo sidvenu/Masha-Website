@@ -86,6 +86,7 @@ class URLBuilder {
 
 jQuery(document).ready(function ($) {
 
+
 	// Header fixed and Back to top button
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 100) {
@@ -270,7 +271,7 @@ jQuery(document).ready(function ($) {
 
 	//fill sort options
 	let url = new URL(document.location);
-	
+
 	if (url.pathname == "/Gallery.html") {
 		let type = url.searchParams.get("type");
 		switch (type) {
@@ -312,5 +313,9 @@ jQuery(document).ready(function ($) {
 		updateProductDetails();
 	} else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
+	}
+	else if (url.pathname == "/index.html") {
+		//carousel swipe
+		$("#myCarousel").bcSwipe({ threshold: 50 });
 	}
 });
