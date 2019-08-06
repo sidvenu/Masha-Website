@@ -381,7 +381,6 @@
 				$.ajax("api/enquiry.php", {
 					success: ()=>{
 						alert("Enquiry posted successfully!");
-						$("#myModal").modal("hide");
 					},
 					error: () => {
 						alert("Couldn't send enquiry. Please try again later.");
