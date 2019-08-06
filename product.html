@@ -179,10 +179,9 @@
 				<div class="modal-body">
 					<div style="text-align: center">
 						<h6><b>To: Masha Arts and handicrafts</b></h6>
-						<img src="img/mf-hussain3.png" alt="" style="width:95px;">
-						<h6><b>M F Hussain</b></h6>
-						<span style="color:lightgray">Dimensions: 49 3/4' x 29 1/4'</span><br />
-						<span style="color:lightgray">Medium: Oil on Canvas</span><br />
+						<img id="product-modal-thumbnail" src="img/mf-hussain3.png" alt="" style="width:95px;">
+						<h6><b id = "product-modal-name">M F Hussain</b></h6>
+						<div id="product-modal-details"></div>
 						<br />
 						<textarea class="col-10"></textarea>
 						<br />
@@ -202,9 +201,6 @@
 							data-target="#myModal">Send</button>
 					</div>
 				</div>
-
-
-
 			</div>
 		</div>
 	</div>
@@ -266,14 +262,13 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
+					
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
-					$("#product-details").append(`
+					$("#product-modal-name").html(data.name);
+					$("#product-details, #product-modal-details").append(`
 						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
 					`);
 
@@ -288,14 +283,14 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
+				
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
-					$("#product-details").append(`
+					$("#product-modal-name").html(data.name);
+
+					$("#product-details, #product-modal-details").append(`
 						<span style="text-decoration-line:underline;font-size:24px;"><b>${data.artist}</b></span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Medium: ${data.medium}</span><br />
 					`);
 
@@ -310,20 +305,16 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
+
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
-					$("#product-details").append(`
+					$("#product-modal-name").html(data.name);
+					$("#product-details, #product-modal-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Type: ${data.type}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Colour: ${data.colour}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Gender: ${data.gender}</span><br />
 					`);
-
 
 					$("#portfolio-wrapper").show('slow');
 				});
@@ -336,20 +327,15 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
+
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
-					$("#product-details").append(`
+					$("#product-modal-name").html(data.name);
+					$("#product-details, #product-modal-details").append(`
 						<span style="color:lightgray;font-size:18px;">Dimensions: ${data.size}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Type: ${data.type}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Colour: ${data.colour}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Origin: ${data.origin}</span><br />
-					`);
-					$("#product-details").append(`
 						<span style="color:lightgray;font-size:18px;">Details: ${data.details}</span><br />
 					`);
 
