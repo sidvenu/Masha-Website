@@ -251,14 +251,14 @@
 					//other works
 					$.get("api/paintings.php?artist="+data.artist, (works)=>{
 						works.forEach(element => {
-							if (works.item_number != item_number) {
+							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
 								<div class="col-lg-4 col-md-6">
 								<div class="member">
 									<div class="pic">
-											<a href="product.html?id=${works.item_number}">
+											<a href="product.html?id=${element.item_number}">
 											<img
-											src="${URLBuilder.paintingsThumbnailURL(works.artist)}/${works.thumbnail}"
+											src="${URLBuilder.paintingsThumbnailURL(element.artist)}/${element.thumbnail}"
 											alt=""></a></div>
 									</div>
 								</div>
@@ -294,14 +294,14 @@
 
 					$.get("api/paintings.php?artist="+data.artist, (works)=>{
 						data.forEach(element => {
-							if (works.item_number != item_number) {
+							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
 								<div class="col-lg-4 col-md-6">
 								<div class="member">
 									<div class="pic">
-											<a href="product.html?id=${works.item_number}">
+											<a href="product.html?id=${element.item_number}">
 											<img
-											src="${URLBuilder.sculpturesThumbnailURL(works.artist)}/${works.thumbnail}"
+											src="${URLBuilder.sculpturesThumbnailURL(element.artist)}/${element.thumbnail}"
 											alt=""></a></div>
 									</div>
 								</div>
