@@ -316,5 +316,6 @@ jQuery(document).ready(function ($) {
 		initCarousel1();
 		//carousel swipe
 		$("#myCarousel").bcSwipe({ threshold: 50 });
+		curatedCollectionInit();
 	}
 });
