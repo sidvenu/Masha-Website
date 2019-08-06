@@ -67,7 +67,7 @@
 				</div>
 
 				<div class="row" id="portfolio-wrapper">
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
 						<div style="text-align: center;">
 							<img src="img/METAMORPHOSIS-600x600.png" alt="">
 							<h4>Painter Name</h4>
@@ -75,68 +75,7 @@
 							<span style="color:lightgray">Medium</span>
 
 						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-
-						<div style="text-align: center;">
-							<img src="img/METAMORPHOSIS-600x600.png" alt="">
-							<h4>Painter Name</h4>
-							<span>Artist </span><br />
-							<span style="color:lightgray">Medium</span>
-
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-						<div style="text-align: center;">
-							<img src="img/METAMORPHOSIS-600x600.png" alt="">
-							<h4>Painter Name</h4>
-							<span>Artist </span><br />
-							<span style="color:lightgray">Medium</span>
-
-
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-
-						<div style="text-align: center;">
-							<img src="img/The-Lilt-600x600.png" alt="">
-							<h4>Painter Name</h4>
-							<span>Artist </span><br />
-							<span style="color:lightgray">Medium</span>
-
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-
-						<div style="text-align: center;">
-							<img src="img/The-Lilt-600x600.png" alt="">
-							<h4>Painter Name</h4>
-							<span>Artist </span><br />
-							<span style="color:lightgray">Medium</span>
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-
-						<div style="text-align: center;">
-							<img src="img/The-Lilt-600x600.png" alt="">
-							<h4>Painter Name</h4>
-							<span>Artist </span><br />
-							<span style="color:lightgray">Medium</span>
-						</div>
-
-					</div>
-
-
+					</div> -->
 				</div>
 
 			</div>
@@ -365,6 +304,65 @@
 					`);
 				}
 			});
+		}
+
+		function curatedCollectionInit() {
+			var collection = $("#portfolio-wrapper");
+			collection.empty();
+			$.get(`${new URLBuilder().api().urlString}/shawls.php?offset=0&num=2`, function (data) {
+				addItemsToCuratedCollection(data, "shawls");
+			});
+			$.get(`${new URLBuilder().api().urlString}/sculptures.php?offset=0&num=2`, function (data) {
+				addItemsToCuratedCollection(data, "sculptures");
+			});
+			$.get(`${new URLBuilder().api().urlString}/carpets.php?offset=0&num=2`, function (data) {
+				addItemsToCuratedCollection(data, "carpets");
+			});
+		}
+
+		function addItemsToCuratedCollection(data, type) {
+			for (var i = 0; i < data.length; i++) {
+				handleCuratedCollectionItemAdd(data[i], type);
+			}
+		}
+
+		function handleCuratedCollectionItemAdd(product, type) {
+			var firstLine = product.name;
+			var secondLine, thirdLine;
+			var imageBaseURL;
+			if (type === "paintings") {
+				secondLine = product.artist;
+				thirdLine = product.medium;
+				imageBaseURL = URLBuilder.paintingsThumbnailURL(product.artist);
+			}
+			else if (type === "sculptures") {
+				secondLine = product.artist;
+				thirdLine = product.medium;
+				imageBaseURL = URLBuilder.sculpturesThumbnailURL(product.artist);
+			}
+			else if (type === "shawls") {
+				secondLine = product.type;
+				thirdLine = product.gender;
+				imageBaseURL = URLBuilder.shawlsThumbnailURL();
+			}
+			else if (type === "carpets") {
+				secondLine = product.type;
+				thirdLine = product.origin;
+				imageBaseURL = URLBuilder.carpetsThumbnailURL();
+			}
+			var painting = data[i];
+			var imageURL = `${imageBaseURL}/${painting.thumbnail}`;
+			imageURL = imageURL.split(" ").join("%20");
+			collection.append(`
+			<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+				<div style="text-align: center;">
+					<img src="${imageURL}" alt="">
+					<h4>${firstLine}</h4>
+					<span>${secondLine}</span><br>
+					<span style="color:lightgray">${thirdLine}</span>
+				</div>
+			</div>
+			`);
 		}
 	</script>
 </body>
