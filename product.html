@@ -262,7 +262,7 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
-					$("#product-modal-thumbnail").attr("src", URLBuilder.paintingsURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.paintingsThumbnailURL(data.artist) + `/${data.thumbnail}`);
 					
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
@@ -283,7 +283,7 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
-					$("#product-modal-thumbnail").attr("src", URLBuilder.sculpturesURL(data.artist) + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.sculpturesThumbnailURL(data.artist) + `/${data.thumbnail}`);
 				
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
@@ -305,7 +305,7 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
-					$("#product-modal-thumbnail").attr("src", URLBuilder.shawlsURL() + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.shawlsThumbnailURL() + `/${data.thumbnail}`);
 
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
@@ -327,7 +327,7 @@
 					let data = dataReceived[0];
 
 					$("#product-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
-					$("#product-modal-thumbnail").attr("src", URLBuilder.carpetsURL() + `/${data.thumbnail}`);
+					$("#product-modal-thumbnail").attr("src", URLBuilder.carpetsThumbnailURL() + `/${data.thumbnail}`);
 
 					$("#product-details").append(`<h2><b>${data.name}</b><h2>`);
 					$("#product-modal-name").html(data.name);
