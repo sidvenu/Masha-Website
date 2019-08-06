@@ -292,7 +292,7 @@
 					$("#team-artist").html(data.artist);
 
 					$.get("api/paintings.php?artist=" + data.artist, (works) => {
-						data.forEach(element => {
+						works.forEach(element => {
 							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
 								<div class="col-lg-4 col-md-6">
