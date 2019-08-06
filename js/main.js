@@ -313,8 +313,6 @@ jQuery(document).ready(function ($) {
 		updateProductDetails();
 	} else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
-	}
-	else if (url.pathname == "/index.html") {
 		//carousel swipe
 		$("#myCarousel").bcSwipe({ threshold: 50 });
 	}
