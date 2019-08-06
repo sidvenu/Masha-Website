@@ -248,9 +248,9 @@ jQuery(document).ready(function ($) {
 					$("#artistArtworks").append(`
 					<div class="col-lg-4 col-md-6">
 						<div class="member">
-							<div class="pic"><img
+							<div class="pic"><a href="product.html?id=${element.item_number}"><img
 									src="${URLBuilder.paintingsThumbnailURL(artist) + "/" + element.thumbnail}"
-									alt=""></div>
+									alt=""></a></div>
 							<h4>${element.name}</h4>
 							<span>${element.medium}</span>
 						</div>	
