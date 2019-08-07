@@ -344,5 +344,9 @@ jQuery(document).ready(function ($) {
 	}
 	else if (url.pathname == "events.html") {
 		populateEvents();
+
+		$(".portfolio-item").click(function () {
+			window.location = "eventdetail.html?id="+$(this).attr("data-id");
+		});
 	}
 });
