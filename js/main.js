@@ -345,7 +345,7 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/events.html") {
 		populateEvents();
 
-		$(".portfolio-wrapper").on("click", ".portfolio-wrapper", function () {
+		$(".portfolio-wrapper").on("click", ".portfolio-item", function () {
 			window.location = "eventdetail.html?id="+$(this).attr("data-id");
 		});
 	}
