@@ -246,7 +246,7 @@ jQuery(document).ready(function ($) {
 		let artist = params.get("artist");
 
 		$("#artistName").html(artist);
-		$.get("api/artists.php?artist=" + artist, (data)=>{
+		$.get("api/artists.php?name=" + artist, (data)=>{
 			$("#artistSub").html(data[0].subheading);
 			$("#artistDescription").html(data[0].description);
 			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
