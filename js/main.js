@@ -59,6 +59,10 @@ class URLBuilder {
 		return new URLBuilder().raw().thumbnails().artists().urlString;
 	}
 
+	static artistsURL() {
+		return new URLBuilder().raw().photos().artists().urlString;
+	}
+
 	static sculpturesURL(artistName) {
 		return new URLBuilder().raw().photos().sculptures(artistName).urlString;
 	}
@@ -245,6 +249,8 @@ jQuery(document).ready(function ($) {
 		$.get("api/artists.php?artist=" + artist, (data)=>{
 			$("#artistSub").html(data[0].subheading);
 			$("#artistDescription").html(data[0].description);
+			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
+			$("#artistPic").attr("src", thumbnail);
 		});
 
 		$.ajax(new URLBuilder().api().urlString + `/paintings.php?artist=${artist}`, {
