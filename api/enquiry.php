@@ -8,7 +8,7 @@
     $emailid = htmlentities($_POST["emailid"]);
     $queries = htmlentities($_POST["queries"]);
 
-    $query = "INSERT INTO enquiries (name, emailid, queries) VALUES ('". $name . "','" . $emailid . "','" . $queries . "');";
+    $query = "INSERT INTO enquiries (name, email, queries) VALUES ('". $name . "','" . $emailid . "','" . $queries . "');";
     $result = $conn->query($query);
     
     echo $query;
