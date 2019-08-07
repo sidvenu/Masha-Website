@@ -47,6 +47,18 @@ class URLBuilder {
 		return new URLBuilder().raw().photos().shawls().urlString;
 	}
 
+	static eventsURL() {
+		return new URLBuilder().raw().photos().events().urlString;
+	}
+
+	static eventsThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().events().urlString;
+	}
+
+	events() {
+		return this.child("events");
+	}
+
 	sculptures(artistName) {
 		return this.child("Sculptures").child(artistName);
 	}
@@ -323,10 +335,14 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();
 		$("#sendenquiry-button").click(validateModal);
-	} else if (url.pathname == "/" || url.pathname == "/index.html") {
+	} 
+	else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
 		//carousel swipe
 		$("#myCarousel").bcSwipe({ threshold: 50 });
 		curatedCollectionInit();
+	}
+	else if (url.pathname == "events.html") {
+		populateEvents();
 	}
 });

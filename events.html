@@ -47,16 +47,10 @@
 				</div>
 
 				<div class="row" id="portfolio-wrapper">
-					<div class="col-lg-6 col-md-6 portfolio-item filter-app">
-
+					<!-- <div class="col-lg-6 col-md-6 portfolio-item filter-app">
 						<img src="img/MG_9552.png" alt="">
-
 						<div style="position: relative;z-index: 2;margin-top: -260px;text-align: right;">
 							<h4 style="color:white;text-decoration-line:underline">M F Hussain</h4>
-
-
-
-
 						</div>
 					</div>
 
@@ -83,7 +77,7 @@
 
 						</div>
 					</div>
-
+ -->
 
 				</div>
 
@@ -109,8 +103,7 @@
 	<script src="js/main.js"></script>
 	<script>
 		$(".portfolio-item").click(function () {
-			window.location = "eventdetail.html";
-
+			window.location = "eventdetail.html?id="+$(this).attr("data-id");
 		});
 		var slideIndex = 1;
 		showDivs(slideIndex);
@@ -138,6 +131,21 @@
 			x[slideIndex - 1].style.display = "block";
 			x[slideIndex - 1].style.visibility = "visible";
 			dots[slideIndex - 1].className += " w3-white";
+		}
+
+		function populateEvents() {
+			$.get("/api/events.php", (data)=>{
+				data.forEach((element)=>{
+					$("#portfolio-wrapper").append(`
+						<div class="col-lg-6 col-md-6 portfolio-item filter-app" data-id="${element.event_id}">
+							<img src="${URLBuilder.eventsThumbnailURL()}/${element.thumbnail}" style="width:unset; height:unset; max-width:100%;" alt="">
+							<div style="position: relative;z-index: 2;margin-top: -260px;text-align: right;">
+								<h4 style="color:white;text-decoration-line:underline">${event.name}</h4>
+							</div>
+						</div>
+					`);
+				});
+			}); 
 		}
 	</script>
 </body>
