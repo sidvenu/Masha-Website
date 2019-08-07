@@ -9,7 +9,7 @@
     $query = "INSERT INTO enquiries (name, emailid, queries) VALUES ('". $name . "','" . $emailid . "','" . $queries . "');";
     $result = $sql->query($query);
     
-    //echo $query;
+    echo $query;
     
     if ($result == TRUE) 
         echo "ok";
