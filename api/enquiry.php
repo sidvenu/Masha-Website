@@ -11,8 +11,6 @@
     $query = "INSERT INTO enquiries (name, email, queries) VALUES ('". $name . "','" . $emailid . "','" . $queries . "');";
     $result = $conn->query($query);
     
-    echo $query;
-    
     if ($result === TRUE) 
         echo "ok";
     else
