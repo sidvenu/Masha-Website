@@ -342,7 +342,11 @@ jQuery(document).ready(function ($) {
 		$("#myCarousel").bcSwipe({ threshold: 50 });
 		curatedCollectionInit();
 	}
-	else if (url.pathname == "events.html") {
+	else if (url.pathname == "/events.html") {
 		populateEvents();
+
+		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
+			window.location = "eventdetail.html?id="+$(this).attr("data-id");
+		});
 	}
 });
