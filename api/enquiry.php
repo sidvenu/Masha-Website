@@ -7,13 +7,13 @@
     $queries = htmlentities($_POST["queries"]);
 
     $query = "INSERT INTO enquiries (name, emailid, queries) VALUES ('". $name . "','" . $emailid . "','" . $queries . "');";
-    //$result = $sql->query($query);
+    $result = $sql->query($query);
     
-    echo $query;
+    //echo $query;
     
-    // if ($result == TRUE) 
-    //     echo "ok";
-    // else
-    //     header("status-code: 400");
-    //     echo $sql->error;
+    if ($result == TRUE) 
+        echo "ok";
+    else
+        header("status-code: 400");
+        echo $sql->error;
 ?>
