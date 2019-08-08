@@ -27,7 +27,7 @@ document.write(`
 						<a href="#">Show Case</a>
 						<ul>
 							<li><a href="events.html">Upcoming Events</a></li>
-							<li><a href="#">Exhibitions</a></li>
+							<li><a href="exhibitions.html">Exhibitions</a></li>
 						</ul>
 					</li>
 					<li><a href="masha.html">Masha Support</a></li>
