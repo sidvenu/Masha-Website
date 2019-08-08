@@ -65,7 +65,6 @@
         }
 
         $query .= $search;
-        $query .= $sort;
         $query .= " ORDER BY name";
 
         if ($limit !== FALSE) 
