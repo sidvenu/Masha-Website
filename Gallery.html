@@ -202,6 +202,8 @@
 					fillProducts(data, type);
 				else {
 					//set pagination
+					$("#pagination-control").show();
+
 					$("#pagination-control").data("total-pages", Math.ceil(number / 9));
 					$("#pagination-control").data("current-page", 0);
 					$("#pagination-next").data("target-page", 1);
