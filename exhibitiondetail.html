@@ -287,7 +287,7 @@
 			let event_id = new URL(document.location).searchParams.get("id");
 
 			//details
-			$.get("/api/exhibitions.php?event_id=" + event_id, (data) => {
+			$.get("/api/exhibitions.php?exhibition_id=" + event_id, (data) => {
 				let event = data[0];
 				$("#event-name").html(event.name);
 				$("#event-venue").html(event.venue);
