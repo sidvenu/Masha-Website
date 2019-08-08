@@ -213,7 +213,7 @@
 					$("#pagination-prev").addClass("disabled");
 
 					$("#pagination-control .page-item").click((ev) => {
-						let target_page = $(ev.target).data("target-page");
+						let target_page = $(ev.target).parent().data("target-page");
 						let current_page = $("#pagination-control").data("current-page");
 						let total_pages = $("#pagination-control").data("total-pages");
 
@@ -236,13 +236,6 @@
 						//set current page
 						$("#pagination-control").data("current-page", target_page);
 
-						//update contents
-						console.log(current_page);
-						console.log(target_page);
-						console.log(num);
-						console.log(offset);
-						console.log (ev.target);
-						console.log($(ev.target));
 						fillProducts(data, type, offset, offset + num);
 					});
 
