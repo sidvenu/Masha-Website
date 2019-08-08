@@ -329,11 +329,10 @@
 				}
 			});
 
-			$("#event-gallery").on("click", "img", () => {
+			$("#event-gallery").on("click", "img", (ev) => {
 				modal.style.display = "block";
-				modalImg.src = $(this).attr("src");
-				console.log(this.src);
-				captionText.innerHTML = $(this).attr("alt");
+				modalImg.src = $(ev.target).attr("src");
+				captionText.innerHTML = $(ev.target).attr("alt");
 			});
 		}
 
