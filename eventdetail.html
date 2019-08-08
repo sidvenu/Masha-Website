@@ -186,54 +186,14 @@
 					<div class="carousel slide" data-ride="carousel" id="myCarousel1">
 
 						<div class="carousel-inner" id="event-gallery">
-							<button class="left carousel-control" data-target="#myCarousel1" data-slide="prev">
+							<button class="left carousel-control" data-target="#myCarousel1" data-slide="prev" style="z-index: 1">
 								<span class="glyphicon glyphicon-chevron-left"></span>
 								<span class="sr-only">Previous</span>
 							</button>
-							<button class="right carousel-control" data-target="#myCarousel1" data-slide="next">
+							<button class="right carousel-control" data-target="#myCarousel1" data-slide="next" style="z-index: 1">
 								<span class="glyphicon glyphicon-chevron-right"></span>
 								<span class="sr-only">Next</span>
 							</button>
-							<!-- <img src="img/next-1.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
-								class="pull-left" onclick="ActiveDiv1()">
-							<img src="img/next.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
-								class="pull-right" onclick="ActiveDiv2()"> -->
-							<!-- <div class="carousel-item active" id="div1">
-								<div class="row">
-
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg1"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg2"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg3"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg4"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg5"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
-
-								</div>
-							</div>
-							<div class="carousel-item" id="div2">
-								<div class="row">
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="7 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="8 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="9 slide"></div>
-
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="10 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="11 slide"></div>
-									<div class="col-md"><img class="d-block w-100" id="myImg"
-											src="img/IMG_0695-400x300.png" alt="12 slide"></div>
-
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -324,7 +284,7 @@
 				}
 
 				if (collection != undefined) {
-					$("#event-gallery").append(collection);
+					$("#event-gallery").prepend(collection);
 					collection = undefined;
 				}
 			});
@@ -340,57 +300,7 @@
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
 		
-		// img.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-
-		// var img1 = document.getElementById("myImg1");
-		// var modalImg1 = document.getElementById("img01");
-		// var captionText = document.getElementById("caption");
-		// img1.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-		// var img2 = document.getElementById("myImg2");
-		// var modalImg2 = document.getElementById("img01");
-		// var captionText = document.getElementById("caption");
-		// img2.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-
-		// var img3 = document.getElementById("myImg3");
-		// var modalImg3 = document.getElementById("img01");
-		// var captionText = document.getElementById("caption");
-		// img3.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-
-		// var img4 = document.getElementById("myImg4");
-		// var modalImg4 = document.getElementById("img01");
-		// var captionText = document.getElementById("caption");
-		// img4.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-
-		// var img5 = document.getElementById("myImg5");
-		// var modalImg5 = document.getElementById("img01");
-		// var captionText = document.getElementById("caption");
-		// img5.onclick = function () {
-		// 	modal.style.display = "block";
-		// 	modalImg.src = this.src;
-		// 	captionText.innerHTML = this.alt;
-		// }
-
-
+		
 	</script>
 
 </body>
