@@ -125,10 +125,12 @@
 				fr = 0;
 				to = data.length;
 			}
+
+			var productsList = $("#portfolio-wrapper");
+			productsList.empty();
+
 			for (let x = fr; x < to; x++) {
 				let product = data[x];
-				var productsList = $("#portfolio-wrapper");
-				productsList.empty();
 				var firstLine = product.name;
 				var secondLine, thirdLine;
 				var urlString;
@@ -174,7 +176,7 @@
 					`);
 			}
 
-			$("html, body").animate({scrollTop: $("#portfolio-wrapper").offset().top}, "slow");
+			$("html, body").animate({ scrollTop: $("#portfolio-wrapper").offset().top }, "slow");
 		}
 
 		function getProductsFromDatabase(searchQ, sort) {
@@ -202,6 +204,8 @@
 					fillProducts(data, type);
 				else {
 					//set pagination
+					$("#pagination-control").show();
+
 					$("#pagination-control").data("total-pages", Math.ceil(number / 9));
 					$("#pagination-control").data("current-page", 0);
 					$("#pagination-next").data("target-page", 1);
@@ -209,7 +213,7 @@
 					$("#pagination-prev").addClass("disabled");
 
 					$("#pagination-control .page-item").click((ev) => {
-						let target_page = $(ev.target).data("target-page");
+						let target_page = $(ev.target).parent().data("target-page");
 						let current_page = $("#pagination-control").data("current-page");
 						let total_pages = $("#pagination-control").data("total-pages");
 
@@ -226,13 +230,12 @@
 						if (target_page == total_pages)
 							$("#pagination-next").addClass("disabled");
 
-						$("#pagination-prev").data("target-page", current_page);
+						$("#pagination-prev").data("target-page", target_page - 1);
 						$("#pagination-next").data("target-page", target_page + 1);
 
 						//set current page
 						$("#pagination-control").data("current-page", target_page);
 
-						//update contents
 						fillProducts(data, type, offset, offset + num);
 					});
 
