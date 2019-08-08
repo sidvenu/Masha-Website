@@ -21,11 +21,17 @@
     <note priority="medium" time="1565267488" done="1565279225">
         sort events by time
     </note>
+    <note priority="medium" time="1565282045" done="1565282758">
+        implement deleting records
+        <comment>
+            api done
+        </comment>
+    </note>
     <note priority="medium" time="1565282027">
         implement updating records
     </note>
-    <note priority="medium" time="1565282045">
-        implement deleting records
+    <note priority="medium" time="1565282780">
+        add delete functionality to app
     </note>
     <note priority="low" time="1565269137">
         create app for manipulating database
