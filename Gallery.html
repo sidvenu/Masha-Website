@@ -125,10 +125,12 @@
 				fr = 0;
 				to = data.length;
 			}
+
+			var productsList = $("#portfolio-wrapper");
+			productsList.empty();
+
 			for (let x = fr; x < to; x++) {
 				let product = data[x];
-				var productsList = $("#portfolio-wrapper");
-				productsList.empty();
 				var firstLine = product.name;
 				var secondLine, thirdLine;
 				var urlString;
@@ -174,7 +176,7 @@
 					`);
 			}
 
-			$("html, body").animate({scrollTop: $("#portfolio-wrapper").offset().top}, "slow");
+			$("html, body").animate({ scrollTop: $("#portfolio-wrapper").offset().top }, "slow");
 		}
 
 		function getProductsFromDatabase(searchQ, sort) {
@@ -233,7 +235,7 @@
 
 						//set current page
 						$("#pagination-control").data("current-page", target_page);
-						
+
 						//update contents
 						console.log(current_page);
 						console.log(target_page);
