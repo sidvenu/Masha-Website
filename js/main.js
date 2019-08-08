@@ -59,8 +59,28 @@ class URLBuilder {
 		return new URLBuilder().raw().thumbnails().events().child("gallery").urlString;
 	}
 
-	static eventsGalleryThumbnailURL() {
-		return new URLBuilder().raw().photos().events().child("gallery").urlString;
+	static eventsGalleryURL() {
+		return new URLBuilder().raw().photos().exhibitions().child("gallery").urlString;
+	}
+
+	static exhibitionsGalleryThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().exhibitions().child("gallery").urlString;
+	}
+
+	static exhibitionsGalleryURL() {
+		return new URLBuilder().raw().photos().exhibitions().child("gallery").urlString;
+	}
+
+	static exhibitionsURL() {
+		return new URLBuilder().raw().photos().exhibitions().urlString;
+	}
+
+	static exhibitionsThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().exhibitions().urlString;
+	}
+
+	exhibitions() {
+		return this.child("exhibitions");
 	}
 
 	events() {
@@ -357,7 +377,17 @@ jQuery(document).ready(function ($) {
 			window.location = "eventdetail.html?id="+$(this).attr("data-id");
 		});
 	}
+	else if (url.pathname == "/exhibitions.html") {
+		populateExhibitions();
+
+		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
+			window.location = "exhibitiondetail.html?id="+$(this).attr("data-id");
+		});
+	}
 	else if (url.pathname == "/eventdetail.html") {
 		updateEventDetails();
+	}
+	else if (url.pathname == "/exhibitiondetail.html") {
+		updateExhibitionDetails();
 	}
 });
