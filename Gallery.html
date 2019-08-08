@@ -233,8 +233,12 @@
 
 						//set current page
 						$("#pagination-control").data("current-page", target_page);
-
+						
 						//update contents
+						console.log(current_page);
+						console.log(target_page);
+						console.log(num);
+						console.log(offset);
 						fillProducts(data, type, offset, offset + num);
 					});
 
