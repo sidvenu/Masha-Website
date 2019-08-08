@@ -158,7 +158,8 @@
 
 				<div class="row" id="portfolio-wrapper">
 					<div class="col-lg-8 col-md-6 portfolio-item filter-app">
-						<img id = "event-pic" style="width: unset; height: unset; max-width: 100%;" src="img/placeholder.jpg" alt="">
+						<img id="event-pic" style="width: unset; height: unset; max-width: 100%;"
+							src="img/placeholder.jpg" alt="">
 					</div>
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -278,7 +279,7 @@
 			let event_id = new URL(document.location).searchParams.get("id");
 
 			//details
-			$.get("/api/events.php?event_id=" + event_id, (data)=>{
+			$.get("/api/events.php?event_id=" + event_id, (data) => {
 				let event = data[0];
 				$("#event-name").html(event.name);
 				$("#event-venue").html(event.venue);
@@ -288,10 +289,10 @@
 			});
 
 			//gallery
-			$.get("/api/event_gallery.php?event_id=" + event_id, (data)=>{
+			$.get("/api/event_gallery.php?event_id=" + event_id, (data) => {
 				let collection;
 				for (let x = 0; x < data.length; x++) {
-					if (x%5 == 0) {
+					if (x % 5 == 0) {
 						if (collection != undefined) {
 							$("#event-gallery").append(collection);
 							collection = undefined;
@@ -299,7 +300,7 @@
 
 						collection = document.createElement("div");
 						$(collection).addClass("carousel-item");
-						if (x == 0) 
+						if (x == 0)
 							$(collection).addClass("active");
 
 						$(collection).append(`
@@ -312,6 +313,11 @@
 									src="${URLBuilder.eventsGalleryThumbnailURL()}/${data[x].thumbnail}" alt="">
 						</div>
 					`);
+				}
+
+				if (collection != undefined) {
+					$("#event-gallery").append(collection);
+					collection = undefined;
 				}
 			});
 		}
