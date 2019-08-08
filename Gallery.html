@@ -200,8 +200,10 @@
 				let number = data.length;
 
 				//fill contents if the number is less than or equal to 9
-				if (number <= 9)
+				if (number <= 9) {
 					fillProducts(data, type);
+					$("#pagination-control").hide();
+				}
 				else {
 					//set pagination
 					$("#pagination-control").show();
