@@ -186,11 +186,11 @@
 					<div class="carousel slide" data-ride="carousel" id="myCarousel1">
 
 						<div class="carousel-inner" id="event-gallery">
-							<button class="left carousel-control" data-target="#myCarousel1" data-slide="prev" id="gallery-prev">
+							<button class="left carousel-control" data-target="#myCarousel1" data-slide="prev" style="z-index: 1">
 								<span class="glyphicon glyphicon-chevron-left"></span>
 								<span class="sr-only">Previous</span>
 							</button>
-							<button class="right carousel-control" data-target="#myCarousel1" data-slide="next" id="gallery-next">
+							<button class="right carousel-control" data-target="#myCarousel1" data-slide="next" style="z-index: 1">
 								<span class="glyphicon glyphicon-chevron-right"></span>
 								<span class="sr-only">Next</span>
 							</button>
@@ -284,7 +284,7 @@
 				}
 
 				if (collection != undefined) {
-					$("#event-gallery").append(collection);
+					$("#event-gallery").prepend(collection);
 					collection = undefined;
 				}
 			});
@@ -294,17 +294,6 @@
 				modalImg.src = $(ev.target).attr("src");
 				captionText.innerHTML = $(ev.target).attr("alt");
 			});
-
-			//custom carousel next and prev button implementation
-			$("#gallery-next").click((ev)=>{
-				let divs = $("#event-gallery .carousel-item");
-				for (let x = 0; x < divs.length; x++) {
-					if ($(divs[x]).hasClass("active")) {
-						$(divs[x]).removeClass("active");
-						$(divs[(x-1)%divs.length]).addClass("active");
-					}
-				}
-			});	
 		}
 
 		var modal = document.getElementById("myModal");
