@@ -398,4 +398,7 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/exhibitiondetail.html") {
 		updateExhibitionDetails();
 	}
+	else if (url.pathname == "/inmedia.html") {
+		updateInMedia();
+	}
 });
