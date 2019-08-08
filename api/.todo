@@ -3,4 +3,7 @@
     <note priority="medium" time="1565267488">
         sort events by time
     </note>
+    <note priority="low" time="1565269137">
+        create app for manipulating database
+    </note>
 </todo>
