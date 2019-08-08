@@ -6,6 +6,21 @@
     <note priority="medium" time="1565267488" done="1565279225">
         sort events by time
     </note>
+    <note priority="veryhigh" time="1565279537">
+        insert record api for events
+    </note>
+    <note priority="veryhigh" time="1565279543">
+        insert record api for exhibitions
+    </note>
+    <note priority="veryhigh" time="1565279549">
+        insert record api for inmedia
+    </note>
+    <note priority="veryhigh" time="1565279587">
+        insert record api for exhibitions-gallry
+    </note>
+    <note priority="veryhigh" time="1565279593">
+        insert record api for events-gallry
+    </note>
     <note priority="low" time="1565269137">
         create app for manipulating database
     </note>

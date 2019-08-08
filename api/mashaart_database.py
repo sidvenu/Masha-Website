@@ -2,30 +2,39 @@ import sys
 import csv
 import requests
 
-headers = []
+BASE_URL = "http://mashaart.in/api"
+INSERT_RECORD_URLS = {
+    "painting": "/painting.php",
+    "shawl": "/shawl.php",
+    "event": "/event.php",
+    "sculpture": "/sculpture.php",
+    "carpet": "/carpet.php",
+    "exhibition": "/exhibition.php",
+    "event-gallery": "/event_g.php",
+    "exhibition-gallery": "/exhibition_g.php",
+    "artist": "/artist.php"
+}
 
-if len(sys.argv) < 3:
-    print ("Usage: " + sys.argv[0] + " <csv file> <server>")
-    exit()
 
-csvfilename = sys.argv[1]
-with open(csvfilename, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
-    for row in spamreader:
-        if len(headers) == 0:
-            for x in row: 
-                headers.append(x)
-            print ("Headers: ")
-            print (headers)
-        else:
-            data = dict.fromkeys(headers)
-            for i in range(len(row)):
-                data[headers[i]] = row[i]
-            print (row)
-            response = requests.post(sys.argv[2], data=data)
-            if response.status_code == 200:
-                print ("SUCCESS")
+#INSERT RECORDS TO THE DATABASE
+def insertDatabase(csvfilename, url):
+    headers = []
+    with open(csvfilename, newline='') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in spamreader:
+            if len(headers) == 0:
+                for x in row: 
+                    headers.append(x)
+                print ("Headers: ")
+                print (headers)
             else:
-                print ("ERROR: ")
-                print (response.text)
-
+                data = dict.fromkeys(headers)
+                for i in range(len(row)):
+                    data[headers[i]] = row[i]
+                print (row)
+                response = requests.post(url, data=data)
+                if response.status_code == 200:
+                    print ("SUCCESS")
+                else:
+                    print ("ERROR: ")
+                    print (response.text)
