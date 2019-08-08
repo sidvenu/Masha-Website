@@ -65,7 +65,7 @@
         }
 
         $query .= $search;
-        $query .= " ORDER BY TIME DESC";
+        $query .= " ORDER BY timestamp DESC";
 
         if ($limit !== FALSE) 
             $query = $query . $limit;
