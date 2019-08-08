@@ -4,4 +4,10 @@
         MASHA WEBSITE
     </title>
     <link filename="api/.todo" priority="veryhigh" time="0"/>
+    <note priority="veryhigh" time="1565268174">
+        Frontend
+        <note priority="veryhigh" time="1565268186">
+            event-details
+        </note>
+    </note>
 </todo>
