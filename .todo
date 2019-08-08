@@ -19,6 +19,9 @@
             event-details: carousel
         </note>
     </note>
+    <note priority="medium" time="1565270460">
+        replace holder messages
+    </note>
     <note priority="low" time="1565268389">
         Remove comments
     </note>
