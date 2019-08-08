@@ -19,6 +19,10 @@ class URLBuilder {
 		return this.child("photos");
 	}
 
+	inmedia() {
+		return this.child("inmedia");
+	}
+
 	paintings(artistName) {
 		return this.child("Gallerie Splash").child(artistName);
 	}
@@ -73,6 +77,10 @@ class URLBuilder {
 
 	static exhibitionsURL() {
 		return new URLBuilder().raw().photos().exhibitions().urlString;
+	}
+
+	static inmediaURL() {
+		return new URLBuilder().raw().photos().inmedia().urlString;
 	}
 
 	static exhibitionsThumbnailURL() {

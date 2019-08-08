@@ -50,48 +50,12 @@
 				</div>
 
 				<div class="container">
-					<div class="carousel slide" data-ride="carousel">
+					<div class="carousel slide" data-ride="carousel" id="inmedia-content">
 						<div class="carousel-inner">
 							<img src="img/next-1.png" style="position: relative;top:110px; z-index: 2;width:3%"
 								class="pull-left" onclick="ActiveDiv1()">
 							<img src="img/next.png" style="position: relative;top:110px; z-index: 2;width:3%"
 								class="pull-right" onclick="ActiveDiv2()">
-
-							<div class="carousel-item active" id="div1">
-								<div class="row">
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="1 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="2 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="3 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="4 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="5 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/a2d9cce9-fd2f-4c03-b01b-05c4e22b3e2e.png" alt="6 slide"></div>
-
-								</div>
-							</div>
-							<div class="carousel-item" id="div2">
-								<div class="row">
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="7 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="8 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="9 slide"></div>
-
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="10 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="11 slide"></div>
-									<div class="col-lg-4 col-md"><img class="d-block w-100"
-											src="img/IMG_0695-400x300.png" alt="12 slide"></div>
-
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -162,7 +126,36 @@
 		}
 
 		function updateInMedia() {
-			$.get("");
+			$.get("api/inmedia.php", (data) => {
+				let content = undefined;
+				for (let x = 0; x < data.length; x++) {
+					if (x % 6 == 0) {
+						if (content != undefined) {
+							$("#inmedia-content").append(content);
+							content = undefined;
+						}
+						if (content == undefined) {
+							content = document.createElement("div");
+							$(content).addClass("carousel-item");
+							$(content).append(`<div class="row"></div>`);
+							if (x==0) 
+								$(content).addClass("active");
+						} 
+						$(content).find(".row").append(`
+						<div class="col-lg-4 col-md">
+							<img class="d-block w-100"
+								src=${URLBuilder.inmediaURL()}/${data[x].thumbnail} 
+								style="width:400px; height:300px;" 
+								alt="">
+						</div>
+						`);
+					}
+				}
+				if (content != undefined) {
+					$("#inmedia-content").append(content);
+					content = undefined;
+				}
+			});
 		}
 	</script>
 </body>
