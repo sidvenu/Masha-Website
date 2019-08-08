@@ -278,7 +278,7 @@
 			let event_id = new URL(document.location).searchParams.get("id");
 
 			//details
-			$.get("/api/events.php?id=" + event_id, (data)=>{
+			$.get("/api/events.php?event_id=" + event_id, (data)=>{
 				let event = data[0];
 				$("#event-name").html(event.name);
 				$("#event-venue").html(event.venue);
@@ -288,7 +288,7 @@
 			});
 
 			//gallery
-			$.get("/api/event_gallery.php?id=" + event_id, (data)=>{
+			$.get("/api/event_gallery.php?event_id=" + event_id, (data)=>{
 				let collection;
 				for (let x = 0; x < data.length; x++) {
 					if (x%5 == 0) {
