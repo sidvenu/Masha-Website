@@ -53,6 +53,13 @@
 				<div class="row" id="portfolio-wrapper">
 				</div>
 
+				<div class="row text-center" id="pagination-control">
+					<ul class="pagination">
+						<li class="page-item" id="pagination-prev"><a class="page-link" href="#">Previous page</a></li>
+						<li class="page-item" id="pagination-next"><a class="page-link" href="#">Next page</a></li>
+					</ul>
+				</div>
+
 			</div>
 		</section>
 
@@ -74,7 +81,7 @@
 	<script src="contactform/contactform.js"></script>
 	<script src="js/main.js"></script>
 	<script>
-		
+
 		getProductsFromDatabase();
 		$("#portfolio-wrapper").on('click', "img", function () {
 			window.location = `${$(this).attr("data-url")}`;
@@ -113,57 +120,47 @@
 			getProductsFromDatabase(globalThis.productSearchFilter, sort);
 		}
 
-		function getProductsFromDatabase(searchQ, sort) {
-			if (searchQ == undefined) {
-				searchQ = "";
-				globalThis.productSearchFilter = undefined;
+		function fillProducts(data, type, fr, to) {
+			if (to == undefined) {
+				fr = 0;
+				to = data.length;
 			}
-			else
-				globalThis.productSearchFilter = searchQ;
-			if (sort == undefined)
-				sort = "";
-			let params = (new URL(document.location)).searchParams;
-			let type = params.get("type");
-			if (!type)
-				type = "paintings";
-			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`, function (data) {
+			for (let x = fr; x < to; x++) {
+				let product = data[x];
 				var productsList = $("#portfolio-wrapper");
 				productsList.empty();
-			
-				//fill contents
-				data.forEach(function (product) {
-					var firstLine = product.name;
-					var secondLine, thirdLine;
-					var urlString;
-					var productURL = "product.html?id=" + product.item_number;
-					if (type === "paintings") {
-						secondLine = product.artist;
-						thirdLine = product.medium;
-						urlString = URLBuilder.paintingsThumbnailURL(product.artist);
-					}
-					else if (type === "sculptures") {
-						secondLine = product.artist;
-						thirdLine = product.medium;
-						urlString = URLBuilder.sculpturesThumbnailURL(product.artist);
-					}
-					else if (type === "shawls") {
-						secondLine = product.type;
-						thirdLine = product.gender;
-						urlString = URLBuilder.shawlsThumbnailURL();
-					}
-					else if (type === "carpets") {
-						secondLine = product.type;
-						thirdLine = product.origin;
-						urlString = URLBuilder.carpetsThumbnailURL();
-					}
-					else if (type == "artists") {
-						urlString = URLBuilder.artistsThumbnailURL();
-						secondLine = "";
-						thirdLine = "";
-						productURL = "artistdetail.html?artist=" + product.name;
-					}
-					
-					productsList.append(`
+				var firstLine = product.name;
+				var secondLine, thirdLine;
+				var urlString;
+				var productURL = "product.html?id=" + product.item_number;
+				if (type === "paintings") {
+					secondLine = product.artist;
+					thirdLine = product.medium;
+					urlString = URLBuilder.paintingsThumbnailURL(product.artist);
+				}
+				else if (type === "sculptures") {
+					secondLine = product.artist;
+					thirdLine = product.medium;
+					urlString = URLBuilder.sculpturesThumbnailURL(product.artist);
+				}
+				else if (type === "shawls") {
+					secondLine = product.type;
+					thirdLine = product.gender;
+					urlString = URLBuilder.shawlsThumbnailURL();
+				}
+				else if (type === "carpets") {
+					secondLine = product.type;
+					thirdLine = product.origin;
+					urlString = URLBuilder.carpetsThumbnailURL();
+				}
+				else if (type == "artists") {
+					urlString = URLBuilder.artistsThumbnailURL();
+					secondLine = "";
+					thirdLine = "";
+					productURL = "artistdetail.html?artist=" + product.name;
+				}
+
+				productsList.append(`
 						<div class="col-lg-4 col-md-6 col-sm-6 portfolio-item filter-app">
 
 							<img src="${urlString}/${product.thumbnail}" alt="" data-url="${productURL}">
@@ -175,7 +172,72 @@
 							</div>
 						</div>
 					`);
-				});
+			}
+
+			$("html, body").animate({scrollTop: $("#portfolio-wrapper").offset().top}, "slow");
+		}
+
+		function getProductsFromDatabase(searchQ, sort) {
+			if (searchQ == undefined) {
+				searchQ = "";
+				globalThis.productSearchFilter = undefined;
+			}
+			else
+				globalThis.productSearchFilter = searchQ;
+			if (sort == undefined)
+				sort = "";
+			let params = (new URL(document.location)).searchParams;
+			let type = params.get("type");
+			let page = params.get("page");
+			if (!type)
+				type = "paintings";
+
+			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`, function (data) {
+
+				//total number
+				let number = data.length;
+
+				//fill contents if the number is less than or equal to 9
+				if (number <= 9)
+					fillProducts(data, type);
+				else {
+					//set pagination
+					$("#pagination-control").data("total-pages", Math.ceil(number / 9));
+					$("#pagination-control").data("current-page", 0);
+					$("#pagination-next").data("target-page", 1);
+					$("#pagination-prev").data("target-page", 0);
+					$("#pagination-prev").addClass("disabled");
+
+					$("#pagination-control .page-item").click((ev) => {
+						let target_page = $(ev.target).data("target-page");
+						let current_page = $("#pagination-control").data("current-page");
+						let total_pages = $("#pagination-control").data("total-pages");
+
+						let num = 9;
+						let offset = target_page * 9;
+
+						//change buttons
+						$("#pagination-prev").removeClass("disabled");
+						$("#pagination-next").removeClass("disabled");
+
+						if (target_page == 0)
+							$("#pagination-prev").addClass("disabled");
+
+						if (target_page == total_pages)
+							$("#pagination-next").addClass("disabled");
+
+						$("#pagination-prev").data("target-page", current_page);
+						$("#pagination-next").data("target-page", target_page + 1);
+
+						//set current page
+						$("#pagination-control").data("current-page", target_page);
+
+						//update contents
+						fillProducts(data, type, offset, offset + num);
+					});
+
+					fillProducts(data, type, 0, 9);
+				}
 			});
 		}
 	</script>

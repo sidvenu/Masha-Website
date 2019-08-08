@@ -333,6 +333,7 @@ jQuery(document).ready(function ($) {
 
 	if (url.pathname == "/Gallery.html") {
 		let type = url.searchParams.get("type");
+		$("#pagination-control").hide();
 		switch (type) {
 			case "paintings":
 				$("#portfolio-sortmethods").append(`
