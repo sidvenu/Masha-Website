@@ -12,14 +12,17 @@
                 finish implementation
             </comment>
         </note>
-        <note priority="high" time="1565268407">
-            Touch sliders
-        </note>
         <note priority="medium" time="1565270252" done="1565273103">
             event-details: carousel
             <comment>
                 fixed it by bringing the buttons forward
             </comment>
+        </note>
+        <note priority="high" time="1565268407">
+            Touch sliders
+        </note>
+        <note priority="high" time="1565273704">
+            In media
         </note>
     </note>
     <note priority="medium" time="1565270460">
