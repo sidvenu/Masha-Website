@@ -12,14 +12,20 @@
     <note priority="veryhigh" time="1565279587" done="1565280174">
         insert record api for exhibitions-gallry
     </note>
+    <note priority="veryhigh" time="1565279593" done="1565280175">
+        insert record api for events-gallry
+    </note>
     <note priority="high" time="1565273713" done="1565279218">
         in media
     </note>
     <note priority="medium" time="1565267488" done="1565279225">
         sort events by time
     </note>
-    <note priority="veryhigh" time="1565279593" done="1565280175">
-        insert record api for events-gallry
+    <note priority="medium" time="1565282027">
+        implement updating records
+    </note>
+    <note priority="medium" time="1565282045">
+        implement deleting records
     </note>
     <note priority="low" time="1565269137">
         create app for manipulating database

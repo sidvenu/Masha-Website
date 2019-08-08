@@ -31,7 +31,7 @@ if len(sys.argv) > 1:
     URL.BASE_URL = sys.argv[1]
 
 #INSERT RECORDS TO THE DATABASE
-def insertDatabase(csvfilename, url):
+def updateDatabase(csvfilename, url):
     headers = []
     with open(csvfilename, newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -78,7 +78,7 @@ class App:
                 s += 1
             
             print ("uploading to ", self.url)
-            insertDatabase(self.csv, self.url)
+            updateDatabase(self.csv, self.url)
 
 #Run the app
 app = App()
