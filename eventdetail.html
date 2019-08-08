@@ -320,6 +320,16 @@
 					collection = undefined;
 				}
 			});
+<<<<<<< Updated upstream
+=======
+
+			$("#event-gallery").on("click", "img", () => {
+				modal.style.display = "block";
+				modalImg.src = $(this).attr("src");
+				console.log(this.src);
+				captionText.innerHTML = $(this).attr("alt");
+			});
+>>>>>>> Stashed changes
 		}
 
 		var modal = document.getElementById("myModal");
