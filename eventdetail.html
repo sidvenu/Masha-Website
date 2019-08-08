@@ -154,49 +154,27 @@
 					<h3 class="section-title"></h3>
 				</div>
 				<div class="row">
-
 				</div>
 
 				<div class="row" id="portfolio-wrapper">
 					<div class="col-lg-8 col-md-6 portfolio-item filter-app">
-
-						<img src="img/MG_9552.png" alt="">
+						<img id = "event-pic" style="width: unset; height: unset; max-width: 100%;" src="img/placeholder.jpg" alt="">
 					</div>
-
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-
 						<div style="text-align: left;margin-top:-25px;">
-							<h2><b>Event Name</b></h2>
-							<span><b>25th July 2019</b></span><br />
-							<span><b>Venue: DLF</b></span><br /><br />
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuistiquem maecenas
-								ultricies mi eget mauris. Mauris ultrices eros in cursus turpis massa. Id donec ultrices
-								tincidunt arcu non sodales neque. Nam at lectus urna duis. Mi proin sed libero enim.
-								Turpis massa sed elementum tempus egestas sed. Ultrices neque ornare aenean euismod
-								elementum nisi quis eleifend. Eu non diam phasellus vestibulum lorem sed. Aenean
-								pharetra magna ac placerat. Lectus quam id leo in vitae turpis massa. Faucibus turpis in
-								eu mi bibendum neque egestas. Adipiscing bibendum est ultricies integer quis. Ac turpis
-								egestas maecenas pharetra convallis posuere. A scelerisque purus semper eget duis at
-								tellus. Posuere morbi leo urna molestie. Ac orci phasellus egestas tellus rutrum tellus
-								pellentesque eu tincidunt. Fames ac turpis egestas sed tempus urna et. Arcu bibendum at
-								varius vel pharetra vel. Augue lacus viverra vitae congue. Erat velit scelerisque in
-								dictum non consectetur a erat. Maecenas accumsan lacus vel facilisis volutpat est.
+							<h2><b id="event-name">...</b></h2>
+							<span><b id="event-time">...</b></span><br />
+							<span><b> Venue: <span id="event-venue">...</span></b></span><br /><br />
+							<p id="event-content">
+								...
 							</p>
-
-
 						</div>
-
 					</div>
-
-
-
 				</div>
-
-
 			</div>
 		</section>
+
 		<section id="services">
 			<div class="container wow fadeIn">
 				<div class="section-header">
@@ -206,7 +184,7 @@
 				<div class="container">
 					<div class="carousel slide" data-ride="carousel">
 
-						<div class="carousel-inner">
+						<div class="carousel-inner" id="event-gallery">
 							<img src="img/next-1.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
 								class="pull-left" onclick="ActiveDiv1()">
 							<img src="img/next.png" style="position: relative; z-index: 2;top: 35px;right: 6px;"
@@ -247,12 +225,9 @@
 
 								</div>
 							</div>
-
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</section><!-- #services -->
 
@@ -297,6 +272,48 @@
 		function ActiveDiv2() {
 			$("#div1").removeClass("active");
 			$("#div2").addClass("active");
+		}
+
+		function updateEventDetails() {
+			let event_id = new URL(document.location).searchParams.get("id");
+
+			//details
+			$.get("/api/events.php?id=" + event_id, (data)=>{
+				let event = data[0];
+				$("#event-name").html(event.name);
+				$("#event-venue").html(event.venue);
+				$("#event-time").html(event.time);
+				$("#event-content").html(event.content);
+				$("#event-pic").attr("src", URLBuilder.eventsURL() + `/${event.thumbnail}`);
+			});
+
+			//gallery
+			$.get("/api/event_gallery.php?id=" + event_id, (data)=>{
+				let collection;
+				for (let x = 0; x < data.length; x++) {
+					if (x%5 == 0) {
+						if (collection != undefined) {
+							$("#event-gallery").append(collection);
+							collection = undefined;
+						}
+
+						collection = document.createElement("div");
+						$(collection).addClass("carousel-item");
+						if (x == 0) 
+							$(collection).addClass("active");
+
+						$(collection).append(`
+							<div class="row"></div>
+						`);
+					}
+					$(collection).find(".row").append(`
+						<div class="col-md">
+							<img 	class="d-block w-100"
+									src="${URLBuilder.eventsGalleryThumbnailURL()}/${data[x].thumbnail}" alt="">
+						</div>
+					`);
+				}
+			});
 		}
 
 		var modal = document.getElementById("myModal");

@@ -54,6 +54,14 @@ class URLBuilder {
 	static eventsThumbnailURL() {
 		return new URLBuilder().raw().thumbnails().events().urlString;
 	}
+	
+	static eventsGalleryThumbnailURL() {
+		return new URLBuilder().raw().thumbnails().events().child("gallery").urlString;
+	}
+
+	static eventsGalleryThumbnailURL() {
+		return new URLBuilder().raw().photos().events().child("gallery").urlString;
+	}
 
 	events() {
 		return this.child("events");
@@ -348,5 +356,8 @@ jQuery(document).ready(function ($) {
 		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
 			window.location = "eventdetail.html?id="+$(this).attr("data-id");
 		});
+	}
+	else if (url.pathname == "/eventdetail.html") {
+		updateEventDetails();
 	}
 });
