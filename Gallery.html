@@ -230,7 +230,7 @@
 						if (target_page == total_pages)
 							$("#pagination-next").addClass("disabled");
 
-						$("#pagination-prev").data("target-page", current_page);
+						$("#pagination-prev").data("target-page", target_page - 1);
 						$("#pagination-next").data("target-page", target_page + 1);
 
 						//set current page
