@@ -65,7 +65,7 @@
         }
 
         $query .= $search;
-        $query .= $sort;
+        $query .= " ORDER BY TIME DESC";
 
         if ($limit !== FALSE) 
             $query = $query . $limit;
