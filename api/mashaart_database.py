@@ -26,6 +26,10 @@ class URL:
     def insertOptions():
         return URL.INSERT_RECORD_URLS.keys()
 
+    @staticmethod
+    def deleteURL():
+        return URL.BASE_URL + "/delete.php"
+
 #if an argument is provided to the app then change the base url
 if len(sys.argv) > 1: 
     URL.BASE_URL = sys.argv[1]
@@ -57,6 +61,8 @@ def updateDatabase(csvfilename, url):
 class App:
     def menu(self):
         print ("1 - INSERT RECORDS")
+        print ("2 - DELETE RECORDS")
+
         choice = input("\nEnter your choice:")
 
         if choice == "1":
@@ -66,19 +72,22 @@ class App:
                 print(c, "-", x)
                 c+=1
             c = int(input ("Enter category: "))
-            self.csv = input("Enter csv file:")
 
-            print (self.csv)
-            self.url = ""
             s = 1
             for x in URL.insertOptions():
                 if (s == c):
                     self.url = URL.insertURL(x)
                     break
                 s += 1
-            
-            print ("uploading to ", self.url)
-            updateDatabase(self.csv, self.url)
+        elif choice == "2":
+            self.url = URL.deleteURL()
+        else:
+            print ("Invalid choice!") 
+            return
+
+        self.csv = input("Enter csv file:")
+        print ("contacting: ", self.url)
+        updateDatabase(self.csv, self.url)
 
 #Run the app
 app = App()

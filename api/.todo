@@ -30,7 +30,7 @@
     <note priority="medium" time="1565282027">
         implement updating records
     </note>
-    <note priority="medium" time="1565282780">
+    <note priority="medium" time="1565282780" done="1565283055">
         add delete functionality to app
     </note>
     <note priority="low" time="1565269137">
