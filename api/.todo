@@ -6,7 +6,7 @@
     <note priority="medium" time="1565267488" done="1565279225">
         sort events by time
     </note>
-    <note priority="veryhigh" time="1565279537">
+    <note priority="veryhigh" time="1565279537" done="1565279923">
         insert record api for events
     </note>
     <note priority="veryhigh" time="1565279543">

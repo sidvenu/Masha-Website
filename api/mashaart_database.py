@@ -4,14 +4,14 @@ import requests
 
 BASE_URL = "http://mashaart.in/api"
 INSERT_RECORD_URLS = {
-    "painting": "/painting.php",
-    "shawl": "/shawl.php",
-    "event": "/event.php",
-    "sculpture": "/sculpture.php",
-    "carpet": "/carpet.php",
-    "exhibition": "/exhibition.php",
-    "event-gallery": "/event_g.php",
-    "exhibition-gallery": "/exhibition_g.php",
+    "painting": "/upload_painting.php",
+    "shawl": "/upload_shawl.php",
+    "event": "/upload_event.php",
+    "sculpture": "/upload_sculpture.php",
+    "carpet": "/upload_carpet.php",
+    "exhibition": "/upload_exhibition.php",
+    "event-gallery": "/upload_event_gallery.php",
+    "exhibition-gallery": "/upload_exhibition_gallery.php",
     "artist": "/artist.php"
 }
 
