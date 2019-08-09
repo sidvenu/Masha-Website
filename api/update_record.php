@@ -13,7 +13,7 @@
                 return "exhibition_id";
 
             case "artists":
-                return "artist";
+                return "name";
 
             case "enquiries":
             case "inmedia":
