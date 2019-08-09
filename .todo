@@ -40,6 +40,9 @@
     <note priority="low" time="1565344515">
         try to convert artist data to csv
     </note>
+    <note priority="low" time="1565347451">
+        remove redundant gallery images
+    </note>
     <note priority="verylow" time="1565268389">
         Remove comments
     </note>
