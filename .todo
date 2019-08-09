@@ -27,11 +27,17 @@
         <note priority="high" time="1565268407">
             Touch sliders
         </note>
+        <note priority="high" time="1565344474">
+            change the image displayed in exhibition description
+        </note>
         <note priority="medium" time="1565270460">
-            replace holder messages
+            replace place holder messages
         </note>
     </note>
-    <note priority="low" time="1565268389">
+    <note priority="low" time="1565344515">
+        try to convert artist data to csv
+    </note>
+    <note priority="verylow" time="1565268389">
         Remove comments
     </note>
 </todo>

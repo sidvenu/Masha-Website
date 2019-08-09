@@ -27,13 +27,19 @@
             api done
         </comment>
     </note>
-    <note priority="medium" time="1565282027">
-        implement updating records
-    </note>
     <note priority="medium" time="1565282780" done="1565283055">
         add delete functionality to app
     </note>
+    <note priority="high" time="1565344428">
+        revamp events table
+    </note>
+    <note priority="medium" time="1565282027">
+        implement updating records
+    </note>
     <note priority="low" time="1565269137">
         create app for manipulating database
+        <note priority="low" time="1565344665">
+            implement enquiry ui
+        </note>
     </note>
 </todo>
