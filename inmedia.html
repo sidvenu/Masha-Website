@@ -149,7 +149,7 @@
 					$(content).find(".row").append(`
 						<div class="col-lg-4 col-md">
 							<img class="d-block w-100"
-								src=${URLBuilder.inmediaURL()}/${data[x].thumbnail} 
+								src=${URLBuilder.inmediaURL()}/${data[x].thumbnail.replace(" ", "%20")} 
 								style="width:400px; height:300px;" 
 								alt="">
 						</div>
