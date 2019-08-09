@@ -30,6 +30,9 @@
         <note priority="high" time="1565344474">
             change the image displayed in exhibition description
         </note>
+        <note priority="high" time="1565344913">
+            replace mainslider contents with mainslider api
+        </note>
         <note priority="medium" time="1565270460">
             replace place holder messages
         </note>
