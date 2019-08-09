@@ -27,4 +27,16 @@
 
         return $clause;
     }
+
+    function extractFromArray(&$array, $key) {
+        //extract a single array field
+        $value = FALSE;
+
+        if (array_key_exists($key, $array)) {
+            $value = $array[$key];
+            array_splice($array, array_search($key, array_keys($array)), 1);
+        }
+
+        return $value;
+    }
 ?>
