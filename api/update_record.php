@@ -43,5 +43,11 @@
 
     $query .= " WHERE " . $pri_key . " = '" . $id . "';";
 
-    echo $query;
+    if ($sql->query($query) === FALSE) {
+        http_response_code(400);
+        echo $sql->error;
+    }
+    else {
+        echo "SUCCESS";
+    }
 ?>
