@@ -1,5 +1,6 @@
 <?php
     include "auth.php";
+    include "tools.php";
 
     $conn = new mysqli($server_name, $username, $password, $db);
     if ($conn->connect_error) {
