@@ -39,6 +39,9 @@
         <note priority="medium" time="1565270460">
             replace place holder messages
         </note>
+        <note priority="medium" time="1565532840">
+            change slider buttons for gallery and inmedia
+        </note>
     </note>
     <note priority="low" time="1565344515">
         try to convert artist data to csv
