@@ -7,7 +7,7 @@
         echo "Connection error";
     }
     else {
-        $output = executeGetQuery($sql, "exibition_gallery", ["exhibition_id"]);
+        $output = executeGetQuery($sql, "exhibition_gallery", ["exhibition_id"]);
 
         if ($output === FALSE) {
             http_response_code(500);
