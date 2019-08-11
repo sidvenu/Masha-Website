@@ -9,33 +9,13 @@
     }
     else {
         $where = FALSE;
-        $num = FALSE;
-        $offset = FALSE;
         $sort = getSortClause($_GET);
-        if (array_search("num", array_keys($_GET)) !== FALSE) {
-            $num = $_GET["num"];
-            array_splice($_GET, array_search("num", array_keys($_GET)), 1);
-        }
-
-        if (array_search("offset", array_keys($_GET)) !== FALSE) {
-            $offset = $_GET["offset"];
-            array_splice($_GET, array_search("offset", array_keys($_GET)), 1);
-        }
+        $limit = getLimitClause($_GET);
 
         $searchQuery = FALSE;
         if (array_search("q", array_keys($_GET)) !== FALSE) {
             $searchQuery = $_GET["q"];
             array_splice($_GET, array_search("q", array_keys($_GET)), 1);
-        }
-        
-        if ($offset === FALSE) {
-            $offset = 0;
-        } 
-
-        $limit = FALSE;
-
-        if ($num !== FALSE) {
-            $limit = " LIMIT " . $offset . ", " . $num;
         }
 
         for ($x = 0; $x < count($_GET); $x++) {
