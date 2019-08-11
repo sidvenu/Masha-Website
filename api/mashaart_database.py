@@ -30,6 +30,10 @@ class URL:
     def deleteURL():
         return URL.BASE_URL + "/delete.php"
 
+    @staticmethod
+    def updateURL():
+        return URL.BASE_URL + "/update_record.php"
+
 #if an argument is provided to the app then change the base url
 if len(sys.argv) > 1: 
     URL.BASE_URL = sys.argv[1]
@@ -62,6 +66,7 @@ class App:
     def menu(self):
         print ("1 - INSERT RECORDS")
         print ("2 - DELETE RECORDS")
+        print ("3 - UPDATE RECORDS")
 
         choice = input("\nEnter your choice:")
 
@@ -81,6 +86,8 @@ class App:
                 s += 1
         elif choice == "2":
             self.url = URL.deleteURL()
+        elif choice == "3":
+            self.url = URL.updateURL()
         else:
             print ("Invalid choice!") 
             return
