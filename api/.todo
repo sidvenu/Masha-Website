@@ -36,7 +36,7 @@
     <note priority="high" time="1565344874">
         implement api for main slider
     </note>
-    <note priority="medium" time="1565282027">
+    <note priority="medium" time="1565282027" done="1565520501">
         implement updating records
     </note>
     <note priority="low" time="1565269137">
