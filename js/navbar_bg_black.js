@@ -26,8 +26,8 @@ document.write(`
 					<li class="menu-has-children">
 						<a href="#" onmouseover="this.style.color='#fafafa'">Show Case</a>
 						<ul>
-							<li><a href="events.html" >Upcoming Events</a></li>
-							<li><a href="exhibitions.html">Exhibitions</a></li>
+							<li><a href="events.html?type=events" >Upcoming Events</a></li>
+							<li><a href="events.html?type=exhibitions">Exhibitions</a></li>
 						</ul>
 					</li>
 					<li><a href="masha.html"  onmouseover="this.style.color='#fafafa'">Masha Support</a></li>

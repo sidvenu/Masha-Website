@@ -383,21 +383,11 @@ jQuery(document).ready(function ($) {
 		populateEvents();
 
 		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
-			window.location = "eventdetail.html?id="+$(this).attr("data-id");
-		});
-	}
-	else if (url.pathname == "/exhibitions.html") {
-		populateExhibitions();
-
-		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
-			window.location = "exhibitiondetail.html?id="+$(this).attr("data-id");
+			window.location = "eventdetail.html?id="+$(this).attr("data-id")+"&type="+url.searchParams.get("type");
 		});
 	}
 	else if (url.pathname == "/eventdetail.html") {
 		updateEventDetails();
-	}
-	else if (url.pathname == "/exhibitiondetail.html") {
-		updateExhibitionDetails();
 	}
 	else if (url.pathname == "/inmedia.html") {
 		updateInMedia();
