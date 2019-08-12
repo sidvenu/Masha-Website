@@ -51,6 +51,11 @@ html, body {
 }
 
 /* GALLERY SLIDER */
+
+.gallery-slider-inner img{
+  height: 200px;
+}
+
 .gallery-slider-wrapper .gallery-slider-inner{
   white-space: nowrap;
   width: auto;
