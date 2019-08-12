@@ -53,30 +53,3 @@ document.write(`
 		</div>
 	</section>
 `);
-
-
-// <div class="row counters">
-
-// <div class="col-lg-4 col-6 text-center m-t-left">
-
-// 	<h6 style="margin-top:15px;"><b>About Us</b></h6><br />
-// 	<p style="margin-top:-27px;">Masha Support.</p>
-// </div>
-
-// <div class="col-lg-4 col-6 text-center">
-
-// 	<h6 style="margin-top:15px;"><b>Help</b></h6>
-// 	<p style="margin-top:-6px;">Privacy Policy</p>
-// 	<p>FAQ</p>
-
-// </div>
-
-// <div class="col-lg-4 col-12 text-center m-t-right">
-
-// 	<h6 style="margin-top:15px;"><b>Contact</b></h6>
-// 	<p style="margin-top:-6px;">Facebook</p>
-// 	<p>Instagram</p>
-
-// </div>
-
-// </div>
