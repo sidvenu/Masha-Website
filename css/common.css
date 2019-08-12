@@ -51,7 +51,7 @@ html, body {
 }
 
 /* GALLERY SLIDER */
-.gallery-slider .gallery-slider-inner{
+.gallery-slider-wrapper .gallery-slider-inner{
   white-space: nowrap;
   width: auto;
   height: 300px;
@@ -59,10 +59,23 @@ html, body {
   position: relative;
 }
 
-.gallery-slider {
+.gallery-slider-wrapper {
   max-width: 100%;
   overflow: hidden;
 }
-.gallery-slider-inner img {
-  
+
+.gallery-slider-control {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+.gallery-slider-control .control-left {
+  left: 0;
+  right: unset;
+}
+
+.gallery-slider-control .control-right {
+  right: 0;
+  left: unset;
 }
