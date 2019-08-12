@@ -17,22 +17,22 @@ document.write(`
 						</tr>
 						<tr>
 							<td>
-								<a href="#" class="sublink">Paintings</a><br />
-								<a href="#" class="sublink">Shawls</a><br />
-								<a href="#" class="sublink">Sculptures</a><br />
-								<a href="#" class="sublink">Carptets</a><br />
+								<a href="Gallery.html?type=paintings" class="sublink">Paintings</a><br />
+								<a href="Gallery.html?type=shawls" class="sublink">Shawls</a><br />
+								<a href="Gallery.html?type=sculptures" class="sublink">Sculptures</a><br />
+								<a href="Gallery.html?type=carpets" class="sublink">Carptets</a><br />
 							</td>
 							<td>
-								<a href="#" class="sublink">Support</a><br />
-								<a href="#" class="sublink">About</a><br />
-								<a href="#" class="sublink">In Media</a><br /><br />
+								<a href="masha.html" class="sublink">Support</a><br />
+								<a href="about.html" class="sublink">About</a><br />
+								<a href="inmedia.html" class="sublink">In Media</a><br /><br />
 							</td>
 						</tr>
 						<tr>
 							<td><h4>Artists</h4></td>
 						</tr>
 						<tr>
-							<td><a href="#" class="sublink">All artists</a><br /></td>
+							<td><a href="Gallery.html?type=artists" class="sublink">All artists</a><br /></td>
 						</tr>
 						<tr>
 							<td>
@@ -41,8 +41,8 @@ document.write(`
 						</tr>
 						<tr>
 							<td>
-								<a href="#" class="sublink">Upcoming events</a><br />
-								<a href="#" class="sublink">Exhibitions</a><br />
+								<a href="events.html?type=events" class="sublink">Upcoming events</a><br />
+								<a href="events.html?type=exhibitions" class="sublink">Exhibitions</a><br />
 							</td>
 						</tr>
 					</table>
