@@ -144,7 +144,7 @@
 	</style>
 </head>
 
-<body  style="font-family: Roboto">
+<body style="font-family: Roboto">
 
 	<script src="js/navbar_bg_white.js"></script>
 
@@ -183,21 +183,22 @@
 					<h3 class="section-title">Image Gallery</h3>
 					<p class="section-description"></p>
 				</div>
-				<div class="container">
-					<div class="carousel slide" data-ride="carousel" id="myCarousel1">
 
-						<div class="carousel-inner" id="event-gallery">
-							<button class="left carousel-control" data-target="#myCarousel1" data-slide="prev"
-								style="z-index: 1">
-								<span class="glyphicon glyphicon-chevron-left"></span>
-								<span class="sr-only">Previous</span>
-							</button>
-							<button class="right carousel-control" data-target="#myCarousel1" data-slide="next"
-								style="z-index: 1">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-								<span class="sr-only">Next</span>
-							</button>
+				<!-- Custom slider -->
+				<div class="container">
+					<div class="gallery-slider">
+						
+						<div class="col-sm-1 text-center gallery-slider-control control-left">
+							<i class="fa fa-chevron-left"></i>
 						</div>
+						<div class="gallery-slider-wrapper col-sm-10">
+							<div class="gallery-slider-inner">
+							</div>
+						</div>
+						<div class="col-sm-1 text-center gallery-slider-control control-right">
+							<i class="fa fa-chevron-right"></i>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -276,40 +277,15 @@
 				$("#event-venue").html(event.venue);
 				$("#event-time").html(event.time);
 				$("#event-content").html(event.content);
-				$("#event-pic").attr("src",picURL + `/${event.flyer}`);
+				$("#event-pic").attr("src", picURL + `/${event.flyer}`);
 			});
 
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
-				let collection;
-				for (let x = 0; x < data.length; x++) {
-					if (x % 5 == 0) {
-						if (collection != undefined) {
-							$("#event-gallery").append(collection);
-							collection = undefined;
-						}
+				data.forEach((element)=>{
+					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
+				});
 
-						collection = document.createElement("div");
-						$(collection).addClass("carousel-item");
-						if (x == 0)
-							$(collection).addClass("active");
-
-						$(collection).append(`
-							<div class="row"></div>
-						`);
-					}
-					$(collection).find(".row").append(`
-						<div class="col-sm">
-							<img class="d-block w-100" style="max-width: 200px; margin-left: auto; margin-right: auto; height: 100%;"
-									src="${galleryThumbnailURL}/${data[x].thumbnail}" alt="">
-						</div>
-					`);
-				}
-
-				if (collection != undefined) {
-					$("#event-gallery").prepend(collection);
-					collection = undefined;
-				}
 			});
 
 			$("#event-gallery").on("click", "img", (ev) => {

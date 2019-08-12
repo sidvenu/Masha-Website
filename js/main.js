@@ -328,7 +328,36 @@ jQuery(document).ready(function ($) {
 		sortProducts($(ev.target).html());
 	});
 
-	//fill sort options
+	//custom slider initialisation
+	if ($(".gallery-slider").length > 0) {
+		globalThis.gallerySliderMaxWidth = 0;
+		globalThis.gallerySliderCurrentPosition = 0;
+
+
+		$(".gallery-slider .control-right").on("click", ()=>{
+			globalThis.gallerySliderMaxWidth = 0;
+			$(".gallery-slider-inner img").each((i, e)=>{
+				globalThis.gallerySliderMaxWidth += $(e).width();
+			});
+
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth + 300)
+				globalThis.gallerySliderCurrentPosition -= 300;
+			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+		});
+
+		$(".gallery-slider .control-left").on("click", ()=>{
+			globalThis.gallerySliderMaxWidth = 0;
+			$(".gallery-slider-inner img").each((i, e)=>{
+				globalThis.gallerySliderMaxWidth += $(e).width();
+			});
+
+			if (globalThis.gallerySliderCurrentPosition < 0)
+				globalThis.gallerySliderCurrentPosition += 300;
+			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+		});
+	}
+
+	//page specific function calls
 	let url = new URL(document.location);
 
 	if (url.pathname == "/Gallery.html") {
