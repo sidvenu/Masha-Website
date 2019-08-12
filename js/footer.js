@@ -48,7 +48,12 @@ document.write(`
 					</table>
 				</div>
 				<div class="col-sm-12 col-lg-4">
-
+					<h4>Contact Masha</h4>
+						<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
+						<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
+					<br />
+						<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
+					<br />
 				</div>
 			</div>
 
