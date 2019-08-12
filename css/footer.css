@@ -13,7 +13,7 @@
   text-decoration: none;
 }
 
-#footerZ a.sublink {
+#footerZ .sublink {
   margin-left: 20px;
 }
 
@@ -32,5 +32,9 @@
 @media (max-width: 960px) {
   #footerZ [class*="col"] {
     text-align: center;
+  }
+
+  #footerZ .sublink {
+    padding-left: 0px;
   }
 }
