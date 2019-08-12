@@ -55,16 +55,15 @@ html, body {
   white-space: nowrap;
   width: auto;
   height: 300px;
-  transition-duration: 1s;
   display: block;
   position: relative;
 }
 
-.gallery-slider-inner:hover {
-  left: -100px;
-}
-
 .gallery-slider {
+  display: block;
   max-width: 100%;
   overflow: hidden;
+}
+.gallery-slider-inner img {
+  display: block;
 }
