@@ -59,7 +59,7 @@ html, body {
   display: block;
 }
 
-.gallery-slider-inner :hover {
+.gallery-slider-inner:hover {
   left: -100px;
 }
 
