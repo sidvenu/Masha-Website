@@ -40,8 +40,10 @@
 }
 
 /* title in mobile nav */
-#mobile-nav .title {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 992) {
+  .title {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
