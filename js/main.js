@@ -335,7 +335,7 @@ jQuery(document).ready(function ($) {
 
 
 		$(".gallery-slider .control-right").on("click", ()=>{
-			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+			// if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
 				globalThis.gallerySliderCurrentPosition -= 100;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
 		});
