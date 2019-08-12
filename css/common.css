@@ -54,7 +54,6 @@ html, body {
 .gallery-slider-wrapper .gallery-slider-inner{
   white-space: nowrap;
   width: auto;
-  height: 300px;
   display: block;
   position: relative;
 }
@@ -62,7 +61,6 @@ html, body {
 .gallery-slider-wrapper {
   max-width: 100%;
   overflow: hidden;
-  height: 300px;
 }
 
 .gallery-slider-control {
