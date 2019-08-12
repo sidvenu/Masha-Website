@@ -13,7 +13,7 @@
   text-decoration: none;
 }
 
-#footerZ a.sublink {
+#footerZ .sublink {
   margin-left: 20px;
 }
 
@@ -23,4 +23,18 @@
 
 #footerZ table {
   width: 100%;
+}
+
+#footerZ [class*="col"] {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  #footerZ [class*="col"] {
+    text-align: center;
+  }
+
+  #footerZ .sublink {
+    margin-left: 0px;
+  }
 }
