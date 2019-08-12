@@ -328,7 +328,23 @@ jQuery(document).ready(function ($) {
 		sortProducts($(ev.target).html());
 	});
 
-	//fill sort options
+	//custom slider initialisation
+	if ($(".gallery-slider").length > 0) {
+		globalThis.gallerySliderMaxWidth = 0;
+		globalThis.gallerySliderCurrentPosition = 0;
+		$(".gallery-slider-inner img").each((i, e)=>{
+			globalThis.gallerySliderMaxWidth += $(e).width();
+		});
+
+
+		$(".gallery-slider control-right").on("click", ()=>{
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+				globalThis.gallerySliderCurrentPosition -= 100;
+			$(".gallery-slider-inner").css({let: globalThis.gallerySliderCurrentPosition});
+		});
+	}
+
+	//page specific function calls
 	let url = new URL(document.location);
 
 	if (url.pathname == "/Gallery.html") {
