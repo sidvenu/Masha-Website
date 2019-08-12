@@ -62,17 +62,20 @@ html, body {
 .gallery-slider-wrapper {
   max-width: 100%;
   overflow: hidden;
+  height: 300px;
 }
 
 
 .gallery-slider .control-left {
-  left: 0;
-  position: relative;
+  left: 100px;
+  top: 150px;
+  position: absolute;
   z-index: 2;
 }
 
 .gallery-slider .control-right {
-  right: 0;
-  position: relative;
+  right: 100px;
+  top: 150px;
+  position: absolute;
   z-index: 2;
 }
