@@ -64,18 +64,15 @@ html, body {
   overflow: hidden;
 }
 
-.gallery-slider-control {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-}
 
-.gallery-slider-control .control-left {
+.gallery-slider .control-left {
   left: 0;
   position: absolute;
+  z-index: 2;
 }
 
-.gallery-slider-control .control-right {
-  left: 100%;
+.gallery-slider .control-right {
+  right: 0;
   position: absolute;
+  z-index: 2;
 }
