@@ -335,6 +335,7 @@ jQuery(document).ready(function ($) {
 
 
 		$(".gallery-slider .control-right").on("click", ()=>{
+			globalThis.gallerySliderMaxWidth = 0;
 			$(".gallery-slider-inner img").each((i, e)=>{
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
@@ -345,6 +346,7 @@ jQuery(document).ready(function ($) {
 		});
 
 		$(".gallery-slider .control-left").on("click", ()=>{
+			globalThis.gallerySliderMaxWidth = 0;
 			$(".gallery-slider-inner img").each((i, e)=>{
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
