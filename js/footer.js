@@ -1,9 +1,6 @@
 document.write(`
     <section id="footerZ" style="margin-top:45px;">
 		<div class="">
-
-			//
-
 			<div class="row">
 				<div class="col-sm-12 col-lg-4 text-center">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
@@ -14,7 +11,7 @@ document.write(`
 						<tr>
 							<td><h4>Gallery</h4></td>
 							<td><h4><a href="#">Masha</a></h4></td>
-							<td><h4>Contact Masha</h4></td>
+							<td><h4>Contact</h4></td>
 						</tr>
 						<tr>
 							<td>
