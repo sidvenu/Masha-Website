@@ -4,7 +4,7 @@ document.write(`
 			<div class="row">
 				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
-					<h2>masha <b>art</b></h2>
+					<h2><b>masha</b> art</h2>
 					<a href="facebook.com"><i class="fa fa-facebook"></i></a>
 					<a href="instagram.com"><i class="fa fa-instagram"></i></a>
 				</div>
