@@ -35,8 +35,7 @@ document.write(`
 								<h4>Showcase</h4>
 							</td>
 							<td>
-								<a href="#" class="sublink">Upcoming events</a><br />
-								<a href="#" class="sublink">Exhibitions</a><br />
+								<h4><a href="#">In Media</a></h4>
 							</td>
 						</tr>
 						<tr>
