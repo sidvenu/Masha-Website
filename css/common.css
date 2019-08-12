@@ -67,12 +67,12 @@ html, body {
 
 .gallery-slider .control-left {
   left: 0;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
 .gallery-slider .control-right {
   right: 0;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
