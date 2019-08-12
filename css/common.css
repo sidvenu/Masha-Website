@@ -57,6 +57,7 @@ html, body {
   height: 300px;
   transition-duration: 1s;
   display: block;
+  position: relative;
 }
 
 .gallery-slider-inner:hover {
