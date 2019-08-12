@@ -13,7 +13,7 @@ html, body {
 body {
   background: #fff;
   color: #666666;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 @media(min-width: 768px) {
@@ -79,7 +79,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 6px 0;
   line-height: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -346,7 +346,7 @@ Search glyphicon and text styling
 }
 
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -490,7 +490,7 @@ Search glyphicon and text styling
 	display: inline-block;
 	color: black;
 	font-weight:bold;
-	font-family: "Roboto", sans-serif;
+	font-family: Roboto, sans-serif;
 	text-transform: uppercase;
 	font-size: 13px;
 	outline: none;
@@ -808,7 +808,7 @@ a:hover {
 #facts .counters p {
   padding: 0;
   /*margin: 0 0 20px 0;*/
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
 }
 
@@ -931,7 +931,7 @@ a:hover {
 }
 
 #call-to-action .cta-btn {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;

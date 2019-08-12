@@ -4,6 +4,7 @@ document.write(`
 
 			<div id="logo" class="pull-left" style="margin-top:-13px;">
 				<a href="index.html"><img src="img/MashaBranding.png" alt="" title="" /></img></a>
+				<span class="title" style="display: none;">Masha Art</span>
 			</div>
 
 			<nav id="nav-menu-container">

@@ -1,10 +1,10 @@
 document.write(`
     <section id="footerZ" style="margin-top:45px;">
-		<div class="">
+		<div class="" style="font-family: Roboto;">
 			<div class="row">
 				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
-					<h2>Masha Art</h2>
+					<h2><b>masha</b> art</h2>
 					<a href="facebook.com"><i class="fa fa-facebook"></i></a>
 					<a href="instagram.com"><i class="fa fa-instagram"></i></a>
 				</div>
@@ -33,12 +33,12 @@ document.write(`
 				</div>
 				<div class="col-sm-12 col-lg-3">
 					<h4>Contact</h4>
-					<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
-					<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
-					<br />
 					<p style="padding-left: 20px;">#212/214, M3M Cosmopolitan<br />
 					Sector 66; Gurugram, Haryana 12210</p>
 					<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
+					<br />
+					<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
+					<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
 				</div>
 			</div>
 
@@ -53,30 +53,3 @@ document.write(`
 		</div>
 	</section>
 `);
-
-
-// <div class="row counters">
-
-// <div class="col-lg-4 col-6 text-center m-t-left">
-
-// 	<h6 style="margin-top:15px;"><b>About Us</b></h6><br />
-// 	<p style="margin-top:-27px;">Masha Support.</p>
-// </div>
-
-// <div class="col-lg-4 col-6 text-center">
-
-// 	<h6 style="margin-top:15px;"><b>Help</b></h6>
-// 	<p style="margin-top:-6px;">Privacy Policy</p>
-// 	<p>FAQ</p>
-
-// </div>
-
-// <div class="col-lg-4 col-12 text-center m-t-right">
-
-// 	<h6 style="margin-top:15px;"><b>Contact</b></h6>
-// 	<p style="margin-top:-6px;">Facebook</p>
-// 	<p>Instagram</p>
-
-// </div>
-
-// </div>

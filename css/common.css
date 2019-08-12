@@ -1,0 +1,51 @@
+html, body {
+  font-family: Roboto;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footerZ {
+	background: #f7f7f7;
+}
+
+
+#footerZ a {
+  color: #333;
+  text-decoration: none;
+}
+
+#footerZ .sublink {
+  margin-left: 20px;
+}
+
+#footerZ a:hover {
+  color: black;
+}
+
+#footerZ table {
+  width: 100%;
+}
+
+#footerZ [class*="col"] {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  #footerZ [class*="col"] {
+    text-align: center;
+  }
+
+  #footerZ .sublink {
+    margin-left: 0px;
+  }
+}
+
+/* title in mobile nav */
+@media (max-width: 992px) {
+  #logo .title {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
