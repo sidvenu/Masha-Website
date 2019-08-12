@@ -13,7 +13,7 @@ document.write(`
 					<table style="border: none">
 						<tr>
 							<td><h4>Gallery</h4></td>
-							<td><h4><a href="#">Masha Support</a></h4></td>
+							<td><h4><a href="#">Masha</a></h4></td>
 						</tr>
 						<tr>
 							<td>
@@ -22,10 +22,14 @@ document.write(`
 								<a href="#" class="sublink">Sculptures</a><br />
 								<a href="#" class="sublink">Carptets</a><br />
 							</td>
+							<td>
+								<a href="#" class="sublink">Support</a>
+								<a href="#" class="sublink">About</a>
+								<a href="#" class="sublink">In Media</a>
+							</td>
 						</tr>
 						<tr>
 							<td><h4>Artists</h4></td>
-							<td><h4><a href="#">About Masha</a></h4></td>
 						</tr>
 						<tr>
 							<td><a href="#" class="sublink">All artists</a><br /></td>
@@ -33,9 +37,6 @@ document.write(`
 						<tr>
 							<td>
 								<h4>Showcase</h4>
-							</td>
-							<td>
-								<h4><a href="#">In Media</a></h4>
 							</td>
 						</tr>
 						<tr>
