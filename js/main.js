@@ -332,9 +332,6 @@ jQuery(document).ready(function ($) {
 	if ($(".gallery-slider").length > 0) {
 		globalThis.gallerySliderMaxWidth = 0;
 		globalThis.gallerySliderCurrentPosition = 0;
-		$(".gallery-slider-inner img").each((i, e)=>{
-			globalThis.gallerySliderMaxWidth += $(e).width();
-		});
 
 
 		$(".gallery-slider .control-right").on("click", ()=>{

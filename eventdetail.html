@@ -285,6 +285,10 @@
 				data.forEach((element)=>{
 					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 				});
+
+				$(".gallery-slider-inner img").each((i, e)=>{
+					globalThis.gallerySliderMaxWidth += $(e).width();
+				});
 			});
 
 			$("#event-gallery").on("click", "img", (ev) => {
