@@ -339,7 +339,7 @@ jQuery(document).ready(function ($) {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
-			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth + 300)
 				globalThis.gallerySliderCurrentPosition -= 300;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
 		});
@@ -349,7 +349,7 @@ jQuery(document).ready(function ($) {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
-			if (globalThis.gallerySliderCurrentPosition < globalThis.gallerySliderMaxWidth)
+			if (globalThis.gallerySliderCurrentPosition > 0)
 				globalThis.gallerySliderCurrentPosition += 300;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
 		});
