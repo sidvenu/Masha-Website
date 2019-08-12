@@ -27,6 +27,9 @@
                 fixed it by bringing the buttons forward
             </comment>
         </note>
+        <note priority="medium" time="1565532840" done="1565639393">
+            change slider buttons for gallery and inmedia
+        </note>
         <note priority="medium" time="1565600916" done="1565617530">
             change footer, make it similar to DAG
         </note>
@@ -51,8 +54,8 @@
         <note priority="medium" time="1565270460">
             replace place holder messages
         </note>
-        <note priority="medium" time="1565532840">
-            change slider buttons for gallery and inmedia
+        <note priority="medium" time="1565639421">
+            fix new slider for mobile
         </note>
     </note>
     <note priority="low" time="1565347451">
