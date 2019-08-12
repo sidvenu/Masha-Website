@@ -3,7 +3,7 @@ document.write(`
 		<div class="container">
 
 			<div id="logo" class="pull-left">
-				<a href="index.html"><img src="img/FinalLogoEditWhite@2x.png" alt="" title=""/></img></a>
+				<a href="index.html"><img src="img/FinalLogoEditWhite@2x.png" alt="" title=""/></img> <span class="title" style="display: none;">Masha Art</span></a>
 			</div>
 
 			<nav id="nav-menu-container">
