@@ -1,0 +1,47 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footerZ {
+	background: #f7f7f7;
+	
+	/* padding: 80px 0 60px 0; */
+}
+
+
+#footerZ a {
+  color: #333;
+  text-decoration: none;
+}
+
+#footerZ .sublink {
+  margin-left: 20px;
+}
+
+#footerZ a:hover {
+  color: black;
+}
+
+#footerZ table {
+  width: 100%;
+}
+
+#footerZ [class*="col"] {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  #footerZ [class*="col"] {
+    text-align: center;
+  }
+
+  #footerZ .sublink {
+    margin-left: 0px;
+  }
+}
+
+/* title in mobile nav */
+#mobile-nav .title {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
