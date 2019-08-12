@@ -10,7 +10,7 @@ document.write(`
 					<h2>Mashaart</h2>
 				</div>
 				<div class="col-sm-12 col-lg-8">
-					<table style="border: none margin-left: auto; margin-right: auto;">
+					<table style="border: none; margin-left: auto; margin-right: auto;">
 						<tr>
 							<td><h4>Gallery</h4></td>
 							<td><h4><a href="#">Masha</a></h4></td>
@@ -33,7 +33,6 @@ document.write(`
 								<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
 								<br />
 								<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
-								<br />
 							</td>
 						</tr>
 						<tr>
