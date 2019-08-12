@@ -23,9 +23,9 @@ document.write(`
 								<a href="#" class="sublink">Carptets</a><br />
 							</td>
 							<td>
-								<a href="#" class="sublink">Support</a>
-								<a href="#" class="sublink">About</a>
-								<a href="#" class="sublink">In Media</a>
+								<a href="#" class="sublink">Support</a><br />
+								<a href="#" class="sublink">About</a><br />
+								<a href="#" class="sublink">In Media</a><br />
 							</td>
 						</tr>
 						<tr>
