@@ -5,16 +5,20 @@ document.write(`
 			//
 
 			<div class="row">
-				<div class="col-sm-12 col-lg-4">
-					<img src="/img/branding.png" style="width: 100px; height: 100px;"/>
+				<div class="col-sm-12 col-lg-4 text-center">
+					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
 				</div>
 				<div class="col-sm-12 col-lg-4">
-					<h6>Masha<b>art</b></h6>
-					<a href="#">Gallery</a><br />
-					<a href="#">Artists</a><br />
-					<a href="#">Showcase</a><br />
-					<a href="#">Masha Support</a><br />
-					<a href="#">Contact US</a><br />
+					<h3>Mashaart</h3>
+					<h5>Gallery</h5>
+					<a href="#" class="sublink">Paintings</a><br />
+					<a href="#" class="sublink">Shawls</a><br />
+					<a href="#" class="sublink">Sculptures</a><br />
+					<a href="#" class="sublink">Carptets</a><br />
+					<h5><a href="#">Artists</a></h5>
+					<h5>Showcase</h5>
+					<a href="#" class="sublink">Upcoming events</a><br />
+					<a href="#" class="sublink">Exhibitions</a><br />
 				</div>
 				<div class="col-sm-12 col-lg-4">
 
