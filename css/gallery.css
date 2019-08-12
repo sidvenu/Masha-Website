@@ -1000,8 +1000,8 @@ a:hover {
 		transition: all 350ms ease;
     transform: scale(1);
     
-    width: 300px;
-    height: 500px;
+    width: 250px;
+    height: 300px;
     border-color: black;
     border-style: solid;
     border-width: 1px;
