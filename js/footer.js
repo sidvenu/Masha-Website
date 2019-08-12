@@ -35,7 +35,8 @@ document.write(`
 					<h4>Contact</h4>
 					<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
 					<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
-					<p class="sublink">#212/214, M3M Cosmopolitan<br />
+					<br />
+					<p style="padding-left: 20px;">#212/214, M3M Cosmopolitan<br />
 					Sector 66; Gurugram, Haryana 12210</p>
 					<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
 				</div>
