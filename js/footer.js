@@ -29,7 +29,7 @@ document.write(`
 					<a href="inmedia.html" class="sublink">In Media</a><br /><br />
 					<h4>Social</h4>
 					<a href="facebook.com" class="sublink"><i class="fa fa-facebook"></i> Facebook</a><br />
-					<a href="instagram.com" class="sublink"><i class="fa fa-instagram></i> Instagram</a><br />
+					<a href="instagram.com" class="sublink"><i class="fa fa-instagram"></i> Instagram</a><br />
 				</div>
 				<div class="col-sm-12 col-lg-3">
 					<h4>Contact</h4>
