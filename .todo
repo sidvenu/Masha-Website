@@ -36,11 +36,26 @@
         <note priority="high" time="1565519479">
             Create events under showcase
         </note>
+        <note priority="high" time="1565601017">
+            NAVBAR
+            <note priority="medium" time="1565600890">
+                add mashaart to the navbar after it shrinks
+            </note>
+            <note priority="medium" time="1565600958">
+                replace artists section of navbar with only artists-&gt; all artists
+            </note>
+            <note priority="medium" time="1565601265">
+                replace show case &gt; showcase
+            </note>
+        </note>
         <note priority="medium" time="1565270460">
             replace place holder messages
         </note>
         <note priority="medium" time="1565532840">
             change slider buttons for gallery and inmedia
+        </note>
+        <note priority="medium" time="1565600916">
+            change footer, make it similar to DAG
         </note>
     </note>
     <note priority="low" time="1565344515">
