@@ -283,7 +283,7 @@
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
 				data.forEach((element)=>{
-					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${data[x].thumbnail}">`);
+					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 				});
 			});
 
