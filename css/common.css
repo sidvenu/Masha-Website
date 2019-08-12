@@ -49,3 +49,16 @@ html, body {
     margin-right: auto;
   }
 }
+
+/* GALLERY SLIDER */
+.gallery-slider .gallery-slider-inner{
+  white-space: nowrap;
+  width: auto;
+  height: 300px;
+  transition-duration: 1s;
+}
+
+.gallery-slider {
+  max-width: 100%;
+  overflow: hidden;
+}
