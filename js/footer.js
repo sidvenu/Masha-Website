@@ -1,6 +1,6 @@
 document.write(`
     <section id="footerZ" style="margin-top:45px;">
-		<div class="">
+		<div class="" style="font-family: Roboto;">
 			<div class="row">
 				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
