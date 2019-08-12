@@ -73,9 +73,11 @@ html, body {
 .gallery-slider-control .control-left {
   left: 0;
   right: unset;
+  position: absolute;
 }
 
 .gallery-slider-control .control-right {
   right: 0;
   left: unset;
+  position: absolute;
 }
