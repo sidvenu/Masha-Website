@@ -2,7 +2,7 @@ document.write(`
     <section id="footerZ" style="margin-top:45px;">
 		<div class="">
 			<div class="row">
-				<div class="col-sm-12 col-lg-3 text-center">
+				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
 					<h2>Masha Art</h2>
 					<a href="facebook.com"><i class="fa fa-facebook"></i></a>

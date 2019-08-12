@@ -24,3 +24,13 @@
 #footerZ table {
   width: 100%;
 }
+
+#footerZ [class*="col"] {
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  #footerZ [class*="col"] {
+    text-align: center;
+  }
+}
