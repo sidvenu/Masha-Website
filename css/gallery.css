@@ -996,12 +996,11 @@ a:hover {
 		position: relative;
 		/*height: 200px;*/
 		overflow: hidden !important;
-		margin-bottom: 50px;
 		transition: all 350ms ease;
     transform: scale(1);
     
     width: 250px;
-    height: 450px;
+    height: 300px;
 	}
 
 #portfolio .portfolio-item a {
