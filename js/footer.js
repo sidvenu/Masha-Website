@@ -25,7 +25,7 @@ document.write(`
 							<td>
 								<a href="#" class="sublink">Support</a><br />
 								<a href="#" class="sublink">About</a><br />
-								<a href="#" class="sublink">In Media</a><br />
+								<a href="#" class="sublink">In Media</a><br /><br />
 							</td>
 						</tr>
 						<tr>
