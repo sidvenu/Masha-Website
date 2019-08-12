@@ -68,10 +68,13 @@ html, body {
 .gallery-slider-control {
   color: #333;
   transition-duration: 1s;
-  margin: auto;
 }
 
 .gallery-slider-control:hover i{
   color: black;
   box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.gallery-slider {
+  display: flex;
 }
