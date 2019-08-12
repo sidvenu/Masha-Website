@@ -59,6 +59,10 @@ html, body {
   display: block;
 }
 
+.gallery-slider-inner :hover {
+  left: -100px;
+}
+
 .gallery-slider {
   max-width: 100%;
   overflow: hidden;
