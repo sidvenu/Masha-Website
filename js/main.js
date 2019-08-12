@@ -335,8 +335,22 @@ jQuery(document).ready(function ($) {
 
 
 		$(".gallery-slider .control-right").on("click", ()=>{
-			// if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
-				globalThis.gallerySliderCurrentPosition -= 100;
+			$(".gallery-slider-inner img").each((i, e)=>{
+				globalThis.gallerySliderMaxWidth += $(e).width();
+			});
+
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+				globalThis.gallerySliderCurrentPosition -= 300;
+			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+		});
+
+		$(".gallery-slider .control-left").on("click", ()=>{
+			$(".gallery-slider-inner img").each((i, e)=>{
+				globalThis.gallerySliderMaxWidth += $(e).width();
+			});
+
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+				globalThis.gallerySliderCurrentPosition += 300;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
 		});
 	}
