@@ -67,18 +67,19 @@ html, body {
   color: #333;
   transition-duration: 1s;
   background: none;
+  border-radius: 50%;
 }
 
 .gallery-slider-control:hover i{
-  color: black;
+  color: white;
 }
 
 .gallery-slider .control-right:hover {
-  background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: #0005;
 }
 
 .gallery-slider .control-left:hover {
-  background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: #0005;
 }
 
 .gallery-slider {
