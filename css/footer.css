@@ -21,6 +21,6 @@
   color: black;
 }
 
-#footerZ h4 {
-  padding-right: 130px;
+#footerZ table {
+  width: 100%;
 }
