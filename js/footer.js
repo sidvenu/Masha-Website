@@ -29,6 +29,9 @@ document.write(`
 								<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
 								<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
 								<br />
+								<p>#212/214, M3M Cosmopolitan<br />
+								Sector 66; Gurugram, Haryana 12210</p>
+								<br />
 								<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
 							</td>
 						</tr>
@@ -36,6 +39,7 @@ document.write(`
 							<td><h4>Artists</h4></td>
 						</tr>
 						<tr>
+							<td><a href="Gallery.html?type=artists" class="sublink">Featured artists</a><br /></td>
 							<td><a href="Gallery.html?type=artists" class="sublink">All artists</a><br /></td>
 						</tr>
 						<tr>
