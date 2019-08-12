@@ -60,7 +60,6 @@ html, body {
 }
 
 .gallery-slider {
-  display: block;
   max-width: 100%;
   overflow: hidden;
 }
