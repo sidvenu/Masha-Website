@@ -5,22 +5,28 @@ document.write(`
 			//
 
 			<div class="row">
-				<div class="col-sm-12 col-lg-4 text-center">
+				<div class="col-sm-12 col-lg-3 text-center">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
+					<h2>Mashaart</h2>
 				</div>
-				<div class="col-sm-12 col-lg-4">
-					<h3>Mashaart</h3>
-					<h5>Gallery</h5>
+				<div class="col-sm-12 col-lg-3">
+					<h4>Gallery</h4>
 					<a href="#" class="sublink">Paintings</a><br />
 					<a href="#" class="sublink">Shawls</a><br />
 					<a href="#" class="sublink">Sculptures</a><br />
 					<a href="#" class="sublink">Carptets</a><br />
-					<h5><a href="#">Artists</a></h5>
-					<h5>Showcase</h5>
+					<h4>Artists</h4>
+					<a href="#" class="sublink">All artists</a><br />
+					<h4>Showcase</h4>
 					<a href="#" class="sublink">Upcoming events</a><br />
 					<a href="#" class="sublink">Exhibitions</a><br />
 				</div>
-				<div class="col-sm-12 col-lg-4">
+				<div class="col-sm-12 col-lg-3">
+					<h4><a href="#">Masha Support</a></h4>
+					<h4><a href="#">About Masha</a></h4>
+					<h4><a href="#">In Media</a></h4>
+				</div>
+				<div class="col-sm-12 col-lg-3">
 
 				</div>
 			</div>
