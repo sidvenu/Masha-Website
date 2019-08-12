@@ -10,7 +10,7 @@ document.write(`
 					<h2>Mashaart</h2>
 				</div>
 				<div class="col-sm-12 col-lg-8">
-					<table style="border: none; margin-left: auto; margin-right: auto;">
+					<table style="border: none; ">
 						<tr>
 							<td><h4>Gallery</h4></td>
 							<td><h4><a href="#">Masha</a></h4></td>
