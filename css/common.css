@@ -65,11 +65,13 @@ html, body {
   height: 300px;
 }
 
-
-.gallery-slider .control-left {
- 
+.gallery-slider-control {
+  color: #333;
+  transition-duration: 1s;
+  vertical-align: center;
 }
 
-.gallery-slider .control-right {
-  
+.gallery-slider-control:hover {
+  color: black;
+  box-shadow: 2px 2px rgba(0,0,0,0.5);
 }
