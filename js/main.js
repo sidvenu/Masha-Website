@@ -349,7 +349,7 @@ jQuery(document).ready(function ($) {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
-			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth)
+			if (globalThis.gallerySliderCurrentPosition < globalThis.gallerySliderMaxWidth)
 				globalThis.gallerySliderCurrentPosition += 300;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
 		});
