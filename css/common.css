@@ -67,15 +67,9 @@ html, body {
 
 
 .gallery-slider .control-left {
-  left: 100px;
-  top: 150px;
-  position: absolute;
-  z-index: 2;
+ 
 }
 
 .gallery-slider .control-right {
-  right: 100px;
-  top: 150px;
-  position: absolute;
-  z-index: 2;
+  
 }
