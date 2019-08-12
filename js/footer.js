@@ -4,7 +4,7 @@ document.write(`
 			<div class="row">
 				<div class="col-sm-12 col-lg-4 text-center">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
-					<h2>Mashaart</h2>
+					<h2>Masha Art</h2>
 				</div>
 				<div class="col-sm-12 col-lg-8">
 					<table style="border: none; ">
@@ -28,19 +28,21 @@ document.write(`
 							<td>
 								<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
 								<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
-								<br />
 								<p>#212/214, M3M Cosmopolitan<br />
 								Sector 66; Gurugram, Haryana 12210</p>
-								<br />
 								<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
 							</td>
 						</tr>
 						<tr>
 							<td><h4>Artists</h4></td>
+							<td><h4>Social</h4></td>
 						</tr>
 						<tr>
-							<td><a href="Gallery.html?type=artists" class="sublink">Featured artists</a><br /></td>
-							<td><a href="Gallery.html?type=artists" class="sublink">All artists</a><br /></td>
+							<td>
+								<a href="Gallery.html?type=artists" class="sublink">Featured artists</a><br />
+								<a href="Gallery.html?type=artists" class="sublink">All artists</a><br />
+							</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>
