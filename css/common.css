@@ -66,13 +66,22 @@ html, body {
 .gallery-slider-control {
   color: #333;
   transition-duration: 1s;
+  background: none;
 }
 
 .gallery-slider-control:hover i{
   color: black;
-  box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.gallery-slider .control-right:hover {
+  background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.gallery-slider .control-left:hover {
+  background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .gallery-slider {
   display: flex;
+  align-items: center;
 }
