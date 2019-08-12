@@ -5,6 +5,8 @@ document.write(`
 				<div class="col-sm-12 col-lg-3 text-center">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
 					<h2>Masha Art</h2>
+					<a href="facebook.com"><i class="fa fa-facebook"></i></a>
+					<a href="instagram.com"><i class="fa fa-instagram"></i></a>
 				</div>
 
 				<div class="col-sm-12 col-lg-3">
@@ -26,12 +28,14 @@ document.write(`
 					<a href="about.html" class="sublink">About</a><br />
 					<a href="inmedia.html" class="sublink">In Media</a><br /><br />
 					<h4>Social</h4>
+					<a href="facebook.com" class="sublink"><i class="fa fa-facebook></i> Facebook</a><br />
+					<a href="instagram.com" class="sublink"><i class="fa fa-instagram></i> Instagram</a><br />
 				</div>
 				<div class="col-sm-12 col-lg-3">
 					<h4>Contact</h4>
 					<a class="sublink" href="tel:+918948799799"><i class="glyphicon glyphicon-earphone"></i> +91-8948799799</a><br />
 					<a class="sublink" href="tel:+919999636199"><i class="glyphicon glyphicon-earphone"></i> +91-9999636199</a><br />
-					<p>#212/214, M3M Cosmopolitan<br />
+					<p class="sublink">#212/214, M3M Cosmopolitan<br />
 					Sector 66; Gurugram, Haryana 12210</p>
 					<a class="sublink" href="https://maps.app.goo.gl/zH765GrPdPjKEuLd7"><i class="glyphicon glyphicon-map-marker"></i> Find us on Google Maps</a><br />
 				</div>
