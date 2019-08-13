@@ -4,7 +4,7 @@ document.write(`
 			<div class="row">
 				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
-					<h2 style="position: relative; top: -30px;"><b>masha</b> <span style="color: orange; font-weight: 300;">art</span></h2>
+					<h2 style="position: relative; top: -30px;"><b>masha</b> <span style="color: orange; font-weight: 500;">art</span></h2>
 				</div>
 
 				<div class="col-sm-12 col-lg-3">
