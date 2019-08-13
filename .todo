@@ -1,76 +1,27 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <title>
-        MASHA WEBSITE
-    </title>
-    <link filename="api/.todo" priority="veryhigh" time="0"/>
-    <note priority="veryhigh" time="1565268174">
-        Frontend
-        <note priority="veryhigh" time="1565268186" done="1565270198">
-            event-details
-            <comment>
-                finish implementation
-            </comment>
-        </note>
-        <note priority="high" time="1565273704" done="1565277884">
-            In media
-        </note>
-        <note priority="high" time="1565284986" done="1565289815">
-            Pagination of gallery
-        </note>
-        <note priority="high" time="1565344474" done="1565519399">
-            change the image displayed in exhibition description
-        </note>
-        <note priority="high" time="1565717423" done="1565722036">
-            handicrafts
-            <note priority="high" time="1565717445" done="0">
-                three buttons
-            </note>
-            <note priority="high" time="1565717471" done="0">
-                url change
-            </note>
-        </note>
-        <note priority="high" time="1565718866" done="1565722060">
-            change carpets/shawls to handicrafts in navbar and footer
-        </note>
-        <note priority="medium" time="1565270252" done="1565273103">
-            event-details: carousel
-            <comment>
-                fixed it by bringing the buttons forward
-            </comment>
-        </note>
-        <note priority="medium" time="1565532840" done="1565639393">
-            change slider buttons for gallery and inmedia
-        </note>
-        <note priority="medium" time="1565600916" done="1565617530">
-            change footer, make it similar to DAG
-        </note>
-        <note priority="high" time="1565268407">
-            Touch sliders
-        </note>
-        <note priority="high" time="1565344913">
-            replace mainslider contents with mainslider api
-        </note>
-        <note priority="high" time="1565601017">
-            NAVBAR
-            <note priority="medium" time="1565601265" done="1565627225">
-                replace show case &gt; showcase
-            </note>
-        </note>
-        <note priority="high" time="1565719341" done="1565722069">
-            add others
-        </note>
-        <note priority="medium" time="1565270460">
-            replace place holder messages
-        </note>
-        <note priority="medium" time="1565639421">
-            fix new slider for mobile
-        </note>
+    <note priority="high" time="1565723615">
+        implement testimonials api
     </note>
-    <note priority="low" time="1565347451">
-        remove redundant gallery images
+    <note priority="high" time="1565723622">
+        implement testimonials frontend
     </note>
-    <note priority="verylow" time="1565268389">
-        Remove comments
+    <note priority="high" time="1565723645">
+        add featured column to artist table
+    </note>
+    <note priority="high" time="1565723665">
+        redesign artist page to display featured artists
+    </note>
+    <note priority="high" time="1565723707">
+        change the 3 points above footer in index
+    </note>
+    <note priority="high" time="1565723753">
+        implement curations recommendation same as paintings (api and frontend)
+    </note>
+    <note priority="high" time="1565723790">
+        add mashaart title in mobile screen navbars
+    </note>
+    <note priority="high" time="1565723821">
+        add touch to all sliders
     </note>
 </todo>
