@@ -15,7 +15,8 @@ class URL:
         "event-gallery": "/upload_event_gallery.php",
         "exhibition-gallery": "/upload_exhibition_gallery.php",
         "artist": "/upload_artist.php",
-        "inmedia": "/upload_inmedia.php"
+        "inmedia": "/upload_inmedia.php",
+        "others": "/upload_other.php"
     }
     
     @staticmethod
