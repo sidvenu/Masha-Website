@@ -11,7 +11,7 @@ document.write(`
 					<h4>Gallery</h4>
 					<a href="Gallery.html?type=paintings" class="sublink">Paintings</a><br />
 					<a href="Gallery.html?type=sculptures" class="sublink">Sculptures</a><br />
-					<a href="Gallery.html?type=carpets" class="sublink">Handicrafts</a><br />
+					<a href="Gallery.html?type=handicrafts" class="sublink">Handicrafts</a><br />
 					<h4>Artists</h4>
 					<a href="Gallery.html?type=artists" class="sublink">Featured artists</a><br />
 					<a href="Gallery.html?type=artists" class="sublink">All artists</a><br />

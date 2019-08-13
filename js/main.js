@@ -372,19 +372,13 @@ jQuery(document).ready(function ($) {
 				`);
 				break;
 
-			case "carpets":
+			case "handicrafts":
 				$("#portfolio-sortmethods").append(`
 					<li>Name</li>
 					<li>Type</li>
 				`);
 				break;
 
-			case "shawls":
-				$("#portfolio-sortmethods").append(`
-					<li>Name</li>
-					<li>Type</li>
-				`);
-				break;
 			case "sculptures":
 				$("#portfolio-sortmethods").append(`
 					<li>Artist</li>
@@ -397,6 +391,13 @@ jQuery(document).ready(function ($) {
 				$("#portfolio-sortcontrol").hide();
 				break;
 		}
+
+		//attach events to handicraft anchors
+		$("#handicrafts-control .options a").click((ev)=>{
+			$("#handicrafts-control .options a").removeClass("selected");
+			$(ev.target).addClass("selected");
+			getProductsFromDatabase();
+		});
 	}
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();
