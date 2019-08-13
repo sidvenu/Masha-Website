@@ -272,7 +272,7 @@
 		}
 
 		function initCarousel1() {
-			$.get(`${new URLBuilder().api().urlString}/paintings.php?offset=100&num=3`, function (data) {
+			$.get(`${new URLBuilder().api().urlString}/sliders.php`, function (data) {
 				console.log(data);
 				var slides = $("#myCarousel .carousel-inner");
 				var carouselIndicators = $("#myCarousel .carousel-indicators");
@@ -280,7 +280,7 @@
 				carouselIndicators.empty();
 				for (var i = 0; i < data.length; i++) {
 					var painting = data[i];
-					var imageBaseURL = URLBuilder.paintingsURL(painting.artist);
+					var imageBaseURL = "raw/photos/slider"; 
 					var imageURL = `${imageBaseURL}/${painting.thumbnail}`;
 					imageURL = imageURL.split(" ").join("%20");
 					slides.append(`
@@ -288,8 +288,8 @@
 						<div class="backgroundImg" style="background: url(${imageURL}) top center; background-size: cover;">
 						</div>
 						<div class="carousel-text">
-							<h2><b>${painting.name}</b></h2>
-							<h5>${painting.artist}</h5>
+							<h2><b>${painting.title}</b></h2>
+							<h5>${painting.detail}</h5>
 						</div>
 					</div>
 					`);
