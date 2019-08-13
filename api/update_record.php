@@ -4,19 +4,17 @@
 
     function lookupIdColumn($table) {
         switch ($table) {
-            case "events":
-            case "event_gallery":
-                return "event_id";
-
-            case "exhibitions":
-            case "exhibition_gallery":
-                return "exhibition_id";
 
             case "artists":
                 return "name";
 
             case "enquiries":
             case "inmedia":
+            case "event_gallery":
+            case "events":
+            case "exhibitions":
+            case "exhibition_gallery":
+            case "slider":
                 return "id";
 
             default:
