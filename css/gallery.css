@@ -959,6 +959,10 @@ a:hover {
 	padding: 80px 0;
 }
 
+#portfolio-wrapper {
+  justify-content: center;
+}
+
 #portfolio #portfolio-wrapper {
   padding-right: 15px;
 }
