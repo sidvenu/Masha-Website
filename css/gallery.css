@@ -1289,6 +1289,7 @@ a:hover {
   font-weight: 200;
   transition-duration: 1s;
   margin-right: 10px;
+  color: black;
 }
 
 #handicrafts-control .options a:hover {
