@@ -5,8 +5,6 @@ document.write(`
 				<div class="col-sm-12 col-lg-3" style="text-align: center;">
 					<img src="/img/branding.png" style="width: 200px; height: 200px;"/>
 					<h2><b>masha</b> art</h2>
-					<a href="facebook.com"><i class="fa fa-facebook"></i></a>
-					<a href="instagram.com"><i class="fa fa-instagram"></i></a>
 				</div>
 
 				<div class="col-sm-12 col-lg-3">
@@ -28,8 +26,9 @@ document.write(`
 					<h4>Masha Support</h4> 
 					<a class="sublink" href="masha.html">About Masha Support</a><br />
 					<h4>Social</h4>
-					<a href="facebook.com" class="sublink"><i class="fa fa-facebook"></i> Facebook</a><br />
-					<a href="instagram.com" class="sublink"><i class="fa fa-instagram"></i> Instagram</a><br />
+					<a href="http://facebook.com/mashaesthetics" class="sublink"><i class="fa fa-facebook"></i> Facebook</a><br />
+					<a href="http://instagram.com/mashaesthetics" class="sublink"><i class="fa fa-instagram"></i> Instagram</a><br />
+					<a href="https://linkedin.com/company/masha-art/" class="sublink"><i class="fa fa-linkedin"></i> LinkedIn</a><br />
 				</div>
 				<div class="col-sm-12 col-lg-3">
 					<h4>Contact</h4>
