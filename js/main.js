@@ -372,19 +372,13 @@ jQuery(document).ready(function ($) {
 				`);
 				break;
 
-			case "carpets":
+			case "handicrafts":
 				$("#portfolio-sortmethods").append(`
 					<li>Name</li>
 					<li>Type</li>
 				`);
 				break;
 
-			case "shawls":
-				$("#portfolio-sortmethods").append(`
-					<li>Name</li>
-					<li>Type</li>
-				`);
-				break;
 			case "sculptures":
 				$("#portfolio-sortmethods").append(`
 					<li>Artist</li>
@@ -401,6 +395,7 @@ jQuery(document).ready(function ($) {
 		//attach events to handicraft anchors
 		$("#handicrafts-control .options a").click(()=>{
 			$("#handicrafts-control .options a").toggleClass("selected");
+			getProductsFromDatabase();
 		});
 	}
 	else if (url.pathname == "/product.html") {

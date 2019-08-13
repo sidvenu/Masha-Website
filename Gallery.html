@@ -210,12 +210,11 @@
 
 			let url;
 
-			if (type != "handicrafts")
-				 url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
-			else {
-				let handicraft_type = $("#handicrafts-control .options a.selected").html().toLowerCase();
-				url = `${new URLBuilder().api().urlString}/${handicraft_type}.php?q=${searchQ}&sort=${sort}`;
+			if (type === "handicrafts") {
+				type = $("#handicrafts-control .options a.selected").html().toLowerCase();
 			}
+
+			url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
 
 			$.get(url, function (data) {
 
