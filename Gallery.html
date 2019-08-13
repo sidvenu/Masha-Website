@@ -163,6 +163,11 @@
 					thirdLine = product.gender;
 					urlString = URLBuilder.shawlsThumbnailURL();
 					$("#handicrafts-control").show();
+				}else if (type === "others") {
+					secondLine = product.type;
+					thirdLine = product.gender;
+					urlString = URLBuilder.shawlsThumbnailURL();
+					$("#handicrafts-control").show();
 				}
 				else if (type === "carpets") {
 					secondLine = product.type;
