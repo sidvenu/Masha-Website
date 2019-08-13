@@ -393,9 +393,9 @@ jQuery(document).ready(function ($) {
 		}
 
 		//attach events to handicraft anchors
-		$("#handicrafts-control .options a").click(()=>{
+		$("#handicrafts-control .options a").click((ev)=>{
 			$("#handicrafts-control .options a").removeClass("selected");
-			$(this).addClass("selected");
+			$(ev.target).addClass("selected");
 			getProductsFromDatabase();
 		});
 	}
