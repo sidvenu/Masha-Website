@@ -397,6 +397,11 @@ jQuery(document).ready(function ($) {
 				$("#portfolio-sortcontrol").hide();
 				break;
 		}
+
+		//attach events to handicraft anchors
+		$("#handicrafts-control .options a").click(()=>{
+			$("#handicrafts-control .options a").toggleClass("selected");
+		});
 	}
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();

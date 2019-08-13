@@ -14,8 +14,7 @@ document.write(`
 						<ul>
 							<li><a href="Gallery.html?type=paintings">Paintings</a></li>
 							<li><a href="Gallery.html?type=sculptures">Sculptures</a></li>
-							<li><a href="Gallery.html?type=shawls">Shawls</a></li>
-							<li><a href="Gallery.html?type=carpets">Carpets</a></li>
+							<li><a href="Gallery.html?type=handicrafts">Handicrafts</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">

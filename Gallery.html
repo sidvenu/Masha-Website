@@ -42,14 +42,25 @@
 				<div class="section-header">
 					<h3 class="section-title"></h3>
 				</div>
-				<div class="row">
 
+				<div class="row">
+					<div class="col-lg-12" id="handicrafts-control" style="display: none;">
+						<h5><b>Handicraft: </b></h5>
+						<div class="options">
+							<a href="#" class="selected">Shawls</a>
+							<a href="#">Carpets</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
 					<div class="col-lg-12" id="portfolio-sortcontrol">
 						<h5><b>Sort by:</b></h5>
 						<ul id="portfolio-sortmethods">
 						</ul>
 					</div>
 				</div>
+
 
 				<div class="row" id="portfolio-wrapper">
 				</div>
@@ -150,11 +161,13 @@
 					secondLine = product.type;
 					thirdLine = product.gender;
 					urlString = URLBuilder.shawlsThumbnailURL();
+					$("#handicrafts-control").show();
 				}
 				else if (type === "carpets") {
 					secondLine = product.type;
 					thirdLine = product.origin;
 					urlString = URLBuilder.carpetsThumbnailURL();
+					$("#handicrafts-control").show();
 				}
 				else if (type == "artists") {
 					urlString = URLBuilder.artistsThumbnailURL();
@@ -195,7 +208,16 @@
 			if (!type)
 				type = "paintings";
 
-			$.get(`${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`, function (data) {
+			let url;
+
+			if (type != "handicrafts")
+				 url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
+			else {
+				let handicraft_type = $("#handicrafts-control .options a.selected").html().toLowerCase();
+				url = `${new URLBuilder().api().urlString}/${handicraft_type}.php?q=${searchQ}&sort=${sort}`;
+			}
+
+			$.get(url, function (data) {
 
 				//total number
 				let number = data.length;
