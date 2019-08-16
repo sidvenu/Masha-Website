@@ -289,7 +289,7 @@
 		function fillAllArtists() {
 			$.get("api/artists.php", (data)=>{
 				data.forEach((artist)=>{
-					$("#allArtistsContainer_wwrapper").append(`
+					$("#allArtistsContainer_wrapper").append(`
 						<div class="col-sm-3">
 							<a href = "artistsdetail.html?artist=${artist.name}">${artist.name}</a>
 						</div>
