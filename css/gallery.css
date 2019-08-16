@@ -1301,3 +1301,13 @@ a:hover {
   font-size: 24px;
   font-weight: 500;
 }
+
+#allArtistsContainer a {
+  text-decoration: none;
+  color: #333;
+  transition-duration: 0.5s;
+}
+
+#allArtistsContainer a:hover {
+  color: black;
+}
