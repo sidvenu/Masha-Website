@@ -125,9 +125,9 @@
 		<section id="team">
 			<div class="container wow fadeInUp">
 				<div class="section-header">
-					<h3 class="section-title" style="text-decoration-line:underline">Other works by <span
+					<h3 class="section-title">Other works by <span
 							id="team-artist"></span></h3>
-
+					<br />
 				</div>
 				<div class="row" id="team-otherworks">
 
@@ -296,12 +296,14 @@
 							if (element.item_number != item_number) {
 								$("#team-otherworks").append(`
 								<div class="col-lg-4 col-md-6">
-								<div class="member">
-									<div class="pic">
+									<div class="member">
+										<div class="pic">
 											<a href="product.html?id=${element.item_number}">
 											<img
 											src="${URLBuilder.sculpturesThumbnailURL(element.artist)}/${element.thumbnail}"
-											alt=""></a></div>
+											alt=""></a>
+										</div>
+										<h3 style="text-align: center">${element.name}</h3>
 									</div>
 								</div>
 								`);
