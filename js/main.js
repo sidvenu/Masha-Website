@@ -303,7 +303,7 @@ jQuery(document).ready(function ($) {
 			console.log (data[0].featured);
 			if (data[0].featured == 'F') {
 				$("#artistDescription").hide();
-				$("#artistPic").hide();
+				$("#artistPic").parent().hide();
 			}
 		});
 
