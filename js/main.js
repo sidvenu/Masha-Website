@@ -304,6 +304,7 @@ jQuery(document).ready(function ($) {
 			if (data[0].featured == 'F') {
 				$("#artistDescription").hide();
 				$("#artistPic").parent().hide();
+				$("#portfolio-wrapper").css({justifyContent: "unset"});
 			}
 		});
 
