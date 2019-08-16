@@ -74,6 +74,15 @@
 				</div>
 
 			</div>
+
+			<div class="wow fadeInUp" style="width: 100vw; display: none;" id="allArtistsContainer">
+				<div class="col-sm-3">
+					<h4>Artists</h4>
+				</div>
+				<div class="col-sm-9" id="allArtistsContainer_wrapper">
+
+				</div>
+			</div>
 		</section>
 
 	</main>
@@ -221,6 +230,9 @@
 			}
 
 			url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
+			if (type == "artists") {
+				url = "api/artists.php?featured=T";
+			}
 
 			$.get(url, function (data) {
 
@@ -272,6 +284,18 @@
 					fillProducts(data, type, 0, 9);
 				}
 			});
+		}
+
+		function fillAllArtists() {
+			$.get("api/artists.php", (data)=>{
+				data.forEach((artist)=>{
+					$("#allArtistsContainer_wwrapper").append(`
+						<div class="col-sm-3">
+							<a href = "artistsdetail.html?artist=${artist.name}">${artist.name}</a>
+						</div>
+					`);
+				});
+			}); 
 		}
 	</script>
 </body>

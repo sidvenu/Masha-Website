@@ -388,6 +388,7 @@ jQuery(document).ready(function ($) {
 				break;
 			case "artists":
 				//no sorting options
+				$("#allArtistsContainer").show();
 				$("#portfolio-sortcontrol").hide();
 				break;
 		}
