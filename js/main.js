@@ -300,6 +300,7 @@ jQuery(document).ready(function ($) {
 			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
 			$("#artistPic").attr("src", thumbnail);
 
+			console.log (data[0].featured);
 			if (data[0].featured == 'F') {
 				$("#artistDescription").hide();
 				$("#aristPic").hide();
