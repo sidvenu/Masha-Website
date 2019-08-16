@@ -73,7 +73,18 @@
 					</ul>
 				</div>
 
+				<div  class="row flex" style="display: none;" id="allArtistsContainer">
+					<div class="col-sm-3">
+						<h3 style="position:relative; top:50%;">All Artists</h3>
+					</div>
+					<div class="col-sm-9" id="allArtistsContainer_wrapper">
+	
+					</div>
+				</div>
+
 			</div>
+
+			
 		</section>
 
 	</main>
@@ -221,6 +232,9 @@
 			}
 
 			url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
+			if (type == "artists") {
+				url = "api/artists.php?featured=T";
+			}
 
 			$.get(url, function (data) {
 
@@ -272,6 +286,20 @@
 					fillProducts(data, type, 0, 9);
 				}
 			});
+		}
+
+		function fillAllArtists() {
+			$.get("api/artists.php", (data)=>{
+				data.forEach((artist)=>{
+					$("#allArtistsContainer_wrapper").append(`
+						<div class="col-sm-3">
+							<a href = "artistdetail.html?artist=${artist.name}">${artist.name}</a>
+						</div>
+					`);
+				});
+			}); 
+
+			$(".section-title")[0].innerHTML = "Featured Artists";
 		}
 	</script>
 </body>

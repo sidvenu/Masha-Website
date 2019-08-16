@@ -20,7 +20,8 @@ document.write(`
 					<li class="menu-has-children">
 						<a href="#">Artist</a>
 						<ul id="artist-navbar-dropdown">
-							<li><a href="Gallery.html?type=artists">All Artists</a></li>
+						<li><a href="Gallery.html?type=artists">Featured Artists</a></li>
+						<li><a href="Gallery.html?type=artists#allArtistsContainer">All Artists</a></li>
 						</ul>
 					</li>
 					<li class="menu-has-children">

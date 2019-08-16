@@ -266,19 +266,19 @@ jQuery(document).ready(function ($) {
 	// custom code
 
 	// get artists from database and fill it in the navbar dropdown
-	function populateArtistsInNavbar() {
-		var numberOfArtists = 3;
-		$.get(`${new URLBuilder().api().urlString}/artists.php?num=${numberOfArtists}`, function (data) {
-			var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
-			for (var i = 0; i < numberOfArtists; i++) {
-				var artistName = data[i].name;
-				var listString = `<li><a href="artistdetail.html?artist=${artistName}">${artistName}</a></li>`;
-				listComp.prepend(listString);
-				listMobile.prepend(listString);
-			}
-		});
-	};
-	populateArtistsInNavbar();
+	// function populateArtistsInNavbar() {
+	// 	var numberOfArtists = 3;
+	// 	$.get(`${new URLBuilder().api().urlString}/artists.php?num=${numberOfArtists}`, function (data) {
+	// 		var listComp = $("#artist-navbar-dropdown"), listMobile = $("#mobile-nav #artist-navbar-dropdown")
+	// 		for (var i = 0; i < numberOfArtists; i++) {
+	// 			var artistName = data[i].name;
+	// 			var listString = `<li><a href="artistdetail.html?artist=${artistName}">${artistName}</a></li>`;
+	// 			listComp.prepend(listString);
+	// 			listMobile.prepend(listString);
+	// 		}
+	// 	});
+	// };
+	// populateArtistsInNavbar();
 
 	$("#mobile-nav #searchText").keyup((ev) => { getProductsFromDatabase($(ev.target).val()) });
 	$("#nav-menu-container #searchText").keyup((ev) => { getProductsFromDatabase($(ev.target).val()) });
@@ -299,6 +299,12 @@ jQuery(document).ready(function ($) {
 			$("#artistDescription").html(data[0].description);
 			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
 			$("#artistPic").attr("src", thumbnail);
+
+			console.log (data[0].featured);
+			if (data[0].featured == 'F') {
+				$("#portfolio-wrapper").hide();
+				$($(".section-title")[0]).html(data[0].name);
+			}
 		});
 
 		$.ajax(new URLBuilder().api().urlString + `/paintings.php?artist=${artist}`, {
@@ -388,7 +394,9 @@ jQuery(document).ready(function ($) {
 				break;
 			case "artists":
 				//no sorting options
+				$("#allArtistsContainer").show();
 				$("#portfolio-sortcontrol").hide();
+				fillAllArtists();
 				break;
 		}
 
