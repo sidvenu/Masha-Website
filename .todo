@@ -24,4 +24,7 @@
     <note priority="high" time="1565723821">
         add touch to all sliders
     </note>
+    <note priority="medium" time="1565940634">
+        replace filling of artists in navbar with featured artists
+    </note>
 </todo>

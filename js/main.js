@@ -390,6 +390,7 @@ jQuery(document).ready(function ($) {
 				//no sorting options
 				$("#allArtistsContainer").show();
 				$("#portfolio-sortcontrol").hide();
+				fillAllArtists();
 				break;
 		}
 
