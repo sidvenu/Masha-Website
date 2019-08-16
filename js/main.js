@@ -303,7 +303,7 @@ jQuery(document).ready(function ($) {
 			console.log (data[0].featured);
 			if (data[0].featured == 'F') {
 				$("#portfolio-wrapper").hide();
-				$(".section-title").html(data[0].name);
+				$($(".section-title")[0]).html(data[0].name);
 			}
 		});
 
