@@ -302,9 +302,8 @@ jQuery(document).ready(function ($) {
 
 			console.log (data[0].featured);
 			if (data[0].featured == 'F') {
-				$("#artistDescription").hide();
-				$("#artistPic").parent().hide();
-				$("#portfolio-wrapper").css({justifyContent: "unset"});
+				$("#portfolio-wrapper").hide();
+				$(".section-title").html(data[0].name);
 			}
 		});
 
