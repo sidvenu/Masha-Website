@@ -1302,12 +1302,12 @@ a:hover {
   font-weight: 500;
 }
 
-#allArtistsContainer a {
+#allArtistsContainer_wrapper a {
   text-decoration: none;
   color: #333;
   transition-duration: 0.5s;
 }
 
-#allArtistsContainer a:hover {
+#allArtistsContainer_wrapper a:hover {
   color: black;
 }
