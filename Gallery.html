@@ -208,6 +208,10 @@
 			}
 
 			$("html, body").animate({ scrollTop: $("#portfolio-wrapper").offset().top }, "slow");
+
+			if (type == "shawls") {
+				$(".portfolio-item img").css({width: 200, height: 200});
+			}
 		}
 
 		function getProductsFromDatabase(searchQ, sort) {
