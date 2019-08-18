@@ -390,7 +390,6 @@ jQuery(document).ready(function ($) {
 		});
 
 		$(".gallery-slider").on("touchend", (ev)=>{
-			ev.preventDefault();
 			globalThis.touchTriggered = false;
 		});
 	}
