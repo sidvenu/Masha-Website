@@ -79,13 +79,14 @@ html, body {
   border-radius: 50%;
   position: absolute;
   top: 50%;
+  width: 100%;
 }
 
-.gallery-slider .control-left {
+.gallery-slider-control .control-left {
   left: 0;
 }
 
-.gallery-slider .control-right {
+.gallery-slider-control .control-right {
   right: 0;
 }
 
