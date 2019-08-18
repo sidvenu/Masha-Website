@@ -472,6 +472,7 @@ function attachTouchToCarousel (div) {
 
 	$(div).on("touchmove", (ev)=>{
 		let dx = globalThis.sliderTouchData.x - ev.changedTouches[0].screenX;
+		console.log(dx);
 		if (Math.abs(dx) > globalThis.sliderTouchData.threshold) {
 			if (dx > 0) {
 				//swipe left
