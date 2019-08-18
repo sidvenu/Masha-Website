@@ -371,7 +371,13 @@ jQuery(document).ready(function ($) {
 			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
 			dy = ev.changedTouches[0].screenY - globalThis.touchStart.y;
 
-			console.log ("x: " + dx + " y: " + dy);
+			let thresholdX = 50;
+			if (Math.abs(dx) > thresholdX) {
+				if (dx < 0) 
+					console.log("Swipe left");
+				else 
+					console.log("Swipe right");
+			}
 		});
 	}
 
