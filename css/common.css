@@ -54,6 +54,8 @@ html, body {
 
 .gallery-slider-inner img{
   height: 200px;
+  max-width: 100%;
+  padding: 0px 5px;
 }
 
 .gallery-slider-wrapper .gallery-slider-inner{
@@ -80,6 +82,7 @@ html, body {
   position: absolute;
   top: 50%;
   width: 100%;
+  left: 0px;
 }
 
 .gallery-slider-control .control-left {
