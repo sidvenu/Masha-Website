@@ -190,11 +190,12 @@
 						<div class="gallery-slider-wrapper col-sm-12">
 							<div class="gallery-slider-inner">
 							</div>
-
-							<span class="gallery-slider-control control-left"><i class="fa fa-chevron-left"></i></span>
-							<span class="gallery-slider-control control-right"><i class="fa fa-chevron-right"></i></span>
+							<div class="gallery-slider-control">
+								<span class="control-left"><i class="fa fa-chevron-left"></i></span>
+								<span class="control-right"><i class="fa fa-chevron-right"></i></span>
+							</div>
 						</div>
-							
+
 
 					</div>
 				</div>
@@ -279,7 +280,7 @@
 
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
-				data.forEach((element)=>{
+				data.forEach((element) => {
 					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 				});
 
