@@ -17,7 +17,7 @@ document.write(`
 							<li><a href="Gallery.html?type=handicrafts">Handicrafts</a></li>
 						</ul>
 					</li>
-					<li><a href="gallery.html?type=artists"  onmouseover="this.style.color='#fafafa'">Artists</a></li>
+					<li><a href="Gallery.html?type=artists"  onmouseover="this.style.color='#fafafa'">Artists</a></li>
 					<li class="menu-has-children">
 						<a href="#" onmouseover="this.style.color='#fafafa'">Showcase</a>
 						<ul>
