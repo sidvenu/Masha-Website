@@ -58,7 +58,7 @@ class URLBuilder {
 	static eventsThumbnailURL() {
 		return new URLBuilder().raw().thumbnails().events().urlString;
 	}
-	
+
 	static eventsGalleryThumbnailURL() {
 		return new URLBuilder().raw().thumbnails().events().child("gallery").urlString;
 	}
@@ -294,13 +294,13 @@ jQuery(document).ready(function ($) {
 		let artist = params.get("artist");
 
 		$("#artistName").html(artist);
-		$.get("api/artists.php?name=" + artist, (data)=>{
+		$.get("api/artists.php?name=" + artist, (data) => {
 			$("#artistSub").html(data[0].subheading);
 			$("#artistDescription").html(data[0].description);
 			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
 			$("#artistPic").attr("src", thumbnail);
 
-			console.log (data[0].featured);
+			console.log(data[0].featured);
 			if (data[0].featured == 'F') {
 				$("#portfolio-wrapper").hide();
 				$($(".section-title")[0]).html(data[0].name);
@@ -339,44 +339,44 @@ jQuery(document).ready(function ($) {
 		globalThis.gallerySliderMaxWidth = 0;
 		globalThis.gallerySliderCurrentPosition = 0;
 
-		$(".gallery-slider .control-right").on("click", ()=>{
+		$(".gallery-slider .control-right").on("click", () => {
 			globalThis.gallerySliderMaxWidth = 0;
-			$(".gallery-slider-inner img").each((i, e)=>{
+			$(".gallery-slider-inner img").each((i, e) => {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
 			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth + 300)
 				globalThis.gallerySliderCurrentPosition -= 300;
-			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
 		});
 
-		$(".gallery-slider .control-left").on("click", ()=>{
+		$(".gallery-slider .control-left").on("click", () => {
 			globalThis.gallerySliderMaxWidth = 0;
-			$(".gallery-slider-inner img").each((i, e)=>{
+			$(".gallery-slider-inner img").each((i, e) => {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
 			if (globalThis.gallerySliderCurrentPosition < 0)
 				globalThis.gallerySliderCurrentPosition += 300;
-			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
 		});
 
 		//touch listeners
-		$(".gallery-slider").on("touchstart", (ev)=>{
-			globalThis.touchStart = {x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY};
+		$(".gallery-slider").on("touchstart", (ev) => {
+			globalThis.touchStart = { x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY };
 		});
-		
-		$(".gallery-slider").on("touchmove", (ev)=>{
+
+		$(".gallery-slider").on("touchmove", (ev) => {
 			let dx, dy;
 			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
 			dy = ev.changedTouches[0].screenY - globalThis.touchStart.y;
 
 			let thresholdX = 50;
 			if (Math.abs(dx) > thresholdX) {
-				if (dx < 0) 
-					console.log("Swipe left");
-				else 
-					console.log("Swipe right");
+				if (dx < 0)
+					$(".gallery-slider-control .control-right").trigger("click");
+				else
+					$(".gallery-slider-control .control-left").trigger("click");
 			}
 		});
 	}
@@ -419,7 +419,7 @@ jQuery(document).ready(function ($) {
 		}
 
 		//attach events to handicraft anchors
-		$("#handicrafts-control .options a").click((ev)=>{
+		$("#handicrafts-control .options a").click((ev) => {
 			$("#handicrafts-control .options a").removeClass("selected");
 			$(ev.target).addClass("selected");
 			getProductsFromDatabase();
@@ -428,7 +428,7 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();
 		$("#sendenquiry-button").click(validateModal);
-	} 
+	}
 	else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
 		//carousel swipe
@@ -439,7 +439,7 @@ jQuery(document).ready(function ($) {
 		populateEvents();
 
 		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
-			window.location = "eventdetail.html?id="+$(this).attr("data-id")+"&type="+url.searchParams.get("type");
+			window.location = "eventdetail.html?id=" + $(this).attr("data-id") + "&type=" + url.searchParams.get("type");
 		});
 	}
 	else if (url.pathname == "/eventdetail.html") {
