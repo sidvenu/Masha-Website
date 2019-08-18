@@ -339,7 +339,6 @@ jQuery(document).ready(function ($) {
 		globalThis.gallerySliderMaxWidth = 0;
 		globalThis.gallerySliderCurrentPosition = 0;
 
-
 		$(".gallery-slider .control-right").on("click", ()=>{
 			globalThis.gallerySliderMaxWidth = 0;
 			$(".gallery-slider-inner img").each((i, e)=>{
@@ -360,6 +359,11 @@ jQuery(document).ready(function ($) {
 			if (globalThis.gallerySliderCurrentPosition < 0)
 				globalThis.gallerySliderCurrentPosition += 300;
 			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+		});
+
+		//touch listeners
+		$(".gallery-slider").on("touchstart", (ev)=>{
+			console.log(ev);
 		});
 	}
 
