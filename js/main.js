@@ -367,14 +367,12 @@ jQuery(document).ready(function ($) {
 
 		//touch listeners
 		$(".gallery-slider").on("touchstart", (ev) => {
-			ev.preventDefault();
 			globalThis.touchStart = { x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY };
 			globalThis.thresholdX = 50;
 			globalThis.touchTriggered = false;
 		});
 
 		$(".gallery-slider").on("touchmove", (ev) => {
-			ev.preventDefault();
 			let dx;
 			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
 			if (Math.abs(dx) > globalThis.thresholdX && !globalThis.touchTriggered) {
@@ -445,7 +443,7 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
 		//carousel swipe
-		$("#myCarousel").bcSwipe({ threshold: 50 });
+		attachTouchToCarousel("#myCarousel");
 		curatedCollectionInit();
 	}
 	else if (url.pathname == "/events.html") {
@@ -462,3 +460,34 @@ jQuery(document).ready(function ($) {
 		updateInMedia();
 	}
 });
+
+function attachTouchToCarousel (div) {
+	if (globalThis.sliderTouchData == undefined) {
+		globalThis.sliderTouchData = {threshold: 50, triggered: false};
+	}
+
+	$(div).on("touchstart", (ev)=>{
+		globalThis.sliderTouchData.x = ev.targetTouches[0].screenX;
+	});
+
+	$(div).on("touchmove", (ev)=>{
+		let dx = globalThis.sliderTouchData.x - ev.changedTouches[0].screenX;
+		if (Math.abs(dx) > globalThis.sliderTouchData.threshold) {
+			if (dx > 0) {
+				//swipe left
+				console.log("left");
+			}
+			else {
+				//swipe right
+				console.log("right");
+			}
+			globalThis.sliderTouchData.triggered = true;
+		}
+	});
+
+	$(div).on("touchend", ()=>{
+		globalThis.sliderTouchData.triggered = false;
+	});
+
+
+}
