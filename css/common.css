@@ -92,6 +92,10 @@ html, body {
   position: absolute;
 }
 
+.gallery-slider-control [class*="control"]:hover {
+  cursor: pointer;
+}
+
 .gallery-slider {
   position: relative;
   display: flex;
