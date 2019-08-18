@@ -363,21 +363,31 @@ jQuery(document).ready(function ($) {
 
 		//touch listeners
 		$(".gallery-slider").on("touchstart", (ev) => {
+			ev.preventDefault();
 			globalThis.touchStart = { x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY };
+			globalThis.thresholdX = 50;
+			globalThis.touchTriggered = false;
 		});
 
 		$(".gallery-slider").on("touchmove", (ev) => {
-			let dx, dy;
+			ev.preventDefault();
+			let dx;
 			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
-			dy = ev.changedTouches[0].screenY - globalThis.touchStart.y;
-
-			let thresholdX = 50;
-			if (Math.abs(dx) > thresholdX) {
-				if (dx < 0)
+			if (Math.abs(dx) > globalThis.thresholdX && !globalThis.touchTriggered) {
+				if (dx < 0){
 					$(".gallery-slider-control .control-right").trigger("click");
-				else
+					globalThis.touchTriggered = true;
+				}
+				else {
 					$(".gallery-slider-control .control-left").trigger("click");
+					globalThis.touchTriggered = true;
+				}
 			}
+		});
+
+		$(".gallery-slider").on("touchend", (ev)=>{
+			ev.preventDefault();
+			globalThis.touchTriggered = false;
 		});
 	}
 
