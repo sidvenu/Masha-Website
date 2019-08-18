@@ -362,8 +362,8 @@ jQuery(document).ready(function ($) {
 		});
 
 		//touch listeners
-		$(".gallery-slider").on("touchstart", (ev)=>{
-			console.log(ev);
+		$(".gallery-slider").on("touchmove", (ev)=>{
+			console.log(ev.changedTouches);
 		});
 	}
 
