@@ -472,15 +472,16 @@ function attachTouchToCarousel (div) {
 
 	$(div).on("touchmove", (ev)=>{
 		let dx = globalThis.sliderTouchData.x - ev.changedTouches[0].screenX;
-		console.log(dx);
-		if (Math.abs(dx) > globalThis.sliderTouchData.threshold) {
+		if (Math.abs(dx) > globalThis.sliderTouchData.threshold && !globalThis.sliderTouchData.triggered) {
 			if (dx > 0) {
 				//swipe left
 				console.log("left");
+				$(div).carousel("next");
 			}
 			else {
 				//swipe right
 				console.log("right");
+				$(div).carousel("prev");
 			}
 			globalThis.sliderTouchData.triggered = true;
 		}
