@@ -362,8 +362,16 @@ jQuery(document).ready(function ($) {
 		});
 
 		//touch listeners
+		$(".gallery-slider").on("touchstart", (ev)=>{
+			globalThis.touchStart = {x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY};
+		});
+		
 		$(".gallery-slider").on("touchmove", (ev)=>{
-			console.log(ev.changedTouches);
+			let dx, dy;
+			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
+			dy = ev.changedTouches[0].screenY - globalThis.touchStart.y;
+
+			console.log ("x: " + dx + " y: " + dy);
 		});
 	}
 
