@@ -143,35 +143,6 @@
 
 		function updateInMedia() {
 			$.get("api/inmedia.php", (data) => {
-				// let content = undefined;
-				// for (let x = 0; x < data.length; x++) {
-				// 	if (x % 6 == 0) {
-				// 		if (content != undefined) {
-				// 			$("#inmedia-content .carousel-inner").append(content);
-				// 			content = undefined;
-				// 		}
-				// 	}
-				// 	if (content == undefined) {
-				// 		content = document.createElement("div");
-				// 		$(content).addClass("carousel-item");
-				// 		$(content).append(`<div class="row"></div>`);
-				// 		if (x == 0)
-				// 			$(content).addClass("active");
-				// 	}
-				// 	$(content).find(".row").append(`
-				// 		<div class="col-lg-4 col-md">
-				// 			<img class="d-block w-100"
-				// 				src=${URLBuilder.inmediaURL()}/${data[x].thumbnail.replace(" ", "%20")} 
-				// 				style="width:400px; height:300px;" 
-				// 				alt="">
-				// 		</div>
-				// 		`);
-
-				// }
-				// if (content != undefined) {
-				// 	$("#inmedia-content .carousel-inner").append(content);
-				// 	content = undefined;
-				// }
 				data.forEach(element => {
 					$("#inmedia-content").append(`
 						<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}>
