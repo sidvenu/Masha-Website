@@ -58,7 +58,7 @@ class URLBuilder {
 	static eventsThumbnailURL() {
 		return new URLBuilder().raw().thumbnails().events().urlString;
 	}
-	
+
 	static eventsGalleryThumbnailURL() {
 		return new URLBuilder().raw().thumbnails().events().child("gallery").urlString;
 	}
@@ -294,13 +294,13 @@ jQuery(document).ready(function ($) {
 		let artist = params.get("artist");
 
 		$("#artistName").html(artist);
-		$.get("api/artists.php?name=" + artist, (data)=>{
+		$.get("api/artists.php?name=" + artist, (data) => {
 			$("#artistSub").html(data[0].subheading);
 			$("#artistDescription").html(data[0].description);
 			let thumbnail = URLBuilder.artistsURL() + `/${data[0].thumbnail}`;
 			$("#artistPic").attr("src", thumbnail);
 
-			console.log (data[0].featured);
+			console.log(data[0].featured);
 			if (data[0].featured == 'F') {
 				$("#portfolio-wrapper").hide();
 				$($(".section-title")[0]).html(data[0].name);
@@ -339,27 +339,61 @@ jQuery(document).ready(function ($) {
 		globalThis.gallerySliderMaxWidth = 0;
 		globalThis.gallerySliderCurrentPosition = 0;
 
-
-		$(".gallery-slider .control-right").on("click", ()=>{
+		$(".gallery-slider .control-right").on("click", () => {
 			globalThis.gallerySliderMaxWidth = 0;
-			$(".gallery-slider-inner img").each((i, e)=>{
+			$(".gallery-slider-inner img").each((i, e) => {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
-			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth + 300)
-				globalThis.gallerySliderCurrentPosition -= 300;
-			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+			let move = $(".gallery-slider-inner").width();
+
+			if (globalThis.gallerySliderCurrentPosition > -globalThis.gallerySliderMaxWidth + move)
+				globalThis.gallerySliderCurrentPosition -= move;
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
 		});
 
-		$(".gallery-slider .control-left").on("click", ()=>{
+		$(".gallery-slider .control-left").on("click", () => {
 			globalThis.gallerySliderMaxWidth = 0;
-			$(".gallery-slider-inner img").each((i, e)=>{
+			$(".gallery-slider-inner img").each((i, e) => {
 				globalThis.gallerySliderMaxWidth += $(e).width();
 			});
 
+			let move = $(".gallery-slider-inner").width();
+
 			if (globalThis.gallerySliderCurrentPosition < 0)
-				globalThis.gallerySliderCurrentPosition += 300;
-			$(".gallery-slider-inner").css({left: globalThis.gallerySliderCurrentPosition});
+				globalThis.gallerySliderCurrentPosition += move;
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
+		});
+
+		//touch listeners
+		$(".gallery-slider").on("touchstart", (ev) => {
+			globalThis.touchStart = { x: ev.targetTouches[0].screenX, y: ev.targetTouches[0].screenY };
+			globalThis.thresholdX = 50;
+			globalThis.touchTriggered = false;
+		});
+
+		$(".gallery-slider").on("touchmove", (ev) => {
+			let dx;
+			dx = ev.changedTouches[0].screenX - globalThis.touchStart.x;
+			if (Math.abs(dx) > globalThis.thresholdX && !globalThis.touchTriggered) {
+				if (dx < 0){
+					$(".gallery-slider-control .control-right").trigger("click");
+					globalThis.touchTriggered = true;
+				}
+				else {
+					$(".gallery-slider-control .control-left").trigger("click");
+					globalThis.touchTriggered = true;
+				}
+			}
+		});
+
+		$(".gallery-slider").on("touchend", (ev)=>{
+			globalThis.touchTriggered = false;
+		});
+
+		$(window).on("resize", ()=>{
+			globalThis.gallerySliderCurrentPosition = 0;
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
 		});
 	}
 
@@ -401,7 +435,7 @@ jQuery(document).ready(function ($) {
 		}
 
 		//attach events to handicraft anchors
-		$("#handicrafts-control .options a").click((ev)=>{
+		$("#handicrafts-control .options a").click((ev) => {
 			$("#handicrafts-control .options a").removeClass("selected");
 			$(ev.target).addClass("selected");
 			getProductsFromDatabase();
@@ -410,18 +444,19 @@ jQuery(document).ready(function ($) {
 	else if (url.pathname == "/product.html") {
 		updateProductDetails();
 		$("#sendenquiry-button").click(validateModal);
-	} 
+	}
 	else if (url.pathname == "/" || url.pathname == "/index.html") {
 		initCarousel1();
 		//carousel swipe
-		$("#myCarousel").bcSwipe({ threshold: 50 });
+		attachTouchToCarousel("#myCarousel");
+		attachTouchToCarousel("#myCarousel2");
 		curatedCollectionInit();
 	}
 	else if (url.pathname == "/events.html") {
 		populateEvents();
 
 		$("#portfolio-wrapper").on("click", ".portfolio-item", function () {
-			window.location = "eventdetail.html?id="+$(this).attr("data-id")+"&type="+url.searchParams.get("type");
+			window.location = "eventdetail.html?id=" + $(this).attr("data-id") + "&type=" + url.searchParams.get("type");
 		});
 	}
 	else if (url.pathname == "/eventdetail.html") {
@@ -431,3 +466,36 @@ jQuery(document).ready(function ($) {
 		updateInMedia();
 	}
 });
+
+function attachTouchToCarousel (div) {
+	if (globalThis.sliderTouchData == undefined) {
+		globalThis.sliderTouchData = {threshold: 50, triggered: false};
+	}
+
+	$(div).on("touchstart", (ev)=>{
+		globalThis.sliderTouchData.x = ev.targetTouches[0].screenX;
+	});
+
+	$(div).on("touchmove", (ev)=>{
+		let dx = globalThis.sliderTouchData.x - ev.changedTouches[0].screenX;
+		if (Math.abs(dx) > globalThis.sliderTouchData.threshold && !globalThis.sliderTouchData.triggered) {
+			if (dx > 0) {
+				//swipe left
+				console.log("left");
+				$(div).find("button.carousel-control.right")[0].click();
+			}
+			else {
+				//swipe right
+				console.log("right");
+				$(div).find("button.carousel-control.left")[0].click();
+			}
+			globalThis.sliderTouchData.triggered = true;
+		}
+	});
+
+	$(div).on("touchend", ()=>{
+		globalThis.sliderTouchData.triggered = false;
+	});
+
+
+}

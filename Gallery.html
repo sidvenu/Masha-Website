@@ -45,7 +45,7 @@
 
 				<div class="row">
 					<div class="col-lg-12" id="handicrafts-control" style="display: none;">
-						<h5><b>Handicraft: </b></h5>
+						<h5><b>Handicrafts: </b></h5>
 						<div class="options">
 							<a href="#" class="selected">Shawls</a>
 							<a href="#">Carpets</a>
@@ -73,9 +73,9 @@
 					</ul>
 				</div>
 
-				<div  class="row flex" style="display: none;" id="allArtistsContainer">
+				<div  class="row flex" style="display: none; align-items: center;" id="allArtistsContainer">
 					<div class="col-sm-3">
-						<h3 style="position:relative; top:50%;">All Artists</h3>
+						<h3 ><b>All Artists</b></h3>
 					</div>
 					<div class="col-sm-9" id="allArtistsContainer_wrapper">
 	
@@ -195,9 +195,7 @@
 
 				productsList.append(`
 						<div class="col-lg-4 col-md-6 col-sm-6 portfolio-item filter-app">
-
 							<img src="${urlString}/${product.thumbnail}" alt="" data-url="${productURL}">
-
 							<div style="text-align: center;">
 								<h4>${firstLine.toLowerCase()}</h4>
 								<span class="product-second-line">${secondLine.toLowerCase()}</span><br />
@@ -208,6 +206,10 @@
 			}
 
 			$("html, body").animate({ scrollTop: $("#portfolio-wrapper").offset().top }, "slow");
+
+			if (type == "shawls") {
+				$(".portfolio-item img").css({width: 200, height: 200});
+			}
 		}
 
 		function getProductsFromDatabase(searchQ, sort) {

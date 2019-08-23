@@ -51,7 +51,7 @@
 				</div>
 
 				<div class="container">
-					<div class="carousel slide" data-ride="carousel" id="inmedia-content">
+					<!-- <div class="carousel slide" data-ride="carousel" id="inmedia-content">
 						<div class="carousel-inner">
 							<button class="left carousel-control" data-target="#inmedia-content" data-slide="prev"
 								style="z-index: 1">
@@ -64,12 +64,28 @@
 								<span class="sr-only">Next</span>
 							</button>
 						</div>
+					</div> -->
+
+					<div class="gallery-slider">
+						<div class="gallery-slider-wrapper col-sm-12">
+							<div class="gallery-slider-inner" id="inmedia-content">
+							</div>
+							<div class="gallery-slider-control">
+								<span class="control-left"><i class="fa fa-chevron-left"
+										style="font-size: 24px;"></i></span>
+								<span class="control-right"><i class="fa fa-chevron-right"
+										style="font-size: 24px;"></i></span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
 	</main>
+
+	<div id="media-viewer" style="display: none;">
+		<img src="img/placeholder.jpg">
+	</div>
 
 	<script src="js/footer.js"></script>
 
@@ -132,38 +148,60 @@
 
 		function updateInMedia() {
 			$.get("api/inmedia.php", (data) => {
-				let content = undefined;
-				for (let x = 0; x < data.length; x++) {
-					if (x % 6 == 0) {
-						if (content != undefined) {
-							$("#inmedia-content .carousel-inner").append(content);
-							content = undefined;
-						}
-					}
-					if (content == undefined) {
-						content = document.createElement("div");
-						$(content).addClass("carousel-item");
-						$(content).append(`<div class="row"></div>`);
-						if (x == 0)
-							$(content).addClass("active");
-					}
-					$(content).find(".row").append(`
-						<div class="col-lg-4 col-md">
-							<img class="d-block w-100"
-								src=${URLBuilder.inmediaURL()}/${data[x].thumbnail.replace(" ", "%20")} 
-								style="width:400px; height:300px;" 
-								alt="">
-						</div>
-						`);
+				data.forEach(element => {
+					$("#inmedia-content").append(`
+						<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}>
+					`);
+				});
+			});
 
-				}
-				if (content != undefined) {
-					$("#inmedia-content .carousel-inner").append(content);
-					content = undefined;
-				}
+			$("#inmedia-content").on("click", "img", (ev) => {
+				$("#media-viewer").show();
+				$("#media-viewer img").attr("src", $(ev.target).attr("src"));
+			});
+
+			$("#media-viewer").on("click", () => {
+				$("#media-viewer").hide();
 			});
 		}
 	</script>
+
+	<style>
+		#inmedia-content img {
+			max-width: 300px;
+			height: 300px;
+			margin: auto;
+			box-shadow: 3px 3px 3px 3px #3333;
+			position: relative;
+			transition-duration: 0.5s;
+			top: 0;
+		}
+
+		#inmedia-content img:hover {
+			top: -10px;
+		}
+
+		#media-viewer {
+			background-color: rgba(0, 0, 0, 0.13);
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			justify-content: center;
+			z-index: 1000;
+			display: flex;
+			align-items: center;
+		}
+
+		#media-viewer img {
+			width: 90%;
+			max-height: 90%;
+
+			padding: 10px;
+			box-shadow: 3px 3px 3px 3px #3333;
+		}
+	</style>
 </body>
 
 </html>

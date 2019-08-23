@@ -52,10 +52,6 @@ html, body {
 
 /* GALLERY SLIDER */
 
-.gallery-slider-inner img{
-  height: 200px;
-}
-
 .gallery-slider-wrapper .gallery-slider-inner{
   white-space: nowrap;
   width: auto;
@@ -77,21 +73,28 @@ html, body {
   transition-duration: 1s;
   background: none;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0px;
 }
 
-.gallery-slider-control:hover i{
-  color: white;
+.gallery-slider-control .control-left {
+  left: 5%;
+  position: absolute;
 }
 
-.gallery-slider .control-right:hover {
-  background: #0005;
+.gallery-slider-control .control-right {
+  right: 5%;
+  position: absolute;
 }
 
-.gallery-slider .control-left:hover {
-  background: #0005;
+.gallery-slider-control [class*="control"]:hover {
+  cursor: pointer;
 }
 
 .gallery-slider {
+  position: relative;
   display: flex;
   align-items: center;
 }

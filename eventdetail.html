@@ -187,18 +187,14 @@
 				<!-- Custom slider -->
 				<div class="container">
 					<div class="gallery-slider">
-						
-						<div class="col-sm-1 text-center gallery-slider-control control-left">
-							<i class="fa fa-chevron-left"></i>
-						</div>
-						<div class="gallery-slider-wrapper col-sm-10">
+						<div class="gallery-slider-wrapper col-sm-12">
 							<div class="gallery-slider-inner">
 							</div>
+							<div class="gallery-slider-control">
+								<span class="control-left"><i class="fa fa-chevron-left" style="font-size: 24px;"></i></span>
+								<span class="control-right"><i class="fa fa-chevron-right" style="font-size: 24px;"></i></span>
+							</div>
 						</div>
-						<div class="col-sm-1 text-center gallery-slider-control control-right">
-							<i class="fa fa-chevron-right"></i>
-						</div>
-
 					</div>
 				</div>
 			</div>
@@ -282,16 +278,15 @@
 
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
-				data.forEach((element)=>{
+				data.forEach((element) => {
 					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 				});
 
 			});
 
-			$("#event-gallery").on("click", "img", (ev) => {
+			$(".gallery-slider-inner").on("click", "img", (ev) => {
 				modal.style.display = "block";
 				modalImg.src = $(ev.target).attr("src");
-				captionText.innerHTML = $(ev.target).attr("alt");
 			});
 		}
 
@@ -301,6 +296,21 @@
 
 
 	</script>
+
+	<style>
+		.gallery-slider-inner img {
+			height: 200px;
+			max-width: 100%;
+			padding: 0px 5px;
+			position: relative;
+			transition-duration: 0.5s;
+			top: 0;
+		}
+
+		.gallery-slider-inner img:hover {
+			top: -10px;
+		}
+	</style>
 
 </body>
 
