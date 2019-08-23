@@ -157,7 +157,7 @@
 
 			$("#inmedia-content").on("click", "img", (ev) => {
 				$("#media-viewer").show("slow");
-				$("#media-viewer img").attr("src", ev.target.attr("src"));
+				$("#media-viewer img").attr("src", $(ev.target).attr("src"));
 			});
 
 			$("#media-viewer").on("click", () => {
