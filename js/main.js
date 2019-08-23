@@ -392,7 +392,8 @@ jQuery(document).ready(function ($) {
 		});
 
 		$(window).on("resize", ()=>{
-			console.log("HI");
+			globalThis.gallerySliderCurrentPosition = 0;
+			$(".gallery-slider-inner").css({ left: globalThis.gallerySliderCurrentPosition });
 		});
 	}
 
