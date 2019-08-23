@@ -1312,5 +1312,6 @@ a:hover {
 }
 
 #allArtistsContainer {
-  background: linear-gradient(to right, rgba(31,31,31,0.5), rgba(255,255,255, 1));
+  /* background: linear-gradient(to right, rgba(31,31,31,0.5), rgba(255,255,255, 1)); */
+  background-color: #f5f4f4;
 }
