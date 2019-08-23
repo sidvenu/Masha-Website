@@ -174,13 +174,23 @@
 				// }
 				data.forEach(element => {
 					$("#inmedia-content").append(`
-						<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}
-								>
+						<div class="col-sm-12">
+							<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}>
+						</div>
 					`);
 				});
 			});
 		}
 	</script>
+
+	<style>
+		#inmedia-content img {
+			max-width: 100%;
+			height: 300px;
+			margin: auto;
+			box-shadow: 3px 3px 3px 3px #3333;
+		}
+	</style>
 </body>
 
 </html>

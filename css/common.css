@@ -52,12 +52,6 @@ html, body {
 
 /* GALLERY SLIDER */
 
-.gallery-slider-inner img{
-  height: 200px;
-  max-width: 100%;
-  padding: 0px 5px;
-}
-
 .gallery-slider-wrapper .gallery-slider-inner{
   white-space: nowrap;
   width: auto;
