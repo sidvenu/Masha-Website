@@ -444,6 +444,7 @@ jQuery(document).ready(function ($) {
 		initCarousel1();
 		//carousel swipe
 		attachTouchToCarousel("#myCarousel");
+		attachTouchToCarousel("#myCarousel2");
 		curatedCollectionInit();
 	}
 	else if (url.pathname == "/events.html") {
