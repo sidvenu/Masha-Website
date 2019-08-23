@@ -17,7 +17,8 @@ class URL:
         "artist": "/upload_artist.php",
         "inmedia": "/upload_inmedia.php",
         "others": "/upload_other.php",
-        "sliders": "/upload_slider.php"
+        "sliders": "/upload_slider.php",
+        "curator", "/upload_curator.php"
     }
     
     @staticmethod
