@@ -71,20 +71,21 @@
 							<div class="gallery-slider-inner" id="inmedia-content">
 							</div>
 							<div class="gallery-slider-control">
-								<span class="control-left"><i class="fa fa-chevron-left" style="font-size: 24px;"></i></span>
-								<span class="control-right"><i class="fa fa-chevron-right"  style="font-size: 24px;"></i></span>
+								<span class="control-left"><i class="fa fa-chevron-left"
+										style="font-size: 24px;"></i></span>
+								<span class="control-right"><i class="fa fa-chevron-right"
+										style="font-size: 24px;"></i></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div id="media-viewer" style="display: none;">
-				<img src="img/placeholder.jpg">
-			</div>
 		</section>
-
 	</main>
+
+	<div id="media-viewer" style="display: none;">
+		<img src="img/placeholder.jpg">
+	</div>
 
 	<script src="js/footer.js"></script>
 
@@ -154,12 +155,12 @@
 				});
 			});
 
-			$("#inmedia-content").on("click", "img", (ev)=>{
+			$("#inmedia-content").on("click", "img", (ev) => {
 				$("#media-viewer").show("slow");
 				$("#media-viewer img").attr("src", ev.target.attr("src"));
 			});
 
-			$("#media-viewer").on("click", ()=>{
+			$("#media-viewer").on("click", () => {
 				$("#media-viewer").hide();
 			});
 		}
@@ -181,7 +182,12 @@
 		}
 
 		#media-viewer {
-			background-color: rgba(255,255,255,0.13);
+			background-color: rgba(255, 255, 255, 0.13);
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
 		}
 
 		#media-viewer img {
