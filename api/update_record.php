@@ -16,7 +16,8 @@
             case "exhibition_gallery":
             case "slider":
                 return "id";
-
+            case "curators":
+                return "rec_id";
             default:
                 return "item_number";
         }
