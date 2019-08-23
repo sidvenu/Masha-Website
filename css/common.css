@@ -63,6 +63,10 @@ html, body {
     display: none;
   }
 
+  #logo {
+    width: unset;
+  }
+
   #logo a {
     display: unset;
     position: unset;
