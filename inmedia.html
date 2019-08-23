@@ -78,6 +78,10 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="media-viewer" style="display: none;">
+				<img src="img/placeholder.jpg">
+			</div>
 		</section>
 
 	</main>
@@ -149,6 +153,15 @@
 					`);
 				});
 			});
+
+			$("#inmedia-content").on("click", "img", (ev)=>{
+				$("#media-viewer").show("slow");
+				$("#media-viewer img").attr("src", ev.target.attr("src"));
+			});
+
+			$("#media-viewer").on("click", ()=>{
+				$("#media-viewer").hide();
+			});
 		}
 	</script>
 
@@ -165,6 +178,24 @@
 
 		#inmedia-content img:hover {
 			top: -10px;
+		}
+
+		#media-viewer {
+			background-color: rgba(255,255,255,1);
+			transition-duration: 0.5ms;
+		}
+
+		#media-viewer.active {
+			background-color: rgba(255,255,255,0.13);
+		}
+
+		#media-viewer img {
+			margin: auto;
+			width: 90%;
+			max-height: 90%;
+
+			padding: 10px;
+			box-shadow: 3px 3px 3px 3px #3333;
 		}
 	</style>
 </body>
