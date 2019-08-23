@@ -476,12 +476,12 @@ function attachTouchToCarousel (div) {
 			if (dx > 0) {
 				//swipe left
 				console.log("left");
-				$(div).carousel("next");
+				$(div).find("button.carousel-control.right")[0].click();
 			}
 			else {
 				//swipe right
 				console.log("right");
-				$(div).carousel("prev");
+				$(div).find("button.carousel-control.left")[0].click();
 			}
 			globalThis.sliderTouchData.triggered = true;
 		}
