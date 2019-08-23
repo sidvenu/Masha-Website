@@ -41,12 +41,10 @@ html, body {
   }
 }
 
-/* title in mobile nav */
-@media (max-width: 992px) {
+/*hide title large screens */
+@media (min-width: 992px) {
   #logo .title {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    display: none;
   }
 }
 
