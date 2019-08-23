@@ -44,6 +44,7 @@ html, body {
 /* logo */
 #logo {
   text-align: center;
+  width: 100%;
 }
 
 #logo a {
@@ -60,6 +61,11 @@ html, body {
 @media (min-width: 993px) {
   #logo .title {
     display: none;
+  }
+
+  #logo a {
+    display: unset;
+    position: unset;
   }
 }
 
