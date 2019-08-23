@@ -41,8 +41,23 @@ html, body {
   }
 }
 
-/*hide title large screens */
-@media (min-width: 992px) {
+/* logo */
+#logo {
+  text-align: center;
+}
+
+#logo a {
+  position: absolute;
+  display: block;
+}
+
+#logo .title {
+  font-size: 24px;
+  position: relative;
+  top: 10px;
+}
+
+@media (min-width: 993px) {
   #logo .title {
     display: none;
   }
