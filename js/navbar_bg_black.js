@@ -4,7 +4,7 @@ document.write(`
 
 			<div id="logo" class="pull-left">
 				<a href="index.html"><img src="img/FinalLogoEditWhite@2x.png" alt="" title=""/></img></a>
-				<span class="title" style="display: none;">Masha Art</span>
+				<span class="title" style="color: white; position: relative; top: 0px;">masha <b>art</b></span>
 			</div>
 
 			<nav id="nav-menu-container">

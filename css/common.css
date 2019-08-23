@@ -41,12 +41,35 @@ html, body {
   }
 }
 
-/* title in mobile nav */
-@media (max-width: 992px) {
+/* logo */
+#logo {
+  text-align: center;
+  width: 100%;
+}
+
+#logo a {
+  position: absolute;
+  display: block;
+}
+
+#logo .title {
+  font-size: 24px;
+  position: relative;
+  top: 10px;
+}
+
+@media (min-width: 993px) {
   #logo .title {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    display: none;
+  }
+
+  #logo {
+    width: unset;
+  }
+
+  #logo a {
+    display: unset;
+    position: unset;
   }
 }
 
