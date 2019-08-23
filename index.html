@@ -252,14 +252,8 @@
 		function curatedCollectionInit() {
 			var collection = $("#portfolio-wrapper");
 			collection.empty();
-			$.get(`${new URLBuilder().api().urlString}/shawls.php?offset=0&num=2`, function (data) {
+			$.get(`${new URLBuilder().api().urlString}/curators.php`, function (data) {
 				addItemsToCuratedCollection(data, "shawls");
-			});
-			$.get(`${new URLBuilder().api().urlString}/sculptures.php?offset=0&num=2`, function (data) {
-				addItemsToCuratedCollection(data, "sculptures");
-			});
-			$.get(`${new URLBuilder().api().urlString}/carpets.php?offset=0&num=2`, function (data) {
-				addItemsToCuratedCollection(data, "carpets");
 			});
 		}
 
