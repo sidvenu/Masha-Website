@@ -212,12 +212,12 @@ h1, h2, h3, h4, h5, h6 {
 		top: 26px;
 		color: white;
   }
-  
+
 #header.header-fixed #logo img{
   max-height: 40px;
   max-width: 40px;
 }
-	
+
 /*
 Change placeholder color for all inputs
 */
