@@ -30,4 +30,7 @@
     <note priority="high" time="1565723622">
         implement testimonials frontend
     </note>
+    <note priority="medium" time="1566585974">
+        make interface for enquiries
+    </note>
 </todo>
