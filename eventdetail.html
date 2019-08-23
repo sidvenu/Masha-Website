@@ -195,8 +195,6 @@
 								<span class="control-right"><i class="fa fa-chevron-right"></i></span>
 							</div>
 						</div>
-
-
 					</div>
 				</div>
 			</div>
@@ -286,10 +284,9 @@
 
 			});
 
-			$("#event-gallery").on("click", "img", (ev) => {
+			$(".gallery-slider-inner").on("click", "img", (ev) => {
 				modal.style.display = "block";
 				modalImg.src = $(ev.target).attr("src");
-				captionText.innerHTML = $(ev.target).attr("alt");
 			});
 		}
 
