@@ -253,7 +253,7 @@
 			var collection = $("#portfolio-wrapper");
 			collection.empty();
 			$.get(`${new URLBuilder().api().urlString}/curators.php`, function (data) {
-				addItemsToCuratedCollection(data, "shawls");
+				addItemsToCuratedCollection(data, "paintings");
 			});
 		}
 
