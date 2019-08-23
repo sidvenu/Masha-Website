@@ -390,6 +390,10 @@ jQuery(document).ready(function ($) {
 		$(".gallery-slider").on("touchend", (ev)=>{
 			globalThis.touchTriggered = false;
 		});
+
+		$(window).on("resize", ()=>{
+			console.log("HI");
+		});
 	}
 
 	//page specific function calls
