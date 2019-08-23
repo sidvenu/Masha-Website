@@ -16,7 +16,7 @@
         "DELETE FROM inmedia WHERE id = '{id}'",
         "DELETE FROM others WHERE item_number = '{id}'",
         "DELETE FROM sliders WHERE id = '{id}'",
-        "DELETE FROM curators WHERE item_number = '{id}'"
+        "DELETE FROM curators WHERE rec_id = '{id}'"
     ];
 
     for ($x = 0; $x < count($query); $x++) {
