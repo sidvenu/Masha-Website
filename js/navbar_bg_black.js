@@ -7,7 +7,7 @@ document.write(`
 				<span class="title" style="top: 0px;"><b style="color: white;">masha</b> <span style="color: #f26522">art</span></span>
 			</div>
 
-			<nav id="nav-menu-container">
+			<nav id="nav-menu-container" stylel:"position: relative; top: 4px;">
 				<ul class="nav-menu">
 					<li class="menu-has-children">
 						<a href="#" onmouseover="this.style.color='#fafafa'">Gallery</a>
