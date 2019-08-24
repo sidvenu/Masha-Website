@@ -231,6 +231,8 @@
 
 			if (type === "handicrafts") {
 				type = $("#handicrafts-control .options a.selected").html().toLowerCase();
+				if (type == "artefacts")
+					type = "shawls";
 			}
 
 			url = `${new URLBuilder().api().urlString}/${type}.php?q=${searchQ}&sort=${sort}`;
