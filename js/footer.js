@@ -24,7 +24,7 @@ document.write(`
 					<a href="about.html" class="sublink">About</a><br />
 					<a href="inmedia.html" class="sublink">In Media</a><br />
 					<h4>Masha Support</h4> 
-					<a class="sublink" href="masha.html">About Masha Support</a><br />
+					<a class="sublink" href="masha_support.html">About Masha Support</a><br />
 					<h4>Social</h4>
 					<a href="http://facebook.com/mashaesthetics" class="sublink"><i class="fa fa-facebook"></i> Facebook</a><br />
 					<a href="http://instagram.com/mashaesthetics" class="sublink"><i class="fa fa-instagram"></i> Instagram</a><br />
