@@ -410,6 +410,7 @@ jQuery(document).ready(function ($) {
 					<li>Name</li>
 					<li>Medium</li>
 				`);
+				$("head title").html("Paintings");
 				break;
 
 			case "handicrafts":
@@ -417,6 +418,7 @@ jQuery(document).ready(function ($) {
 					<li>Name</li>
 					<li>Type</li>
 				`);
+				$("head title").html("Handicrafts");
 				break;
 
 			case "sculptures":
@@ -425,12 +427,14 @@ jQuery(document).ready(function ($) {
 					<li>Name</li>
 					<li>Medium</li>
 				`);
+				$("head title").html("Sculptures");
 				break;
 			case "artists":
 				//no sorting options
 				$("#allArtistsContainer").show();
 				$("#portfolio-sortcontrol").hide();
 				fillAllArtists();
+				$("head title").html("Artists");
 				break;
 		}
 
