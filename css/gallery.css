@@ -1086,7 +1086,13 @@ a:hover {
 }
 
 #team .member .pic img {
-  max-width: 100%;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 8px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 3px 3px 3px 3px #3333;
 }
 
 #team .member h4 {
