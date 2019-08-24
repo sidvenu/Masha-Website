@@ -25,7 +25,7 @@ document.write(`
 							<li><a href="events.html?type=exhibitions">Exhibitions</a></li>
 						</ul>
 					</li>
-					<li><a href="masha.html">Masha Support</a></li>
+					<li><a href="masha_support.html">Masha Support</a></li>
 					<li><a href="about.html">About Us</a></li>
 					<li><a href="contact.html">Contact</a></li>
 					<li><a href="inmedia.html">In Media</a></li>

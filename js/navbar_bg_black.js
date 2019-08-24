@@ -25,7 +25,7 @@ document.write(`
 							<li><a href="events.html?type=exhibitions">Exhibitions</a></li>
 						</ul>
 					</li>
-					<li><a href="masha.html"  onmouseover="this.style.color='#fafafa'">Masha Support</a></li>
+					<li><a href="masha_support.html"  onmouseover="this.style.color='#fafafa'">Masha Support</a></li>
 					<li><a href="about.html"  onmouseover="this.style.color='#fafafa'">About Us</a></li>
 					<li><a href="contact.html"  onmouseover="this.style.color='#fafafa'">Contact</a></li>
 					<li><a href="inmedia.html"  onmouseover="this.style.color='#fafafa'">In Media</a></li>
