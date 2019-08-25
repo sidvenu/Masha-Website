@@ -397,6 +397,11 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+	//media viewer
+	$(".media-viewer").on("click", () => {
+		$(".media-viewer").hide();
+	});
+
 	//page specific function calls
 	let url = new URL(document.location);
 

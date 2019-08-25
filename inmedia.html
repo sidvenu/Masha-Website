@@ -66,7 +66,7 @@
 		</section>
 	</main>
 
-	<div id="media-viewer" style="display: none;">
+	<div class="media-viewer" style="display: none;">
 		<img src="img/placeholder.jpg">
 	</div>
 
@@ -139,12 +139,8 @@
 			});
 
 			$("#inmedia-content").on("click", "img", (ev) => {
-				$("#media-viewer").show();
-				$("#media-viewer img").attr("src", $(ev.target).attr("src"));
-			});
-
-			$("#media-viewer").on("click", () => {
-				$("#media-viewer").hide();
+				$(".media-viewer").show();
+				$(".media-viewer img").attr("src", $(ev.target).attr("src"));
 			});
 		}
 	</script>
@@ -162,27 +158,6 @@
 
 		#inmedia-content img:hover {
 			top: -10px;
-		}
-
-		#media-viewer {
-			background-color: rgba(0, 0, 0, 0.13);
-			position: fixed;
-			left: 0;
-			top: 0;
-			width: 100vw;
-			height: 100vh;
-			justify-content: center;
-			z-index: 1000;
-			display: flex;
-			align-items: center;
-		}
-
-		#media-viewer img {
-			width: 90%;
-			max-height: 90%;
-
-			padding: 10px;
-			box-shadow: 3px 3px 3px 3px #3333;
 		}
 	</style>
 </body>

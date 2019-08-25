@@ -125,3 +125,27 @@ html, body {
   display: flex;
   align-items: center;
 }
+
+/* MEDIA VIEWER */
+
+
+.media-viewer {
+  background-color: rgba(0, 0, 0, 0.13);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.media-viewer img {
+  width: 90%;
+  max-height: 90%;
+
+  padding: 10px;
+  box-shadow: 3px 3px 3px 3px #3333;
+}
