@@ -4,7 +4,7 @@ import requests
 
 #class to fetch URL
 class URL:
-    BASE_URL = "http://mashaart.in/api"
+    BASE_URL = "https://mashaart.in/api"
     INSERT_RECORD_URLS = {
         "painting": "/upload_painting.php",
         "shawl": "/upload_shawl.php",
