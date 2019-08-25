@@ -121,10 +121,10 @@
 				data.forEach((element) => {
 					$("#portfolio-wrapper").append(`
 						<div class="col-lg-6 col-md-6 portfolio-item filter-app" data-id="${element.id}" style="height: 200px">
-							<img src="${thumbnailURL}/${element.thumbnail}" style="width:unset; height:unset; max-width:100%;" alt="">
-							<div style="position: relative;z-index: 2;margin-top: -200px;text-align: right;">
-								<h4 style="color:white;text-decoration-line:underline">${element.name}</h4>
+							<div style="position: absolute;z-index: 2;right: 5%; bottom: 7%;">
+								<h4 style="color:white;">${element.name}</h4>
 							</div>
+							<img src="${thumbnailURL}/${element.thumbnail}" style="width:unset; height:unset; max-width:100%;" alt="">
 						</div>
 					`);
 				});
