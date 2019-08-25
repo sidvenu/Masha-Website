@@ -263,7 +263,12 @@ jQuery(document).ready(function ($) {
 		time: 1000
 	});
 
-	// custom code
+	// custom 
+
+	//the header title redirects to index
+	$("#logo .title").on("'click", ()=>{
+		document.location = "index.html";
+	});
 
 	// get artists from database and fill it in the navbar dropdown
 	// function populateArtistsInNavbar() {
