@@ -267,7 +267,7 @@ jQuery(document).ready(function ($) {
 
 	//the header title redirects to index
 	$("#logo .title").on("'click", ()=>{
-		document.location.href = "index.html";
+		window.location.replace("index.html");
 	});
 
 	// get artists from database and fill it in the navbar dropdown
