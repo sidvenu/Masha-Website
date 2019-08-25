@@ -196,8 +196,7 @@
 							</div>
 						</div>
 					</div> -->
-					<div id="gallery-container" class="flex"
-						style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 90%;">
+					<div id="gallery-container" class="row">
 
 					</div>
 				</div>
@@ -284,7 +283,11 @@
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
 				data.forEach((element) => {
 					//$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
-					$("#gallery-container").append(`<img style="max-width: 300px;" src="${galleryThumbnailURL}/${element.thumbnail}">`);
+					$("#gallery-container").append(`
+					<div class="col-sm-12 col-md-6 col-lg-4">
+						<img style="max-width: 300px;" src="${galleryThumbnailURL}/${element.thumbnail}">
+					</div>
+					`);
 				});
 
 			});
