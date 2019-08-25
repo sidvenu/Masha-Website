@@ -186,7 +186,7 @@
 
 				<!-- Custom slider -->
 				<div class="container">
-					<div class="gallery-slider">
+					<!-- <div class="gallery-slider">
 						<div class="gallery-slider-wrapper col-sm-12">
 							<div class="gallery-slider-inner">
 							</div>
@@ -195,6 +195,10 @@
 								<span class="control-right"><i class="fa fa-chevron-right" style="font-size: 24px;"></i></span>
 							</div>
 						</div>
+					</div> -->
+					<div id="gallery-container" class="flex"
+						style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 90%;">
+
 					</div>
 				</div>
 			</div>
@@ -279,7 +283,8 @@
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
 				data.forEach((element) => {
-					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
+					//$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
+					$("#gallery-container").append(`<img style="max-width: 300px;" src="${galleryThumbnailURL}/${element.thumbnail}">`);
 				});
 
 			});
