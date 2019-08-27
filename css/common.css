@@ -147,7 +147,7 @@ html, body {
 }
 
 .media-viewer img {
-  width: 90%;
+  max-width: 90%;
   max-height: 90%;
 
   padding: 10px;
