@@ -49,7 +49,7 @@
 				</div>
 
 				<div class="container">
-					<div class="gallery-slider">
+					<!-- <div class="gallery-slider">
 						<div class="gallery-slider-wrapper col-sm-12">
 							<div class="gallery-slider-inner" id="inmedia-content">
 							</div>
@@ -60,6 +60,9 @@
 										style="font-size: 24px;"></i></span>
 							</div>
 						</div>
+					</div> -->
+					<div id = "inmedia-content" class="row">
+
 					</div>
 				</div>
 			</div>
@@ -133,7 +136,9 @@
 			$.get("api/inmedia.php", (data) => {
 				data.forEach(element => {
 					$("#inmedia-content").append(`
-						<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}>
+						<div class="col-sm-12 col-md-6 col-lg-4">
+							<img 	src=${URLBuilder.inmediaURL()}/${element.thumbnail.replace(" ", "%20")}>
+						</div>
 					`);
 				});
 			});
@@ -146,18 +151,20 @@
 	</script>
 
 	<style>
-		#inmedia-content img {
-			max-width: 300px;
-			height: 300px;
-			margin: auto;
-			box-shadow: 3px 3px 3px 3px #3333;
-			position: relative;
-			transition-duration: 0.5s;
-			top: 0;
+		#inmedia-content div {
+			text-align: center;
 		}
 
-		#inmedia-content img:hover {
-			top: -10px;
+		#inmedia-content div img {
+			padding: 7px;
+			margin: 5px;
+			border-color: black;
+			border-style: solid;
+			border-width: 1px;
+			box-shadow: 3px 3px 3px 3px #3333;
+			max-height: 300px;
+			max-width: 300px;
+			image-orientation: from-image;
 		}
 	</style>
 </body>
