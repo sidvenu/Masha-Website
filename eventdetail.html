@@ -283,7 +283,7 @@
 					//$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 					$("#gallery-container").append(`
 					<div class="col-sm-12 col-md-6 col-lg-4">
-						<img src="${galleryThumbnailURL}/${element.thumbnail} data-pic="${galleryPicURL}/${element.thumbnail}">
+						<img src="${galleryThumbnailURL}/${element.thumbnail}" data-pic="${galleryPicURL}/${element.thumbnail}">
 					</div>
 					`);
 				});
@@ -296,7 +296,7 @@
 			});
 
 			$("#gallery-container").on("click", "img", (ev)=>{
-				$(".media-viewer img").attr("src", $(ev.target).attr("src"));
+				$(".media-viewer img").attr("src", $(ev.target).attr("data-pic"));
 				$(".media-viewer").show();
 			});
 		}
