@@ -246,7 +246,7 @@
 			let event_id = url.get("id");
 			let type = url.get("type");
 
-			let baseURL, picURL, galleryURL, galleryThumbnailURL;
+			let baseURL, picURL, galleryURL, galleryThumbnailURL, galleryPicURL;
 
 			switch (type) {
 				case "events":
@@ -254,12 +254,14 @@
 					picURL = URLBuilder.eventsURL();
 					galleryURL = "/api/event_gallery.php";
 					galleryThumbnailURL = URLBuilder.eventsGalleryThumbnailURL();
+					galleryPicURL = URLBuilder.eventsGalleryURL();
 					break;
 				case "exhibitions":
 					baseURL = "/api/exhibitions.php";
 					picURL = URLBuilder.exhibitionsURL();
 					galleryURL = "/api/exhibition_gallery.php";
 					galleryThumbnailURL = URLBuilder.exhibitionsGalleryThumbnailURL();
+					galleryPicURL = URLBuilder.exhibitionsGalleryURL();
 					break;
 			}
 
@@ -277,14 +279,14 @@
 			//gallery
 			$.get(`${galleryURL}?id=` + event_id, (data) => {
 				data.forEach((element) => {
-					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
+					$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}" data-pic="${galleryPicURL}/${element.thumbnail}">`);
 				});
 
 			});
 
 			$(".gallery-slider-inner").on("click", "img", (ev) => {
 				modal.style.display = "block";
-				modalImg.src = $(ev.target).attr("src");
+				modalImg.src = $(ev.target).attr("data-pic");
 			});
 		}
 
