@@ -247,7 +247,7 @@
 			let event_id = url.get("id");
 			let type = url.get("type");
 
-			let baseURL, picURL, galleryURL, galleryThumbnailURL;
+			let baseURL, picURL, galleryURL, galleryThumbnailURL, galleryPicURL;
 
 			switch (type) {
 				case "events":
@@ -255,12 +255,14 @@
 					picURL = URLBuilder.eventsURL();
 					galleryURL = "/api/event_gallery.php";
 					galleryThumbnailURL = URLBuilder.eventsGalleryThumbnailURL();
+					galleryPicURL = URLBuilder.eventsGalleryURL();
 					break;
 				case "exhibitions":
 					baseURL = "/api/exhibitions.php";
 					picURL = URLBuilder.exhibitionsURL();
 					galleryURL = "/api/exhibition_gallery.php";
 					galleryThumbnailURL = URLBuilder.exhibitionsGalleryThumbnailURL();
+					galleryPicURL = URLBuilder.exhibitionsGalleryURL();
 					break;
 			}
 
@@ -281,7 +283,7 @@
 					//$(".gallery-slider-inner").append(`<img src="${galleryThumbnailURL}/${element.thumbnail}">`);
 					$("#gallery-container").append(`
 					<div class="col-sm-12 col-md-6 col-lg-4">
-						<img src="${galleryThumbnailURL}/${element.thumbnail}">
+						<img src="${galleryThumbnailURL}/${element.thumbnail} data-pic="${galleryPicURL}/${element.thumbnail}">
 					</div>
 					`);
 				});
@@ -290,7 +292,7 @@
 
 			$(".gallery-slider-inner").on("click", "img", (ev) => {
 				modal.style.display = "block";
-				modalImg.src = $(ev.target).attr("src");
+				modalImg.src = $(ev.target).attr("data-pic");
 			});
 
 			$("#gallery-container").on("click", "img", (ev)=>{
