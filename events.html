@@ -106,13 +106,13 @@
 
 			switch (type) {
 				case "events":
-					baseurl += "/events.php";
+					baseurl += "/events.php?sort=ordering";
 					thumbnailURL = URLBuilder.eventsThumbnailURL();
 					break;
 				case "upcoming_events":
 					break;
 				case "exhibitions":
-					baseurl += "/exhibitions.php";
+					baseurl += "/exhibitions.php?sort=ordering";
 					thumbnailURL = URLBuilder.exhibitionsThumbnailURL();
 					break;
 			}
